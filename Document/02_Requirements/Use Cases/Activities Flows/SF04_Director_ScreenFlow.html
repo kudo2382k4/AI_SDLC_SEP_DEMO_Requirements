@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SF04 — Director Screen Flow | HSA Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--hub-fill:#fef3c7;--hub-stroke:#b45309;--hub-text:#78350f;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#0f172a;}
+  .hdr{background:#0f172a;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px #0004;}
+  .hdr-l{display:flex;align-items:center;gap:14px;}
+  .badge{padding:3px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#fef3c7;color:#78350f;}
+  .hdr-title{color:#f1f5f9;font-size:15px;font-weight:700;}
+  .hdr-sub{color:#94a3b8;font-size:11px;}
+  .hdr-meta{color:#475569;font-size:11px;}
+  .legend{background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .li{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569;}
+  .ld{width:28px;height:14px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
+  .lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;}
+  .canvas-wrap{overflow:auto;padding:24px 28px;background:#f8fafc;}
+  .sf-canvas{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 4px 20px #0001;overflow:visible;}
+  .sf-node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:5px;font-size:10.5px;line-height:1.3;padding:6px 8px;cursor:default;transition:box-shadow .15s;}
+  .sf-node:hover{box-shadow:0 4px 16px #0003;z-index:20;}
+  .sf-arrows{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
+  .note-bar{background:#fffbeb;border-top:2px solid #fbbf24;padding:10px 28px;font-size:11.5px;color:#78350f;font-style:italic;}
+  footer{background:#0f172a;color:#475569;text-align:center;font-size:11px;padding:10px;}
+  .section-label{position:absolute;font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-l">
+    <span class="badge">Director</span>
+    <div>
+      <div class="hdr-title">SF04 — Director Screen Flow</div>
+      <div class="hdr-sub">Luồng màn hình Giám đốc Trung tâm | 18 màn hình | Smart HSA Platform</div>
+    </div>
+  </div>
+  <div class="hdr-meta">Phase 1 &nbsp;|&nbsp; BA v1.0 &nbsp;|&nbsp; Smart HSA Platform</div>
+</header>
+
+<div class="legend">
+  <span class="lbl">Legend:</span>
+  <div class="li"><div class="ld" style="background:#fef3c7;border-color:#b45309;"></div>Hub/Dashboard</div>
+  <div class="li"><div class="ld" style="background:#fff;border-color:#94a3b8;"></div>Screen</div>
+  <div class="li"><div class="ld" style="background:#fef9c3;border-color:#ca8a04;"></div>Auth/Action</div>
+  <div class="li"><div class="ld" style="background:#f0fdf4;border-color:#16a34a;"></div>Success</div>
+  <div class="li"><div class="ld" style="background:#ffe4e6;border-color:#be123c;"></div>Error/Rejected</div>
+  <div class="li"><div class="ld" style="background:#fffbeb;border-color:#ca8a04;"></div>Pending/Warning</div>
+  <div class="li"><div class="ld" style="background:#0f172a;border-color:#0f172a;border-radius:999px;"></div>Entry Point</div>
+</div>
+
+<div class="canvas-wrap">
+<div class="sf-canvas" style="width:1200px;height:640px;">
+
+  <svg class="sf-arrows" width="1200" height="640">
+    <defs><marker id="arr-16a34a" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+        </marker>
+<marker id="arr-64748b" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+        </marker>
+<marker id="arr-be123c" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#be123c"/>
+        </marker>
+<marker id="arr-b45309" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#b45309"/>
+        </marker>
+<marker id="arr-ca8a04" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#ca8a04"/>
+        </marker>
+</defs>
+    <line x1="178.0" y1="320.4" x2="222.0" y2="320.6" stroke="#b45309" stroke-width="1.5" marker-end="url(#arr-b45309)" /><line x1="404.0" y1="246.6" x2="452.0" y2="206.5" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="311.7" x2="452.0" y2="306.6" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="376.7" x2="452.0" y2="406.7" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="284.7" x2="682.0" y2="171.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="297.0" x2="912.0" y2="160.1" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="312.2" y1="346.0" x2="306.9" y2="392.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="313.4" y1="346.0" x2="305.7" y2="462.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="333.7" x2="912.0" y2="406.3" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="534.0" y1="160.0" x2="534.0" y2="192.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="534.0" y1="480.0" x2="534.0" y2="512.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="534.0" y1="320.0" x2="534.0" y2="352.0" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)" /><text x="534" y="328" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">Alert</text><line x1="764.0" y1="160.0" x2="764.0" y2="192.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="160.0" x2="764.0" y2="292.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="340.0" x2="764.0" y2="382.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="994.0" y1="160.0" x2="994.0" y2="202.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="994.0" y1="250.0" x2="994.0" y2="292.0" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><text x="994" y="263" text-anchor="middle" font-size="9" fill="#16a34a" font-style="italic">Approved</text><line x1="994.0" y1="440.0" x2="994.0" y2="482.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" />
+  </svg>
+
+  <div id="n-login" class="sf-node" style="left:30px;top:300px;width:145px;min-height:40px;background:#0f172a;color:#fff;border:2px solid #0f172a;border-radius:999px;font-weight:700;">Trang Đăng nhập</div><div id="n-dashboard" class="sf-node" style="left:230px;top:300px;width:170px;min-height:42px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">👔 Dashboard KPI TT</div><div id="n-dir_prof" class="sf-node" style="left:230px;top:400px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Hồ sơ Giám đốc</div><div id="n-sys_notif" class="sf-node" style="left:230px;top:470px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Thông báo Hệ thống</div><div id="n-revenue" class="sf-node" style="left:460px;top:120px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Doanh thu & Tuyển sinh</div><div id="n-enroll_chart" class="sf-node" style="left:460px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Biểu đồ Tuyển sinh/tháng</div><div id="n-completion" class="sf-node" style="left:460px;top:280px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Tỷ lệ Hoàn thành KH</div><div id="n-alert_kh" class="sf-node" style="left:460px;top:360px;width:148px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">⚠ Cảnh báo KH chưa đủ HV</div><div id="n-score_dist" class="sf-node" style="left:460px;top:440px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Phổ điểm thi Toàn TT</div><div id="n-exam_total" class="sf-node" style="left:460px;top:520px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Tổng lượt thi & Điểm TB</div><div id="n-all_courses" class="sf-node" style="left:690px;top:120px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Khóa học (All Statuses)</div><div id="n-course_cmp" class="sf-node" style="left:690px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Thống kê theo KH (Compare)</div><div id="n-lect_list" class="sf-node" style="left:690px;top:300px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Giảng viên & Phân công</div><div id="n-lect_perf" class="sf-node" style="left:690px;top:390px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Thống kê Hiệu suất GV</div><div id="n-proposals" class="sf-node" style="left:920px;top:120px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">DS Đề xuất mở KH Mới</div><div id="n-prop_detail" class="sf-node" style="left:920px;top:210px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Chi tiết đề xuất KH</div><div id="n-approve_kh" class="sf-node" style="left:920px;top:300px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">✅ Phê duyệt mở KH</div><div id="n-rpt_page" class="sf-node" style="left:920px;top:400px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Trang Xuất Báo cáo Tổng hợp</div><div id="n-download" class="sf-node" style="left:920px;top:490px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">Download PDF / Excel</div>
+
+</div>
+</div>
+
+<div class="note-bar">⚠ Giám đốc = Read-only toàn bộ hệ thống. Write permission chỉ tại: Phê duyệt mở Khóa học (UC-GD-01).</div>
+
+<footer>SF04 — Director Screen Flow&nbsp;|&nbsp;Luồng màn hình Giám đốc Trung tâm | 18 màn hình | Smart HSA Platform&nbsp;|&nbsp;Generated 2026-04-15</footer>
+</body>
+</html>

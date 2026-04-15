@@ -1,0 +1,157 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="WF06" name="WF06 - Q&amp;A Messaging Workflow">
+    <mxGraphModel dx="1501" dy="885" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="900" width="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr" parent="1" style="rounded=0;fillColor=#0f172a;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="44" width="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr_t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" value="HSA Platform — Smart High School Assessment | WF06: Q&amp;A Messaging Workflow (Student–Lecturer Question &amp; Answer) | Phase 1 | Senior BA v1.0" vertex="1">
+          <mxGeometry height="44" width="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="pool" parent="1" style="swimlane;startSize=40;horizontal=1;fillColor=#0f172a;fontColor=#e2e8f0;strokeColor=#4338ca;strokeWidth=2;fontSize=13;fontStyle=1;" value="WF06 — Q&amp;A Messaging Workflow (Student–Lecturer Question &amp; Answer)" vertex="1">
+          <mxGeometry height="790" width="1650" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ph_bg" parent="pool" style="rounded=0;fillColor=#e2e8f0;strokeColor=#94a3b8;" value="" vertex="1">
+          <mxGeometry height="28" width="1620" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" parent="pool" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" value="① Submit Q&amp;A Question" vertex="1">
+          <mxGeometry height="28" width="420" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" parent="pool" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" value="② System Routing &amp; SLA Monitoring" vertex="1">
+          <mxGeometry height="28" width="580" x="450" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" parent="pool" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" value="③ Lecturer Response &amp; Closure" vertex="1">
+          <mxGeometry height="28" width="620" x="1030" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pd1" parent="pool" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="750" width="1" x="450" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pd2" parent="pool" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="750" width="1" x="1030" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#eef2ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=11;fontStyle=1;" value="Student" vertex="1">
+          <mxGeometry height="165" width="1650" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="s11s" parent="l1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c7d2fe;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" value="&lt;b&gt;Start&lt;/b&gt;" vertex="1">
+          <mxGeometry height="44" width="90" x="50" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s11a" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Navigate to Course → Q&amp;A Tab. Select subject topic for question" vertex="1">
+          <mxGeometry height="52" width="175" x="180" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="s11b" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Type question text. Attach image/screenshot (optional). Select topic tag" vertex="1">
+          <mxGeometry height="52" width="175" x="390" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="s11c" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Submit Q&amp;A Message. Receive confirmation notification: &#39;Question sent to Lecturer&#39;" vertex="1">
+          <mxGeometry height="52" width="175" x="600" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="s11d" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Receive push notification: Lecturer has responded. View full thread response" vertex="1">
+          <mxGeometry height="52" width="175" x="1200" y="57" as="geometry" />
+        </mxCell>
+        <mxCell id="s11e" parent="l1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c7d2fe;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" value="&lt;b&gt;Question Resolved&lt;/b&gt;" vertex="1">
+          <mxGeometry height="44" width="130" x="1460" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#f0fdf4;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" value="System" vertex="1">
+          <mxGeometry height="175" width="1650" y="233" as="geometry" />
+        </mxCell>
+        <mxCell id="s21a" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Validate: Student enrolled in course &amp; course is ACTIVE. Save QAMessage (status=OPEN)" vertex="1">
+          <mxGeometry height="52" width="175" x="600" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="s21b" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Route Q&amp;A to assigned Lecturer. Send push notification + email alert to Lecturer" vertex="1">
+          <mxGeometry height="52" width="175" x="820" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="s21dec" parent="l2" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Lecturer responds within SLA (24h)?" vertex="1">
+          <mxGeometry height="80" width="150" x="1020" y="47" as="geometry" />
+        </mxCell>
+        <mxCell id="s21c" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Update QAMessage status=ANSWERED. Push notification to Student with response content" vertex="1">
+          <mxGeometry height="52" width="175" x="1200" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#ecfdf5;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" value="Lecturer" vertex="1">
+          <mxGeometry height="230" width="1650" y="408" as="geometry" />
+        </mxCell>
+        <mxCell id="s31a" parent="l3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Receive push/email notification for new Q&amp;A. View question in Course Dashboard" vertex="1">
+          <mxGeometry height="52" width="175" x="820" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s31dec" parent="l3" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Able to answer question?" vertex="1">
+          <mxGeometry height="80" width="145" x="1020" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="s31yes" parent="l3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Type detailed answer (supports MathJax formula, plain text). Click &#39;Submit Answer&#39;" vertex="1">
+          <mxGeometry height="52" width="175" x="1200" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="s31no" parent="l3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" value="Mark as &#39;Need Follow-up&#39;. Add note &amp; assign to colleague lecturer or request clarification from student" vertex="1">
+          <mxGeometry height="52" width="145" x="900" y="177" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#f5f3ff;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=11;fontStyle=1;" value="Operations Staff" vertex="1">
+          <mxGeometry height="152" width="1650" y="638" as="geometry" />
+        </mxCell>
+        <mxCell id="s41a" parent="l4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;" value="Receive SLA breach escalation alert. Review overdue Q&amp;A list in admin dashboard" vertex="1">
+          <mxGeometry height="52" width="175" x="1020" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="s41b" parent="l4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;" value="Manually reassign Q&amp;A to available Lecturer or escalate to Center Director" vertex="1">
+          <mxGeometry height="52" width="175" x="1240" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="s11s" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="s11a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s11b" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11c">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="s11d" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11e">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="s11c" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s21a" value="submit question">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="s21a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" target="s21b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="s21b" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" target="s21dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="s21dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" target="s21c" value="Yes ✓">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="s21dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ca8a04;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#ca8a04;fontStyle=1;fontSize=10;" target="s21warn" value="No ✗ (SLA expired)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="s21c" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s11d" value="push notification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="s21b" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s31a" value="push + email">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="s31a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" target="s31dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="s31dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" target="s31yes" value="Yes ✓">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="s31dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#be123c;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#be123c;fontStyle=1;fontSize=10;" target="s31no" value="No ✗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="s31yes" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s21c" value="submit answer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" source="s21warn" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ca8a04;dashed=1;endArrow=open;endFill=0;fontColor=#ca8a04;fontSize=9;" target="s41a" value="escalate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="s41a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6d28d9;strokeWidth=1.5;endArrow=open;endFill=0;" target="s41b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f8fafc;align=left;fontSize=9;fontColor=#475569;rounded=1;" value="⚠ BUSINESS RULES: (1) SLA = 24h for Lecturer to respond. After 24h system auto-escalates to Operations Staff. (2) Student can only Q&amp;A within enrolled Active courses. (3) MathJax LaTeX supported in both question and answer text areas." vertex="1">
+          <mxGeometry height="26" width="1300" x="20" y="855" as="geometry" />
+        </mxCell>
+        <mxCell id="s21warn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;" value="SLA Breach Alert: Escalate to Operations Staff (auto-email after 24h)" vertex="1">
+          <mxGeometry height="52" width="150" x="1040" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

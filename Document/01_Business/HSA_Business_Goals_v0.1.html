@@ -27,11 +27,15 @@
         .card.green h3 { color: #047857; }
         .card.amber h3 { color: #b45309; }
         .card.purple h3 { color: #5b21b6; }
+        .card.teal h3 { color: #0f766e; }
+        .card.rose h3 { color: #be123c; }
         .metric-badge { padding: 0.3rem 0.7rem; border-radius: 6px; font-weight: 700; font-size: 1.05rem; display: inline-block; margin-bottom: 0.9rem; }
         .metric-badge.indigo { background: #e0e7ff; color: #3730a3; }
         .metric-badge.green  { background: #dcfce7; color: #166534; }
         .metric-badge.amber  { background: #fef3c7; color: #92400e; }
         .metric-badge.purple { background: #f5f3ff; color: #5b21b6; }
+        .metric-badge.teal   { background: #ccfbf1; color: #0f766e; }
+        .metric-badge.rose   { background: #ffe4e6; color: #be123c; }
         ul { padding-left: 1.4rem; margin-bottom: 0; }
         li { margin-bottom: 0.4rem; font-size: 0.92rem; }
         .pain-item { background: #fef2f2; border-left: 3px solid #f87171; padding: 0.8rem 1rem; border-radius: 6px; margin-bottom: 0.8rem; font-size: 0.92rem; }
@@ -43,6 +47,10 @@
         .kpi-note::before { content: '📊'; flex-shrink: 0; margin-top: 1px; }
         .business-model-box { background: #f0fdf4; border: 1px solid #86efac; padding: 1.25rem 1.5rem; border-radius: 8px; margin-top: 1rem; }
         .business-model-box strong { color: #15803d; }
+        .project-flow { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; background: #eff6ff; padding: 1rem 1.5rem; border-radius: 8px; margin: 1.2rem 0; font-size: 0.88rem; }
+        .flow-step { background: #6366f1; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
+        .flow-arrow { color: #94a3b8; font-weight: 700; }
+        .new-badge { background: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; font-size: 0.72rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; margin-left: 0.3rem; vertical-align: middle; }
     </style>
 </head>
 <body>
@@ -53,7 +61,7 @@
                 <div class="subtitle">Hiện trạng (As-Is) &amp; Mục tiêu hướng tới (To-Be) của <strong>Smart HSA Platform</strong> — Trung tâm Ôn luyện ĐGNL</div>
             </div>
             <div style="flex-shrink: 0;">
-                <span class="status-draft">Version: v0.1 (Draft)</span>
+                <span class="status-draft">Version: v0.2 (Updated)</span>
             </div>
         </div>
 
@@ -61,20 +69,38 @@
             <strong>🏢 Mô hình Kinh doanh:</strong> Trung tâm Ôn luyện ĐGNL tư nhân — thu học phí từ Học viên đăng ký Khóa học, mời Giảng viên chuyên gia về giảng dạy theo hợp đồng thời vụ. Website là kênh tuyển sinh và nền tảng học tập chính thức.
         </div>
 
+        <div class="project-flow">
+            <strong style="color: #1e40af; margin-right: 0.3rem;">Luồng học tập cốt lõi:</strong>
+            <span class="flow-step">📋 Đăng ký Khóa học</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">📚 Học Nội dung</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">🎯 Thi thử Giai đoạn</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">💬 Hỏi Giảng viên</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">📈 Phân tích Năng lực</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">🏆 Luyện tiếp</span>
+        </div>
+
         <h2>1. Vấn đề Hiện tại (Pain Points — As-Is Context)</h2>
-        <p>Phân tích từ quá trình phỏng vấn Giám đốc, Nhân viên vận hành, Giảng viên và Học viên của Trung tâm Ôn luyện ĐGNL, chúng ta gặp <strong>4 điểm nghẽn</strong> cốt lõi:</p>
+        <p>Phân tích từ quá trình phỏng vấn Giám đốc, Nhân viên vận hành, Giảng viên và Học viên của Trung tâm Ôn luyện ĐGNL, chúng ta gặp <strong>5 điểm nghẽn</strong> cốt lõi:</p>
 
         <div class="pain-item">
             <strong>1. Quy trình Đăng ký Khóa học hoàn toàn thủ công:</strong> Học viên phải nhắn tin Zalo/Facebook hoặc đến trực tiếp để đăng ký. Nhân viên ghi tên vào Excel, dễ sai sót, không theo dõi được trạng thái đăng ký real-time. Không thể tuyển sinh ngoài giờ hành chính.
         </div>
         <div class="pain-item">
-            <strong>2. Học viên trả tiền nhưng không biết mình đang tiến bộ ra sao:</strong> Sau các buổi thi thử, học viên chỉ nhận được điểm tổng mà không có phân tích chuyên sâu theo chuyên đề. Không có lộ trình ôn tập cá nhân hóa để biết nên học gì tiếp theo.
+            <strong>2. Học viên trả tiền nhưng không biết mình đang tiến bộ ra sao:</strong> Sau các buổi thi thử, học viên chỉ nhận được điểm tổng mà không có phân tích chuyên sâu theo chuyên đề. Không có lộ trình ôn tập theo giai đoạn rõ ràng để biết nên học gì tiếp theo.
         </div>
         <div class="pain-item">
-            <strong>3. Giảng viên thiếu dữ liệu để dạy hiệu quả:</strong> Giảng viên dạy theo giáo trình cố định mà không biết học viên nào đang yếu phần nào. Phải chấm bài thi tay tốn thời gian. Không có ngân hàng câu hỏi chung để chia sẻ giữa các giảng viên.
+            <strong>3. Không có kênh trao đổi học thuật giữa Học viên và Giảng viên:</strong> Học viên gặp bài khó phải đợi đến buổi học tiếp theo hoặc hỏi qua Zalo cá nhân của Giảng viên — không chuyên nghiệp, khó lưu lại lịch sử, Giảng viên không quản lý được.
         </div>
         <div class="pain-item">
-            <strong>4. Không có dữ liệu quản trị để Giám đốc ra quyết định:</strong> Không biết khóa học nào đang đông học viên, khóa nào sắp hết chỗ, giảng viên nào đang được học viên đánh giá tốt nhất, doanh thu thực tế tháng này là bao nhiêu.
+            <strong>4. Giảng viên thiếu dữ liệu để dạy hiệu quả:</strong> Giảng viên dạy theo giáo trình cố định mà không biết học viên nào đang yếu phần nào, đang kẹt ở giai đoạn nào. Phải chấm bài thi tay tốn thời gian. Không có ngân hàng câu hỏi chung.
+        </div>
+        <div class="pain-item">
+            <strong>5. Không có dữ liệu quản trị để Giám đốc ra quyết định:</strong> Không biết khóa học nào đang đông học viên, học viên đang tiến bộ đến giai đoạn nào, giảng viên nào được đánh giá tốt nhất, và tương tác Q&A diễn ra như thế nào.
         </div>
 
         <h2>2. Mục tiêu Kinh doanh (SMART Business Goals)</h2>
@@ -87,48 +113,70 @@
                 <p>Giải phóng nhân viên khỏi việc nhận đăng ký thủ công, mở rộng kênh tuyển sinh 24/7.</p>
                 <ul>
                     <li><strong>Mục tiêu:</strong> 40% đơn đăng ký khóa học mới đến qua form online trong 3 tháng đầu vận hành.</li>
-                    <li><strong>Cách Platform hỗ trợ:</strong> Enrollment Portal với form đăng ký rõ ràng, thông tin Giảng viên và Khóa học minh bạch, Email xác nhận tự động trong 30 giây.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Enrollment Portal với form đăng ký rõ ràng, thông tin Giảng viên, lộ trình giai đoạn học và Email xác nhận tự động trong 30 giây.</li>
                 </ul>
                 <div class="kpi-note">Đo lường: Tỷ lệ đơn đăng ký qua hệ thống / Tổng đơn đăng ký theo tháng.</div>
             </div>
 
             <div class="card green">
-                <h3>🎯 2. Nâng cao Kết quả Học viên (Learning Outcomes)</h3>
-                <div class="metric-badge green">+20% điểm HSA</div>
-                <p>Học viên bỏ học phí ra phải thấy được kết quả học tập rõ ràng — đây là uy tín cốt lõi của trung tâm.</p>
+                <h3>📚 2. Xây dựng Trải nghiệm Học tập Hoàn chỉnh <span class="new-badge">MỚI</span></h3>
+                <div class="metric-badge green">≥ 70% Completion Rate</div>
+                <p>Học viên không chỉ thi thử — họ cần học nội dung bài giảng đầy đủ trước khi bước vào từng giai đoạn thi.</p>
                 <ul>
-                    <li><strong>Mục tiêu:</strong> Tăng trung bình 20% điểm thi thử HSA của học viên sau 8 tuần sử dụng hệ thống.</li>
-                    <li><strong>Cách Platform hỗ trợ:</strong> Adaptive Learning phân tích Competency Profile và đề xuất chuyên đề ôn luyện phù hợp sau mỗi bài Mock Exam.</li>
+                    <li><strong>Mục tiêu:</strong> Tỷ lệ hoàn thành nội dung bài giảng mỗi buổi học đạt ≥ 70% sau 4 tuần đầu.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Course Content Viewer với tài liệu PDF/slide và video bài giảng đã ghi sẵn, tracking tiến độ theo từng buổi và giai đoạn học.</li>
                 </ul>
-                <div class="kpi-note">Đo lường: So sánh điểm thi thử T0 vs T8 của cùng nhóm học viên.</div>
+                <div class="kpi-note">Đo lường: Số buổi học được đánh dấu hoàn thành / Tổng số buổi của khóa.</div>
             </div>
 
             <div class="card amber">
-                <h3>⚡ 3. Tối ưu Năng suất Giảng viên (Lecturer Productivity)</h3>
-                <div class="metric-badge amber">Tiết kiệm 90% thời gian chấm bài</div>
-                <p>Giải phóng Giảng viên khỏi công việc hành chính để tập trung vào chất lượng giảng dạy — điều học viên thực sự trả tiền cho.</p>
+                <h3>🎯 3. Thi thử Theo Giai đoạn — Nâng Kết quả HSA <span class="new-badge">UPDATE</span></h3>
+                <div class="metric-badge amber">+20% điểm HSA sau 8 tuần</div>
+                <p>Học viên bỏ học phí ra phải thấy được kết quả cụ thể qua từng giai đoạn — đây là uy tín cốt lõi của trung tâm.</p>
                 <ul>
-                    <li><strong>Mục tiêu:</strong> Chấm điểm trắc nghiệm tự động 100%, kết quả real-time ngay khi học viên nộp bài. Dashboard khóa học cập nhật tức thì.</li>
-                    <li><strong>Cách Platform hỗ trợ:</strong> Auto-grading Engine + Lecturer Dashboard với Radar Chart theo từng khóa học được phân công.</li>
+                    <li><strong>Mục tiêu:</strong> Tăng trung bình 20% điểm thi thử HSA sau 8 tuần; học viên phải trải qua ít nhất 2/3 giai đoạn thi thử.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Phase-based Mock Exam (Giai đoạn 1: Nền tảng → 2: Nâng cao → 3: Chinh phục) + Adaptive Learning cá nhân hóa gợi ý nội dung học tiếp theo sau mỗi giai đoạn.</li>
+                </ul>
+                <div class="kpi-note">Đo lường: So sánh điểm thi thử T0 vs T8 của cùng nhóm học viên, phân tích theo từng giai đoạn.</div>
+            </div>
+
+            <div class="card rose">
+                <h3>💬 4. Kênh Trao đổi Trực tuyến Học viên — Giảng viên <span class="new-badge">MỚI</span></h3>
+                <div class="metric-badge rose">≥ 80% câu hỏi được phản hồi trong 24h</div>
+                <p>Học viên gặp bài khó không còn phải chờ đến buổi học tiếp theo — có thể hỏi Giảng viên ngay trong nền tảng.</p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> ≥ 80% câu hỏi học thuật của học viên được Giảng viên phản hồi trong vòng 24 giờ.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Q&A Messaging trong phạm vi khóa học, hỗ trợ rich-text và đính kèm ảnh/công thức. Giảng viên nhận thông báo push khi có câu hỏi mới.</li>
+                </ul>
+                <div class="kpi-note">Đo lường: Tỷ lệ câu hỏi được phản hồi trong 24h + Thời gian phản hồi trung bình.</div>
+            </div>
+
+            <div class="card purple">
+                <h3>⚡ 5. Tối ưu Năng suất Giảng viên (Lecturer Productivity)</h3>
+                <div class="metric-badge purple">Tiết kiệm 90% thời gian chấm bài</div>
+                <p>Giải phóng Giảng viên khỏi công việc hành chính để tập trung vào chất lượng giảng dạy và tư vấn học thuật qua Q&A.</p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> Chấm điểm tự động 100%, kết quả real-time. Dashboard khóa học cập nhật tức thì theo từng giai đoạn.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Auto-grading Engine + Lecturer Dashboard với Radar Chart theo giai đoạn + Q&A Portal tích hợp.</li>
                 </ul>
                 <div class="kpi-note">Đo lường: Khảo sát Giảng viên về giờ dành cho chấm bài/tổng hợp báo cáo trước và sau khi dùng hệ thống.</div>
             </div>
 
-            <div class="card purple">
-                <h3>📈 4. Dữ liệu Quản trị Thông minh (Center Intelligence)</h3>
-                <div class="metric-badge purple">Dashboard 360° thời gian thực</div>
-                <p>Trao quyền kiểm soát cho Giám đốc Trung tâm thông qua dữ liệu — ra quyết định mở khóa mới, gia hạn hợp đồng Giảng viên dựa trên số liệu thực tế.</p>
+            <div class="card teal">
+                <h3>📈 6. Dữ liệu Quản trị Thông minh (Center Intelligence)</h3>
+                <div class="metric-badge teal">Dashboard 360° thời gian thực</div>
+                <p>Trao quyền kiểm soát cho Giám đốc Trung tâm thông qua dữ liệu toàn diện — từ tuyển sinh đến tiến độ học theo giai đoạn.</p>
                 <ul>
-                    <li><strong>Mục tiêu:</strong> Giám đốc có thể xem số lượng đăng ký, tỷ lệ hoàn thành khóa học, và hiệu quả học tập theo từng khóa học/giảng viên bất cứ lúc nào.</li>
-                    <li><strong>Cách Platform hỗ trợ:</strong> Center Management Dashboard với báo cáo tuyển sinh, doanh thu (tracking trạng thái thanh toán), performance theo khóa học.</li>
+                    <li><strong>Mục tiêu:</strong> Giám đốc có thể xem số lượng đăng ký, tiến độ học viên theo giai đoạn, hoạt động Q&A và hiệu quả theo từng khóa học/giảng viên bất cứ lúc nào.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Center Management Dashboard với báo cáo tuyển sinh, tracking trạng thái thanh toán, tiến độ giai đoạn học và performance khóa học.</li>
                 </ul>
-                <div class="kpi-note">Đo lường: Tần suất Giám đốc truy cập Dashboard/tuần + Số quyết định kinh doanh dựa trên dữ liệu được ghi nhận.</div>
+                <div class="kpi-note">Đo lường: Tần suất Giám đốc truy cập Dashboard/tuần + Số quyết định kinh doanh dựa trên dữ liệu.</div>
             </div>
         </div>
 
         <div class="vision-box">
             <h3>🏆 TUYÊN NGÔN DỰ ÁN (PROJECT VISION STATEMENT)</h3>
-            <p>"Smart HSA Platform không chỉ là phần mềm quản lý trung tâm hay hệ thống thi online đơn thuần. Đây là <strong>Đòn bẩy tăng trưởng</strong> — giúp Trung tâm Ôn luyện ĐGNL mở rộng tuyển sinh 24/7 không cần thêm nhân sự, đồng thời là <strong>Cam kết chất lượng</strong> với học viên rằng mỗi đồng học phí đều được đo lường bằng kết quả điểm thi thật sự cải thiện." — <em>BA Lead</em></p>
+            <p>"Smart HSA Platform không chỉ là phần mềm quản lý trung tâm hay hệ thống thi online đơn thuần. Đây là <strong>Hành trình học tập hoàn chỉnh</strong> — học viên THPT đăng ký khóa học, học nội dung bài giảng, thi thử qua từng giai đoạn có lộ trình rõ ràng, và trao đổi trực tiếp với Giảng viên bất kỳ khi nào gặp khó khăn. Đây đồng thời là <strong>Đòn bẩy tăng trưởng</strong> cho Trung tâm và là <strong>Cam kết chất lượng</strong> với học viên rằng mỗi đồng học phí đều được đo lường bằng kết quả điểm thi thật sự cải thiện qua từng giai đoạn." — <em>BA Lead</em></p>
         </div>
     </div>
 </body>

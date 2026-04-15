@@ -130,6 +130,42 @@
             padding-left: 1.2rem;
         }
         .scope-out li, .scope-in li { font-size: 14px; margin-bottom: 3px; }
+        .flow-banner {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            color: #c7d2fe;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .flow-banner strong { color: #e0e7ff; }
+        .flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.6rem;
+            align-items: center;
+        }
+        .flow-step {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 0.25rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+        .flow-arrow { color: #a5b4fc; font-weight: 700; }
+        .new-tag {
+            background: #fef2f2;
+            color: #b91c1c;
+            font-size: 0.7rem;
+            padding: 0.05rem 0.35rem;
+            border-radius: 3px;
+            font-weight: 700;
+            margin-left: 0.3rem;
+            vertical-align: middle;
+            border: 1px solid #fecaca;
+        }
         .signatures {
             display: flex;
             justify-content: space-between;
@@ -211,20 +247,39 @@
     <h2>Project Description</h2>
 
     <h3>Purpose</h3>
-    <p>Dự án Smart HSA Platform nhằm số hóa và nâng cấp toàn bộ quy trình vận hành của Trung tâm Ôn luyện ĐGNL: từ việc học viên <strong>đăng ký khóa học trực tuyến</strong> qua website, đến quá trình học tập, luyện thi thử (Mock Exam) và nhận phân tích năng lực cá nhân hóa. Đồng thời, hệ thống tự động hóa quy trình chấm điểm cho Giảng viên và cung cấp Dashboard quản trị doanh thu/tuyển sinh cho Giám đốc Trung tâm.</p>
-    <p>Trung tâm hiện thu học phí từ học viên đăng ký và mời Giảng viên chuyên gia về giảng dạy theo hợp đồng thời vụ. Mô hình này đòi hỏi một nền tảng kỹ thuật số đủ mạnh để vừa phục vụ công tác tuyển sinh, vừa đảm bảo chất lượng đào tạo và trải nghiệm học viên xứng đáng với học phí đã bỏ ra.</p>
+    <p>Dự án Smart HSA Platform nhằm xây dựng một <strong>hành trình học tập toàn diện</strong> cho học viên THPT ôn luyện kỳ thi Đánh giá Năng lực (HSA): từ việc học viên <strong>đăng ký khóa học trực tuyến</strong> qua website, <strong>học nội dung bài giảng</strong> (tài liệu, video đã ghi sẵn), <strong>thi thử qua các giai đoạn lộ trình</strong> và <strong>trao đổi trực tuyến với Giảng viên</strong> ngay trong nền tảng khi gặp khó khăn. Đồng thời, hệ thống tự động hóa quy trình chấm điểm cho Giảng viên và cung cấp Dashboard quản trị tổng thể cho Giám đốc Trung tâm.</p>
+    <p>Trung tâm hiện thu học phí từ học viên đăng ký và mời Giảng viên chuyên gia về giảng dạy theo hợp đồng thời vụ. Mô hình này đòi hỏi một nền tảng kỹ thuật số đủ mạnh để phục vụ cả bốn luồng giá trị cốt lõi và trải nghiệm học viên xứng đáng với học phí đã bỏ ra.</p>
+
+    <div class="flow-banner">
+        <strong>🎯 Luồng Học tập Cốt lõi (Core Learning Flow) — Phase 1:</strong>
+        <div class="flow-steps">
+            <span class="flow-step">📋 Đăng ký Khóa học</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">📚 Học Nội dung Bài giảng</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">🎯 Thi thử theo Giai đoạn</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">💬 Hỏi Giảng viên (Q&A)</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">📈 Phân tích Năng lực</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">🔁 Ôn luyện Tiếp</span>
+        </div>
+    </div>
 
     <h3>Scope</h3>
     <div class="scope-in">
         <strong>✅ Bao gồm (In-scope — Phase 1):</strong>
         <ul>
             <li><strong>Enrollment Portal (Cổng Đăng ký Khóa học):</strong> Học viên duyệt danh sách khóa học, xem thông tin Giảng viên, điền form đăng ký trực tuyến, nhận email xác nhận tự động.</li>
-            <li><strong>Student Portal:</strong> Làm bài Mock Exam chuẩn cấu trúc ĐGNL, xem kết quả và lời giải, xem Competency Profile (Radar Chart). UI responsive tối ưu Mobile/Tablet.</li>
-            <li><strong>Adaptive Learning Engine:</strong> Phân tích điểm mạnh/yếu theo phân môn, đề xuất chuyên đề ôn luyện cá nhân hoá.</li>
+            <li><strong>Course Content Viewer (Học Nội dung Bài giảng):</strong> <span class="new-tag">MỚI</span> Học viên xem tài liệu bài giảng (PDF/slide) và video bài giảng đã ghi sẵn theo từng buổi học. Tracking tiến độ hoàn thành theo giai đoạn. UI responsive tối ưu Mobile/Tablet.</li>
+            <li><strong>Phase-based Mock Exam (Thi thử Theo Giai đoạn):</strong> <span class="new-tag">UPDATE</span> Học viên làm bài Mock Exam chuẩn cấu trúc ĐGNL theo từng giai đoạn lộ trình học (Giai đoạn 1: Nền tảng → Giai đoạn 2: Nâng cao → Giai đoạn 3: Chinh phục). Xem kết quả và Competency Profile (Radar Chart) sau mỗi giai đoạn.</li>
+            <li><strong>Q&A Messaging (Trao đổi Trực tuyến với Giảng viên):</strong> <span class="new-tag">MỚI</span> Học viên đặt câu hỏi học thuật 1-1, Giảng viên phản hồi trong phạm vi khóa học được phân công. Hỗ trợ rich-text và đính kèm ảnh/công thức.</li>
+            <li><strong>Adaptive Learning Engine:</strong> Phân tích điểm mạnh/yếu theo phân môn, đề xuất chuyên đề ôn luyện và nội dung học tiếp theo sau mỗi giai đoạn.</li>
             <li><strong>Question Bank Module:</strong> Tạo và import đề thi theo ma trận chuẩn, phân loại độ khó (Bloom's Taxonomy), dùng chung giữa các Giảng viên.</li>
-            <li><strong>Lecturer Portal:</strong> Quản lý khóa học được phân công, xem danh sách học viên đăng ký, Radar Chart năng lực, giao bài tập bổ trợ.</li>
+            <li><strong>Lecturer Portal:</strong> Quản lý khóa học được phân công, xem danh sách học viên, Radar Chart năng lực theo giai đoạn, phản hồi Q&A, giao bài tập bổ trợ, upload nội dung bài giảng.</li>
             <li><strong>Auto-grading Engine:</strong> Chấm điểm tự động tức thì (Real-time) ngay khi học viên nộp bài.</li>
-            <li><strong>Center Management Dashboard:</strong> Giám đốc/Nhân viên theo dõi số lượng đăng ký, tracking trạng thái thanh toán, số liệu học tập theo từng khóa học/giảng viên.</li>
+            <li><strong>Center Management Dashboard:</strong> Giám đốc/Nhân viên theo dõi số lượng đăng ký, tracking trạng thái thanh toán, tiến độ học theo giai đoạn và số liệu học tập theo từng khóa học/giảng viên.</li>
         </ul>
     </div>
     <div class="scope-out">
@@ -232,7 +287,8 @@
         <ul>
             <li>Tích hợp Cổng thanh toán trực tuyến (VNPAY, Momo, Banking API) — Phase 1 xác nhận thanh toán thủ công.</li>
             <li>Module Quản lý Hợp đồng &amp; Thanh toán thù lao Giảng viên (HR/Payroll).</li>
-            <li>Livestream / Video học trực tiếp (chỉ ôn luyện qua Mock Exam và tài liệu tĩnh).</li>
+            <li>Livestream / Video Call học trực tiếp — chỉ hỗ trợ Q&A text/hình ảnh và video bài giảng đã ghi sẵn.</li>
+            <li>Forum thảo luận công khai giữa nhiều học viên (Community Forum) — Phase 1 chỉ Q&A 1-1 giữa Học viên và Giảng viên.</li>
             <li>Cổng Xét tuyển Đại học thực tế (University Admission Portal).</li>
             <li>Chatbot tư vấn tâm lý phi học thuật hoặc giải trí.</li>
         </ul>
@@ -242,10 +298,10 @@
 
     <h3>Key Deliverables</h3>
     <p>
-        1. <strong>Enrollment Portal (Website công khai):</strong> Trang giới thiệu, danh sách khóa học, profile Giảng viên, form đăng ký online.<br>
-        2. <strong>Student Portal (Web App):</strong> Giao diện làm bài Mock Exam chuẩn ĐGNL, xem kết quả &amp; Competency Profile.<br>
-        3. <strong>Lecturer Portal (Web App):</strong> Dashboard quản lý khóa học được giao, theo dõi học viên, giao bài tập.<br>
-        4. <strong>Center Admin Panel:</strong> Quản lý đăng ký học viên, xác nhận thanh toán, phân công Giảng viên, Question Bank, báo cáo tổng quan.<br>
+        1. <strong>Enrollment Portal (Website công khai):</strong> Trang giới thiệu, danh sách khóa học, lộ trình giai đoạn học, profile Giảng viên, form đăng ký online.<br>
+        2. <strong>Student Portal (Web App):</strong> Xem nội dung bài giảng (PDF/Video), giao diện làm bài Mock Exam theo giai đoạn, xem kết quả &amp; Competency Profile, Q&A với Giảng viên.<br>
+        3. <strong>Lecturer Portal (Web App):</strong> Dashboard quản lý khóa học theo giai đoạn, theo dõi học viên, Q&A Portal, upload nội dung bài giảng, giao bài tập.<br>
+        4. <strong>Center Admin Panel:</strong> Quản lý đăng ký học viên, xác nhận thanh toán, phân công Giảng viên, Question Bank, báo cáo tổng quan tuyển sinh và tiến độ giai đoạn học.<br>
         5. <strong>Bộ tài liệu Kỹ thuật:</strong> SRS (Software Requirements Specification), ERD Database Schema, System Context Diagram, API Documentation.
     </p>
 
@@ -292,22 +348,22 @@
         </thead>
         <tbody>
             <tr>
-                <td>Khảo sát Requirement &amp; Chốt SRS Baseline</td>
+                <td>Khảo sát Requirement &amp; Chốt SRS Baseline (bao gồm Q&A và Phase-based Exam)</td>
                 <td>01/04/2026</td>
                 <td>14/04/2026</td>
             </tr>
             <tr>
-                <td>Thiết kế UI/UX (Enrollment Portal + Portal Học viên/GV) &amp; ERD / Context Diagram</td>
+                <td>Thiết kế UI/UX (Enrollment Portal + Course Content + Student &amp; Lecturer Portal) &amp; ERD / Context Diagram</td>
                 <td>15/04/2026</td>
                 <td>30/04/2026</td>
             </tr>
             <tr>
-                <td>Sprint 1: Enrollment Portal + Center Admin (Đăng ký, Quản lý Khóa học, Giảng viên)</td>
+                <td>Sprint 1: Enrollment Portal + Course Content Viewer + Center Admin (Đăng ký, Nội dung, Quản lý Khóa học, Giảng viên)</td>
                 <td>01/05/2026</td>
                 <td>31/05/2026</td>
             </tr>
             <tr>
-                <td>Sprint 2: Student Portal (Mock Exam, Auto-grading) + Lecturer Portal + Adaptive Learning</td>
+                <td>Sprint 2: Phase-based Mock Exam + Auto-grading + Q&A Messaging + Lecturer Portal + Adaptive Learning</td>
                 <td>01/06/2026</td>
                 <td>30/06/2026</td>
             </tr>
@@ -339,15 +395,25 @@
                 <td>Cao (High)</td>
                 <td>Thiết kế kiến trúc Auto-scaling trên Cloud từ đầu. Load Testing bằng k6/JMeter trước UAT tối thiểu 1 tuần.</td>
             </tr>
+            <tr class="risk-high">
+                <td>Giảng viên (hợp đồng thời vụ) không phản hồi Q&A của học viên kịp thời hoặc bỏ qua kênh hệ thống</td>
+                <td>Cao (High)</td>
+                <td>Thiết lập SLA Q&A: phản hồi trong 24h. Tích hợp Push Notification cho Giảng viên. UI Q&A Portal phải cực đơn giản — phản hồi được trong 3 clicks.</td>
+            </tr>
             <tr class="risk-med">
-                <td>Giảng viên (hợp đồng thời vụ) không nhiệt tình học cách dùng hệ thống mới</td>
+                <td>Giảng viên không nhiệt tình học cách dùng hệ thống mới (bao gồm Course Content upload, Q&A)</td>
                 <td>Trung bình (Medium)</td>
-                <td>Tổ chức Demo ngắn (30 phút) cho Giảng viên. Đảm bảo Lecturer Portal UI cực kỳ đơn giản, chỉ cần 3 bước để xem kết quả học viên của mình.</td>
+                <td>Tổ chức Demo ngắn (30 phút) cho Giảng viên. Đảm bảo Lecturer Portal UI cực kỳ đơn giản — có thể dùng được trong 5 phút đầu không cần hướng dẫn.</td>
             </tr>
             <tr>
-                <td>Chất lượng Ngân hàng Câu hỏi không đạt chuẩn ma trận ĐGNL</td>
+                <td>Chất lượng Ngân hàng Câu hỏi không đạt chuẩn ma trận ĐGNL theo từng giai đoạn</td>
                 <td>Trung bình (Medium)</td>
-                <td>Áp dụng Quy tắc Duyệt câu hỏi: bắt buộc gắn Chuyên đề + Mức độ khó (Bloom) + Môn học trước khi đưa vào đề thi chính thức.</td>
+                <td>Áp dụng Quy tắc Duyệt câu hỏi: bắt buộc gắn Chuyên đề + Mức độ khó (Bloom) + Môn học + Giai đoạn trước khi đưa vào đề thi chính thức.</td>
+            </tr>
+            <tr>
+                <td>Nội dung bài giảng (video/PDF) upload chậm hoặc không tương thích định dạng</td>
+                <td>Trung bình (Medium)</td>
+                <td>Sử dụng CDN + Object Storage (S3) để lưu trữ. Hỗ trợ các định dạng phổ biến (MP4, PDF, PPTX). Giới hạn dung lượng file upload và hiển thị progress bar.</td>
             </tr>
         </tbody>
     </table>

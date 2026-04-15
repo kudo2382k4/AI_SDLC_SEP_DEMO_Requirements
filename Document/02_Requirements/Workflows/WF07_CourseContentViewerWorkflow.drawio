@@ -1,0 +1,172 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="WF07" name="WF07 - Course Content Viewer Workflow">
+    <mxGraphModel dx="548" dy="323" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="860" width="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr" parent="1" style="rounded=0;fillColor=#0f172a;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="44" width="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr_t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" value="HSA Platform — Smart High School Assessment | WF07: Course Content Viewer Workflow (Student Learning Material Access) | Phase 1 | Senior BA v1.0" vertex="1">
+          <mxGeometry height="44" width="1700" as="geometry" />
+        </mxCell>
+        <mxCell id="pool" parent="1" style="swimlane;startSize=40;horizontal=1;fillColor=#0f172a;fontColor=#e2e8f0;strokeColor=#4338ca;strokeWidth=2;fontSize=13;fontStyle=1;" value="WF07 — Course Content Viewer Workflow (Student Learning Material Access)" vertex="1">
+          <mxGeometry height="755" width="1650" x="20" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="ph_bg" parent="pool" style="rounded=0;fillColor=#e2e8f0;strokeColor=#94a3b8;" value="" vertex="1">
+          <mxGeometry height="28" width="1620" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" parent="pool" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" value="① Access &amp; Authentication" vertex="1">
+          <mxGeometry height="28" width="400" x="30" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" parent="pool" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" value="② Content Delivery (CDN)" vertex="1">
+          <mxGeometry height="28" width="550" x="430" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" parent="pool" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" value="③ Progress Tracking &amp; Completion" vertex="1">
+          <mxGeometry height="28" width="670" x="980" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pd1" parent="pool" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="715" width="1" x="430" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pd2" parent="pool" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" value="" vertex="1">
+          <mxGeometry height="715" width="1" x="980" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#eef2ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=11;fontStyle=1;" value="Student" vertex="1">
+          <mxGeometry height="185" width="1650" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="s11s" parent="l1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c7d2fe;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" value="&lt;b&gt;Start&lt;/b&gt;" vertex="1">
+          <mxGeometry height="44" width="90" x="50" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s11a" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Login. Select enrolled course from &#39;My Courses&#39; list" vertex="1">
+          <mxGeometry height="52" width="175" x="185" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="s11b" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Browse Course Syllabus: View list of Chapters, Lessons, and Material type (PDF / Video)" vertex="1">
+          <mxGeometry height="52" width="185" x="480" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="s11dec" parent="l1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Content type?" vertex="1">
+          <mxGeometry height="80" width="130" x="700" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11c" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="View PDF inline in browser viewer with MathJax formula rendering support" vertex="1">
+          <mxGeometry height="52" width="165" x="875" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s11d" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Watch Video: Embedded Player with playback speed, fullscreen &amp; caption toggle" vertex="1">
+          <mxGeometry height="52" width="165" x="875" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="s11e" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="Mark lesson as &#39;Completed&#39;. Move to next lesson or return to Syllabus" vertex="1">
+          <mxGeometry height="52" width="175" x="1100" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="s11f" parent="l1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" value="View overall course completion progress bar (%)" vertex="1">
+          <mxGeometry height="52" width="175" x="1335" y="67" as="geometry" />
+        </mxCell>
+        <mxCell id="s11end" parent="l1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c7d2fe;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" value="&lt;b&gt;Session End&lt;/b&gt;" vertex="1">
+          <mxGeometry height="44" width="75" x="1555" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#f0fdf4;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" value="System (Auth &amp; Access Gate)" vertex="1">
+          <mxGeometry height="175" width="1650" y="253" as="geometry" />
+        </mxCell>
+        <mxCell id="s21a" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Verify JWT session token. Check Student enrollment status = CONFIRMED for this course" vertex="1">
+          <mxGeometry height="52" width="175" x="185" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="s21dec" parent="l2" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Enrollment CONFIRMED?" vertex="1">
+          <mxGeometry height="80" width="145" x="390" y="47" as="geometry" />
+        </mxCell>
+        <mxCell id="s21b" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Render Course Syllabus page. Fetch Content Index from DB. Display locked/unlocked lessons status" vertex="1">
+          <mxGeometry height="52" width="185" x="570" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="s21err" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" value="Access Denied: Redirect to Enrollment page with error message" vertex="1">
+          <mxGeometry height="44" width="145" x="390" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s21c" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Generate pre-signed URL for content file (expires in 15min). Log access event" vertex="1">
+          <mxGeometry height="52" width="175" x="800" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="s21d" parent="l2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Record lesson progress event. Update lessonCompletion=true. Recalculate course_progress %" vertex="1">
+          <mxGeometry height="52" width="175" x="1100" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#f0f9ff;strokeColor=#0284c7;fontColor=#075985;fontSize=11;fontStyle=1;" value="Cloud Storage &amp; CDN" vertex="1">
+          <mxGeometry height="155" width="1650" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="s31a" parent="l3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontColor=#075985;fontSize=10;" value="Serve PDF file via secure pre-signed CDN URL. MathJax JS loaded client-side for formula render" vertex="1">
+          <mxGeometry height="52" width="185" x="800" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s31b" parent="l3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontColor=#075985;fontSize=10;" value="Stream video via HLS adaptive bitrate. CDN edge node serves closest to student location" vertex="1">
+          <mxGeometry height="52" width="185" x="1000" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" parent="pool" style="swimlane;startSize=30;horizontal=0;fillColor=#ecfdf5;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" value="Lecturer" vertex="1">
+          <mxGeometry height="172" width="1650" y="583" as="geometry" />
+        </mxCell>
+        <mxCell id="s41a" parent="l4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Upload new lecture material: PDF or Video file (via Lecturer portal)" vertex="1">
+          <mxGeometry height="52" width="175" x="185" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s41b" parent="l4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="Attach material to Lesson node in Course Syllabus structure. Set status=Published" vertex="1">
+          <mxGeometry height="52" width="175" x="400" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s41c" parent="l4" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" value="View per-lesson completion analytics: % of students who completed each lesson" vertex="1">
+          <mxGeometry height="52" width="175" x="1335" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="s11s" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11a">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="s11a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s21a" value="confirm login">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_e21dec" edge="1" parent="1" source="s21a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" target="s21dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_yes" edge="1" parent="1" source="s21dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" target="s21b" value="Yes ✓">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_no" edge="1" parent="1" source="s21dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#be123c;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#be123c;fontStyle=1;fontSize=10;" target="s21err" value="No ✗">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s21b" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s11b" value="show syllabus">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="s11b" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11dec">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="s11dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#4338ca;fontStyle=1;fontSize=10;" target="s11c" value="PDF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="s11dec" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#4338ca;fontStyle=1;fontSize=10;" target="s11d" value="Video">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="s11c" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s21c" value="request content URL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7b" edge="1" parent="1" source="s11d" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s21c" value="request content URL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="s21c" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#0284c7;dashed=1;endArrow=open;endFill=0;fontColor=#0284c7;fontSize=9;" target="s31a" value="signed URL (PDF)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="s21c" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#0284c7;dashed=1;endArrow=open;endFill=0;fontColor=#0284c7;fontSize=9;" target="s31b" value="signed URL (Video)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="s11e" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s21d" value="mark complete">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="s21d" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s11f" value="progress %">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="s11f" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="s11c" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" target="s11e">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="s41a" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" target="s41b">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="s21d" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" target="s41c" value="analytics data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;strokeColor=#cbd5e1;fillColor=#f8fafc;align=left;fontSize=9;fontColor=#475569;rounded=1;" value="⚠ BUSINESS RULES: (1) Student can ONLY access content of CONFIRMED enrolled courses. (2) Pre-signed CDN URLs expire in 15 minutes for security. (3) Video streamed via HLS adaptive bitrate — no permanent download allowed. (4) MathJax renders LaTeX in real-time client-side for PDF mathematical formulas." vertex="1">
+          <mxGeometry height="26" width="1500" x="20" y="820" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

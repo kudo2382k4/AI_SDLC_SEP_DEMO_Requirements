@@ -23,6 +23,11 @@
         .header .badge-project { display: inline-block; background: rgba(99,102,241,0.3); border: 1px solid rgba(99,102,241,0.6); color: #a5b4fc; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.82rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 1rem; }
         .header h1 { color: white; font-size: 2.4rem; margin-bottom: 0.5rem; }
         .header p { color: #94a3b8; font-size: 1rem; max-width: 720px; margin: 0 auto; }
+        .header .version { color: #cbd5e1; font-size: 0.82rem; margin-top: 0.75rem; }
+        .core-goals { background: white; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 2.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 5px solid #6366f1; }
+        .core-goals h3 { margin: 0 0 0.75rem; color: #4f46e5; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
+        .goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+        .goal-item { background: #f5f3ff; padding: 0.7rem 1rem; border-radius: 8px; font-size: 0.88rem; color: #3730a3; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
         .personas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
         .persona-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07); border: 1px solid var(--border); transition: transform 0.25s ease, box-shadow 0.25s ease; }
         .persona-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
@@ -46,6 +51,7 @@
         .bar { flex-grow: 1; background: #e2e8f0; height: 7px; border-radius: 4px; overflow: hidden; }
         .fill { height: 100%; border-radius: 4px; }
         .badge { background: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 16px; font-size: 0.78rem; font-weight: 600; color: #475569; display: inline-block; margin-right: 0.35rem; margin-bottom: 0.4rem; border: 1px solid #e2e8f0; }
+        .badge.new { background: #fef0f0; color: #c0392b; border-color: #fecaca; }
         .ba-note { margin-top: 2.5rem; background: #eff6ff; border-left: 4px solid #6366f1; padding: 1.5rem; border-radius: 8px; font-size: 0.93rem; color: #1e40af; }
     </style>
 </head>
@@ -55,6 +61,17 @@
             <div class="badge-project">📘 SMART HSA PLATFORM — TRUNG TÂM ÔN LUYỆN ĐGNL | PHASE 1</div>
             <h1>Hồ sơ Người dùng (User Personas)</h1>
             <p>Xây dựng dựa trên kết quả phỏng vấn các đối tượng trong Stakeholder Matrix của Trung tâm Ôn luyện ĐGNL. Đây là Kim chỉ nam (North Star) cho quá trình thiết kế UI/UX và ưu tiên Backlog.</p>
+            <div class="version">Version: v0.2 (Updated) — Cập nhật theo mục tiêu dự án: Đăng ký → Học nội dung → Thi thử theo giai đoạn → Trao đổi với Giảng viên</div>
+        </div>
+
+        <div class="core-goals">
+            <h3>🎯 4 Mục tiêu Cốt lõi của Dự án</h3>
+            <div class="goals-grid">
+                <div class="goal-item">📋 Đăng ký Khóa học trực tuyến 24/7</div>
+                <div class="goal-item">📚 Học Nội dung Bài giảng (PDF/Video)</div>
+                <div class="goal-item">🎯 Thi thử Theo Giai đoạn lộ trình</div>
+                <div class="goal-item">💬 Trao đổi Trực tuyến với Giảng viên</div>
+            </div>
         </div>
 
         <div class="personas-grid">
@@ -67,25 +84,29 @@
                     <p class="p-role">End User (Primary) | Học viên Lớp 12 đăng ký khóa học ĐGNL</p>
                 </div>
                 <div class="p-body">
-                    <div class="quote">"Em bỏ tiền ra đóng học phí 3 triệu cho trung tâm mà chỉ nhận được đề thi thử, không biết mình đang ở đâu so với target vào ĐHQG."</div>
+                    <div class="quote">"Em bỏ tiền ra đóng học phí 3 triệu cho trung tâm mà chỉ nhận được đề thi thử, không biết mình đang ở đâu so với target vào ĐHQG. Và khi không hiểu bài cũng không biết hỏi ai ngoài giờ học."</div>
 
                     <h3 class="section-title">Hành vi & Tính cách</h3>
-                    <p style="font-size: 0.92rem;">Học sinh lớp 12 chịu áp lực thi HSA, tự bỏ tiền (hoặc được Phụ huynh đóng) để đăng ký khóa ôn luyện tại trung tâm. Kỳ vọng cao về ROI học phí. Học trên điện thoại và laptop, hay ôn khuya lúc 10-11h đêm.</p>
+                    <p style="font-size: 0.92rem;">Học sinh lớp 12 chịu áp lực thi HSA, tự bỏ tiền (hoặc được Phụ huynh đóng) để đăng ký khóa ôn luyện tại trung tâm. Kỳ vọng cao về ROI học phí. Học trên điện thoại và laptop, hay ôn khuya lúc 10-11h đêm. Thường xuyên gặp bế tắc không biết hỏi ai.</p>
 
                     <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
                     <ul>
                         <li>Đóng học phí cao nhưng <strong>không biết mình đang tiến bộ như thế nào</strong>. Chỉ nhận điểm số thô, không có phân tích theo chuyên đề.</li>
                         <li>Quy trình đăng ký khóa học <strong>vẫn phải đến trực tiếp hoặc gọi điện</strong>, không thể đăng ký online 24/7.</li>
                         <li>Không biết <strong>giảng viên khóa học là ai, kinh nghiệm thế nào</strong> trước khi đăng ký.</li>
+                        <li>Gặp khó khăn học thuật phải <strong>chờ đến buổi học tiếp theo mới được hỏi</strong> — mất đà học tập.</li>
                         <li>Mạng đứt giữa bài thi — <strong>mất hết câu trả lời</strong>, phải làm lại từ đầu.</li>
+                        <li><strong>Không có lộ trình học rõ ràng</strong> — không biết giai đoạn nào mình cần tập trung nhất.</li>
                     </ul>
 
                     <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
                     <ul>
                         <li><span class="badge">Enrollment</span> Đăng ký và xem thông tin khóa học online 24/7, xem profile Giảng viên trước khi quyết định.</li>
-                        <li><span class="badge">Mock Exam</span> Làm bài thi thử đúng cấu trúc ĐGNL, cảm nhận áp lực thời gian thật.</li>
-                        <li><span class="badge">Radar Chart</span> Xem Competency Profile trực quan — biết đang yếu phần nào.</li>
-                        <li><span class="badge">Adaptive</span> Nhận gợi ý chuyên đề ôn tập cá nhân hoá sau mỗi lần nộp bài.</li>
+                        <li><span class="badge">Course Content</span> Xem tài liệu bài giảng (PDF/slide) và video bài giảng đã ghi sẵn theo từng buổi học.</li>
+                        <li><span class="badge new">Phase Exam</span> Thi thử theo Giai đoạn (Nền tảng → Nâng cao → Chinh phục), cảm nhận áp lực thời gian thật.</li>
+                        <li><span class="badge new">Q&A Chat</span> Đặt câu hỏi học thuật cho Giảng viên bất kỳ lúc nào, nhận phản hồi trực tiếp trong app.</li>
+                        <li><span class="badge">Radar Chart</span> Xem Competency Profile trực quan — biết đang yếu phần nào sau mỗi giai đoạn.</li>
+                        <li><span class="badge">Adaptive</span> Nhận gợi ý chuyên đề ôn tập cá nhân hoá và nội dung học tiếp theo sau mỗi lần nộp bài.</li>
                         <li><span class="badge">Offline-safe</span> Câu trả lời được lưu cache khi mất mạng, tự đồng bộ khi có kết nối.</li>
                     </ul>
 
@@ -104,24 +125,27 @@
                     <p class="p-role">Key User | Giảng viên được Trung tâm mời về giảng dạy (Hợp đồng thời vụ)</p>
                 </div>
                 <div class="p-body">
-                    <div class="quote">"Tôi được mời dạy 2 khóa ở đây, nhưng không có công cụ nào để biết học viên của tôi đang ở level nào. Tôi phải dạy chay theo giáo trình mà không biết ai đang yếu gì."</div>
+                    <div class="quote">"Tôi được mời dạy 2 khóa ở đây, nhưng không có công cụ nào để biết học viên đang ở level nào. Học viên hỏi tôi qua Zalo cá nhân — rất khó quản lý và không chuyên nghiệp."</div>
 
                     <h3 class="section-title">Hành vi & Tính cách</h3>
-                    <p style="font-size: 0.92rem;">Chuyên gia/Giáo viên có kinh nghiệm ôn thi HSA, nhận hợp đồng thời vụ từ trung tâm. Có thể dạy ở nhiều nơi cùng lúc. Không phải nhân viên cơ hữu, truy cập hệ thống khi cần để theo dõi học viên của mình.</p>
+                    <p style="font-size: 0.92rem;">Chuyên gia/Giáo viên có kinh nghiệm ôn thi HSA, nhận hợp đồng thời vụ từ trung tâm. Có thể dạy ở nhiều nơi cùng lúc. Không phải nhân viên cơ hữu, truy cập hệ thống khi cần để theo dõi học viên của mình và phản hồi câu hỏi.</p>
 
                     <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
                     <ul>
                         <li><strong>Chấm bài thủ công</strong> nếu trung tâm tổ chức thi offline — tốn thời gian, không track được lịch sử.</li>
-                        <li><strong>Không có dữ liệu học viên</strong> — không biết ai đang tiến bộ, ai cần chú ý thêm trong khóa học mình phụ trách.</li>
+                        <li><strong>Không có dữ liệu học viên</strong> — không biết ai đang tiến bộ, ai cần chú ý thêm trong từng giai đoạn học.</li>
                         <li>Phải <strong>tự soạn đề thi thử từ đầu</strong> — không có ngân hàng câu hỏi chung.</li>
-                        <li><strong>Quyền truy cập rời rạc</strong> — không phân biệt rõ khóa học nào của mình.</li>
+                        <li>Học viên hỏi bài qua <strong>Zalo cá nhân</strong> — lộn xộn, không có lịch sử, không chuyên nghiệp.</li>
+                        <li><strong>Không biết học viên đang học đến giai đoạn nào</strong> — khó điều chỉnh nội dung giảng dạy phù hợp.</li>
                     </ul>
 
                     <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
                     <ul>
                         <li><span class="badge">Auto-grading</span> Không cần chấm tay — hệ thống chấm tức thì, GV chỉ cần phân tích kết quả.</li>
-                        <li><span class="badge">Class Dashboard</span> Xem phổ điểm, Radar Chart toàn khóa học của mình theo real-time.</li>
+                        <li><span class="badge">Class Dashboard</span> Xem phổ điểm, Radar Chart toàn khóa học theo từng giai đoạn phân tích real-time.</li>
                         <li><span class="badge">Question Bank</span> Import và tái sử dụng ngân hàng đề thi chung của trung tâm.</li>
+                        <li><span class="badge new">Q&A Portal</span> Nhận thông báo và trả lời câu hỏi học thuật của học viên ngay trong Lecturer Portal — không cần dùng Zalo riêng.</li>
+                        <li><span class="badge">Course Content</span> Upload tài liệu bài giảng và video cho từng buổi học của khóa học mình phụ trách.</li>
                         <li><span class="badge">Giao bài</span> Phân công bài tập bổ trợ cho học viên yếu trực tiếp trong app.</li>
                     </ul>
 
@@ -140,22 +164,23 @@
                     <p class="p-role">Project Sponsor | Giám đốc / Chủ Trung tâm Ôn luyện ĐGNL</p>
                 </div>
                 <div class="p-body">
-                    <div class="quote">"Tôi không biết mỗi tháng có bao nhiêu người đăng ký mới, khóa nào đang hot, giảng viên nào học viên đánh giá cao. Tôi cần số liệu thật để quyết định mở khóa mới."</div>
+                    <div class="quote">"Tôi không biết mỗi tháng có bao nhiêu người đăng ký mới, khóa nào đang hot, học viên đang tiến bộ ở giai đoạn nào. Tôi cần số liệu thật để quyết định mở khóa mới và kéo dài hợp đồng giảng viên."</div>
 
                     <h3 class="section-title">Hành vi & Tính cách</h3>
-                    <p style="font-size: 0.92rem;">Người ra quyết định và đầu tư cho hệ thống. Bận rộn, không trực tiếp vận hành. Cần bức tranh số liệu tổng quan: tuyển sinh, doanh thu, chất lượng đào tạo. Tư duy kinh doanh — muốn biết ROI đầu tư vào nền tảng này.</p>
+                    <p style="font-size: 0.92rem;">Người ra quyết định và đầu tư cho hệ thống. Bận rộn, không trực tiếp vận hành. Cần bức tranh số liệu tổng quan: tuyển sinh, tình trạng học tập theo giai đoạn, chất lượng đào tạo. Tư duy kinh doanh — muốn biết ROI đầu tư vào nền tảng này.</p>
 
                     <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
                     <ul>
                         <li><strong>Không có dữ liệu tuyển sinh real-time</strong>: phải hỏi nhân viên thủ công mỗi tuần.</li>
                         <li>Không biết <strong>khóa học nào hiệu quả nhất</strong> (học viên cải thiện điểm nhiều nhất) để đầu tư marketing.</li>
-                        <li>Quy trình đăng ký còn <strong>thủ công nhiều</strong> — nhân viên phải nghe điện thoại, ghi tay, nhiều sai sót.</li>
+                        <li>Không biết học viên <strong>đang bị mắc kẹt ở giai đoạn nào</strong> — không thể can thiệp kịp thời.</li>
                         <li>Không so sánh được <strong>chất lượng đào tạo giữa các Giảng viên khác nhau</strong>.</li>
                     </ul>
 
                     <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
                     <ul>
-                        <li><span class="badge">Enrollment Analytics</span> Dashboard tuyển sinh theo thời gian thực: số đăng ký, tỷ lệ chốt, doanh thu theo khóa.</li>
+                        <li><span class="badge">Enrollment Analytics</span> Dashboard tuyển sinh theo thời gian thực: số đăng ký, tỷ lệ chốt theo khóa.</li>
+                        <li><span class="badge new">Phase Progress</span> Theo dõi tiến độ học viên theo từng giai đoạn — biết học viên đang ở đâu trong lộ trình.</li>
                         <li><span class="badge">Course Performance</span> So sánh kết quả học viên giữa các khóa học — đánh giá chất lượng giảng dạy.</li>
                         <li><span class="badge">Online Enrollment</span> Học viên tự đăng ký 24/7 trên website, giảm tải nhân viên.</li>
                     </ul>
@@ -186,14 +211,16 @@
                         <li>Phải <strong>nhắc nhở thanh toán từng học viên</strong> — dễ quên, không có hệ thống cảnh báo tự động.</li>
                         <li><strong>Phân công Giảng viên thủ công</strong> qua điện thoại/tin nhắn — khó quản lý lịch dạy.</li>
                         <li>Báo cáo tuyển sinh cuối tháng <strong>tốn nửa ngày tổng hợp Excel</strong>.</li>
+                        <li>Không biết học viên nào đang <strong>gặp khó khăn ở giai đoạn nào</strong> để hỗ trợ kịp thời.</li>
                     </ul>
 
                     <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
                     <ul>
                         <li><span class="badge">Online Form</span> Học viên tự điền form đăng ký online — chị chỉ cần xác nhận thanh toán.</li>
-                        <li><span class="badge">Enrollment List</span> Danh sách học viên đăng ký theo khóa, filter và tìm kiếm nhanh.</li>
+                        <li><span class="badge">Enrollment List</span> Danh sách học viên đăng ký theo khóa, filter và tìm kiếm nhanh theo giai đoạn.</li>
                         <li><span class="badge">Phân công</span> Giao khóa học cho Giảng viên chỉ bằng vài click trên hệ thống.</li>
                         <li><span class="badge">Auto Email</span> Hệ thống tự gửi email xác nhận đăng ký / nhắc thanh toán cho học viên.</li>
+                        <li><span class="badge new">Content Mgmt</span> Upload và quản lý tài liệu bài giảng, video theo từng buổi của khóa học.</li>
                     </ul>
 
                     <div class="tech-savvy">
@@ -207,10 +234,10 @@
 
         <div class="ba-note">
             <strong>📌 BA Note — Priority Personas:</strong>
-            <br>• <strong>Học viên (Minh Khang)</strong> = Persona số 1. Mọi quyết định UX phải lấy trải nghiệm học viên làm thước đo ưu tiên.
-            <br>• <strong>Quản lý Trung tâm (Chị Lan)</strong> = Persona vận hành cốt lõi. Nếu quy trình Enrollment không đơn giản hóa đủ cho chị, hệ thống sẽ không được nhân viên chấp nhận.
-            <br>• <strong>Giảng viên (Thầy Hùng Bảo)</strong> = Key User chất lượng. Giảng viên hài lòng → dạy tốt hơn → học viên cải thiện điểm → tăng uy tín trung tâm.
-            <br>• <strong>Giám đốc (Anh Tuấn)</strong> = Người quyết định ngân sách. Phải thấy ROI rõ ràng từ Platform mới duyệt đầu tư Phase 2.
+            <br>• <strong>Học viên (Minh Khang)</strong> = Persona số 1. Mọi quyết định UX phải lấy trải nghiệm học viên làm thước đo ưu tiên. Đặc biệt chú trọng UX của tính năng Q&A và Phase-based Mock Exam.
+            <br>• <strong>Quản lý Trung tâm (Chị Lan)</strong> = Persona vận hành cốt lõi. Nếu quy trình Enrollment và quản lý nội dung không đơn giản hóa đủ cho chị, hệ thống sẽ không được nhân viên chấp nhận.
+            <br>• <strong>Giảng viên (Thầy Hùng Bảo)</strong> = Key User chất lượng. Thành công của Q&A Portal phụ thuộc vào việc Giảng viên có sẵn sàng phản hồi trong hệ thống hay không — <em>UI Lecturer Portal phải cực kỳ đơn giản, dùng được trong 5 phút đầu.</em>
+            <br>• <strong>Giám đốc (Anh Tuấn)</strong> = Người quyết định ngân sách. Phải thấy ROI rõ ràng qua số liệu tuyển sinh, tiến độ học theo giai đoạn và chất lượng Q&A mới duyệt đầu tư Phase 2.
         </div>
     </div>
 </body>

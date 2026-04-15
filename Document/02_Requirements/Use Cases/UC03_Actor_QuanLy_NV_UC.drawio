@@ -1,126 +1,149 @@
-<mxfile host="app.diagrams.net" version="21.6.5" type="device">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
   <diagram id="UC03_QL" name="UC03 - Actor: Quản lý / NV Vận hành">
-    <mxGraphModel dx="1200" dy="900" grid="0" pageWidth="1500" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1901" dy="1121" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1100" math="0" shadow="0">
       <root>
-        <mxCell id="0" /><mxCell id="1" parent="0" />
-        <mxCell id="bg" value="" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1500" height="1100" as="geometry" /></mxCell>
-        <mxCell id="hdr" value="" style="rounded=0;fillColor=#0f172a;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1500" height="44" as="geometry" /></mxCell>
-        <mxCell id="hdr_t" value="HSA Platform | UC03: Use Case Diagram — Actor: Quản lý / NV Vận hành (Operations Staff) | UML 2.x Actor-Centric | Phase 1 | BA v1.0" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1500" height="44" as="geometry" /></mxCell>
-
-        <!-- SYSTEM BOUNDARY -->
-        <mxCell id="sys" value="Smart HSA Platform — Các chức năng của Quản lý / NV Vận hành" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6d28d9;strokeWidth=2;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#2e1065;arcSize=2;" vertex="1" parent="1">
-          <mxGeometry x="186" y="57" width="1290" height="1000" as="geometry" />
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg" parent="1" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="1100" width="1500" as="geometry" />
         </mxCell>
-
-        <!-- ACTOR -->
-        <mxCell id="actor" value="Quản lý / NV Vận hành" style="shape=mxgraph.uml.actor;fillColor=none;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=12;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;labelPosition=center;" vertex="1" parent="1">
-          <mxGeometry x="36" y="510" width="70" height="90" as="geometry" />
+        <mxCell id="hdr" parent="1" style="rounded=0;fillColor=#0f172a;strokeColor=none;" value="" vertex="1">
+          <mxGeometry height="44" width="1500" as="geometry" />
         </mxCell>
-
-        <!-- ═══ ZONE 1: ENROLLMENT ADMINISTRATION ═══ -->
-        <mxCell id="z1" value="✅ ENROLLMENT ADMIN — Xác nhận Đăng ký &amp; Quản lý Học viên" style="rounded=1;fillColor=#f5f3ff;strokeColor=#8b5cf6;strokeWidth=1;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="200" y="78" width="1262" height="255" as="geometry" />
+        <mxCell id="hdr_t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" value="HSA Platform | UC03: Use Case Diagram — Actor: Quản lý / NV Vận hành (Operations Staff) | UML 2.x Actor-Centric | Phase 1 | BA v1.0" vertex="1">
+          <mxGeometry height="44" width="1500" as="geometry" />
         </mxCell>
-
-        <mxCell id="uc1" value="UC-NV-01&lt;br/&gt;Xem DS Enrollment mới (Status = PENDING) trên Dashboard" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="218" y="108" width="200" height="58" as="geometry" />
+        <mxCell id="sys" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6d28d9;strokeWidth=2;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#2e1065;arcSize=2;" value="Smart HSA Platform — Các chức năng của Quản lý / NV Vận hành" vertex="1">
+          <mxGeometry height="1000" width="1290" x="186" y="57" as="geometry" />
         </mxCell>
-        <mxCell id="uc2" value="UC-NV-02&lt;br/&gt;Kiểm tra thông tin Thanh toán học phí của HV" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="438" y="108" width="200" height="58" as="geometry" />
+        <mxCell id="actor" parent="1" style="shape=umlActor;fillColor=none;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=12;fontStyle=1;verticalLabelPosition=bottom;verticalAlign=top;labelPosition=center;html=1;outlineConnect=0;" value="Quản lý / NV Vận hành" vertex="1">
+          <mxGeometry height="90" width="70" x="36" y="510" as="geometry" />
         </mxCell>
-        <mxCell id="uc3" value="UC-NV-03&lt;br/&gt;Xác nhận Enrollment (click Confirm → Status = CONFIRMED)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="658" y="108" width="200" height="58" as="geometry" />
+        <mxCell id="z1" parent="1" style="rounded=1;fillColor=#f5f3ff;strokeColor=#8b5cf6;strokeWidth=1;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#2e1065;" value="✅ ENROLLMENT ADMIN — Xác nhận Đăng ký &amp; Quản lý Học viên" vertex="1">
+          <mxGeometry height="255" width="1262" x="200" y="78" as="geometry" />
         </mxCell>
-        <mxCell id="uc4" value="UC-NV-04&lt;br/&gt;Từ chối Enrollment (ghi lý do, thông báo HV)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontSize=10;fontColor=#881337;" vertex="1" parent="1">
-          <mxGeometry x="878" y="108" width="200" height="58" as="geometry" />
+        <mxCell id="uc1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-01&lt;br/&gt;Xem DS Enrollment mới (Status = PENDING) trên Dashboard" vertex="1">
+          <mxGeometry height="58" width="200" x="218" y="108" as="geometry" />
         </mxCell>
-        <mxCell id="uc5" value="UC-NV-05&lt;br/&gt;Quản lý Danh sách Học viên trong từng Khóa học" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="1098" y="108" width="200" height="58" as="geometry" />
+        <mxCell id="uc2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-02&lt;br/&gt;Kiểm tra thông tin Thanh toán học phí của HV" vertex="1">
+          <mxGeometry height="58" width="200" x="570" y="239" as="geometry" />
         </mxCell>
-        <mxCell id="uc6" value="UC-NV-06&lt;br/&gt;Gửi thông báo email hàng loạt cho HV trong KH" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="218" y="200" width="200" height="58" as="geometry" />
+        <mxCell id="uc3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-03&lt;br/&gt;Xác nhận Enrollment (click Confirm → Status = CONFIRMED)" vertex="1">
+          <mxGeometry height="58" width="200" x="587" y="122" as="geometry" />
         </mxCell>
-        <mxCell id="uc7" value="UC-NV-07&lt;br/&gt;Xuất báo cáo Tuyển sinh (Excel / PDF)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="438" y="200" width="200" height="58" as="geometry" />
+        <mxCell id="uc4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontSize=10;fontColor=#881337;" value="UC-NV-04&lt;br/&gt;Từ chối Enrollment (ghi lý do, thông báo HV)" vertex="1">
+          <mxGeometry height="58" width="200" x="870" y="204" as="geometry" />
         </mxCell>
-
-        <!-- ═══ ZONE 2: COURSE MANAGEMENT ═══ -->
-        <mxCell id="z2" value="🎓 COURSE MANAGEMENT — Quản lý Khóa học &amp; Giảng viên" style="rounded=1;fillColor=#f5f3ff;strokeColor=#8b5cf6;strokeWidth=1;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="200" y="355" width="1262" height="260" as="geometry" />
+        <mxCell id="uc5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-05&lt;br/&gt;Quản lý Danh sách Học viên trong từng Khóa học" vertex="1">
+          <mxGeometry height="58" width="200" x="1042" y="144" as="geometry" />
         </mxCell>
-
-        <mxCell id="uc8" value="UC-NV-08&lt;br/&gt;Tạo Khóa học mới (tên, lịch, học phí, số lượng HV tối đa)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="218" y="385" width="200" height="58" as="geometry" />
+        <mxCell id="uc6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-06&lt;br/&gt;Gửi thông báo email hàng loạt cho HV trong KH" vertex="1">
+          <mxGeometry height="58" width="200" x="269" y="253" as="geometry" />
         </mxCell>
-        <mxCell id="uc9" value="UC-NV-09&lt;br/&gt;Publish Khóa học (hiển thị trang đăng ký)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="438" y="385" width="200" height="58" as="geometry" />
+        <mxCell id="uc7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-07&lt;br/&gt;Xuất báo cáo Tuyển sinh (Excel / PDF)" vertex="1">
+          <mxGeometry height="58" width="200" x="1218" y="244" as="geometry" />
         </mxCell>
-        <mxCell id="uc10" value="UC-NV-10&lt;br/&gt;Phân công Giảng viên vào Khóa học (gửi thông báo GV)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="658" y="385" width="200" height="58" as="geometry" />
+        <mxCell id="z2" parent="1" style="rounded=1;fillColor=#f5f3ff;strokeColor=#8b5cf6;strokeWidth=1;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#2e1065;" value="🎓 COURSE MANAGEMENT — Quản lý Khóa học &amp; Giảng viên" vertex="1">
+          <mxGeometry height="260" width="1262" x="200" y="355" as="geometry" />
         </mxCell>
-        <mxCell id="uc11" value="UC-NV-11&lt;br/&gt;Xác nhận Khai giảng (Activate KH khi đủ điều kiện)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="878" y="385" width="200" height="58" as="geometry" />
+        <mxCell id="uc8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-08&lt;br/&gt;Tạo Khóa học mới (tên, lịch, học phí, số lượng HV tối đa)" vertex="1">
+          <mxGeometry height="58" width="200" x="405" y="409" as="geometry" />
         </mxCell>
-        <mxCell id="uc12" value="UC-NV-12&lt;br/&gt;Hủy / Đóng Khóa học (chưa khai giảng hoặc kết thúc)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontSize=10;fontColor=#881337;" vertex="1" parent="1">
-          <mxGeometry x="1098" y="385" width="200" height="58" as="geometry" />
+        <mxCell id="uc9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-09&lt;br/&gt;Publish Khóa học (hiển thị trang đăng ký)" vertex="1">
+          <mxGeometry height="58" width="200" x="341" y="544" as="geometry" />
         </mxCell>
-        <mxCell id="uc13" value="UC-NV-13&lt;br/&gt;Chỉnh sửa thông tin Khóa học (trước khi khai giảng)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="218" y="480" width="200" height="58" as="geometry" />
+        <mxCell id="uc10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-10&lt;br/&gt;Phân công Giảng viên vào Khóa học (gửi thông báo GV)" vertex="1">
+          <mxGeometry height="58" width="200" x="726" y="407" as="geometry" />
         </mxCell>
-        <mxCell id="uc14" value="UC-NV-14&lt;br/&gt;Xem danh sách Giảng viên đang có hợp đồng (hợp lệ để phân công)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="438" y="480" width="200" height="58" as="geometry" />
+        <mxCell id="uc11" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-11&lt;br/&gt;Xác nhận Khai giảng (Activate KH khi đủ điều kiện)" vertex="1">
+          <mxGeometry height="58" width="200" x="1026" y="422" as="geometry" />
         </mxCell>
-
-        <!-- ═══ ZONE 3: QUESTION BANK APPROVAL ═══ -->
-        <mxCell id="z3" value="📚 QB APPROVAL — Phê duyệt Ngân hàng Câu hỏi" style="rounded=1;fillColor=#f5f3ff;strokeColor=#8b5cf6;strokeWidth=1;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="200" y="640" width="1262" height="185" as="geometry" />
+        <mxCell id="uc12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontSize=10;fontColor=#881337;" value="UC-NV-12&lt;br/&gt;Hủy / Đóng Khóa học (chưa khai giảng hoặc kết thúc)" vertex="1">
+          <mxGeometry height="58" width="200" x="1226" y="506" as="geometry" />
         </mxCell>
-
-        <mxCell id="uc15" value="UC-NV-15&lt;br/&gt;Xem DS câu hỏi chờ phê duyệt (số câu, phân bổ Topic)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="218" y="668" width="200" height="58" as="geometry" />
+        <mxCell id="uc13" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-13&lt;br/&gt;Chỉnh sửa thông tin Khóa học (trước khi khai giảng)" vertex="1">
+          <mxGeometry height="58" width="200" x="555" y="537" as="geometry" />
         </mxCell>
-        <mxCell id="uc16" value="UC-NV-16&lt;br/&gt;Phê duyệt (Approve) bộ câu hỏi → Publish vào QB" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="438" y="668" width="200" height="58" as="geometry" />
+        <mxCell id="uc14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-14&lt;br/&gt;Xem danh sách Giảng viên đang có hợp đồng (hợp lệ để phân công)" vertex="1">
+          <mxGeometry height="58" width="200" x="826" y="524" as="geometry" />
         </mxCell>
-        <mxCell id="uc17" value="UC-NV-17&lt;br/&gt;Từ chối câu hỏi (ghi chú lý do, yêu cầu GV bổ sung)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontSize=10;fontColor=#881337;" vertex="1" parent="1">
-          <mxGeometry x="658" y="668" width="200" height="58" as="geometry" />
+        <mxCell id="z3" parent="1" style="rounded=1;fillColor=#f5f3ff;strokeColor=#8b5cf6;strokeWidth=1;dashed=1;verticalAlign=top;fontSize=11;fontStyle=1;fontColor=#2e1065;" value="📚 QB APPROVAL — Phê duyệt Ngân hàng Câu hỏi" vertex="1">
+          <mxGeometry height="340" width="1262" x="200" y="640" as="geometry" />
         </mxCell>
-        <mxCell id="uc18" value="UC-NV-18&lt;br/&gt;Kiểm tra phân phối QB (thống kê Topic, Bloom, Môn học)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="878" y="668" width="200" height="58" as="geometry" />
+        <mxCell id="uc15" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-15&lt;br/&gt;Xem DS câu hỏi chờ phê duyệt (số câu, phân bổ Topic)" vertex="1">
+          <mxGeometry height="58" width="200" x="227" y="693" as="geometry" />
         </mxCell>
-        <mxCell id="uc19" value="UC-NV-19&lt;br/&gt;Vô hiệu hóa câu hỏi lỗi thời (Status = Inactive)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="1098" y="668" width="200" height="58" as="geometry" />
+        <mxCell id="uc16" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-16&lt;br/&gt;Phê duyệt (Approve) bộ câu hỏi → Publish vào QB" vertex="1">
+          <mxGeometry height="58" width="200" x="438" y="668" as="geometry" />
         </mxCell>
-        <mxCell id="uc20" value="UC-NV-20&lt;br/&gt;Xem Dashboard Tổng hợp vận hành (enrollment, khai giảng)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" vertex="1" parent="1">
-          <mxGeometry x="218" y="760" width="200" height="58" as="geometry" />
+        <mxCell id="uc17" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontSize=10;fontColor=#881337;" value="UC-NV-17&lt;br/&gt;Từ chối câu hỏi (ghi chú lý do, yêu cầu GV bổ sung)" vertex="1">
+          <mxGeometry height="58" width="200" x="609" y="784" as="geometry" />
         </mxCell>
-
-        <!-- ═══ ASSOCIATIONS ═══ -->
-        <mxCell id="as1" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as2" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as3" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc4" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as4" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc6" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as5" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc8" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as6" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc10" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as7" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc11" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as8" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc15" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as9" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc16" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="as10" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" edge="1" source="actor" target="uc20" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-
-        <!-- ═══ INCLUDE ═══ -->
-        <mxCell id="inc1" value="«include»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" edge="1" source="uc3" target="uc2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="inc2" value="«include»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" edge="1" source="uc8" target="uc9" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="inc3" value="«include»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" edge="1" source="uc10" target="uc14" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="inc4" value="«include»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" edge="1" source="uc16" target="uc18" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-
-        <!-- ═══ EXTEND ═══ -->
-        <mxCell id="ext1" value="«extend»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" edge="1" source="uc4" target="uc3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="ext2" value="«extend»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" edge="1" source="uc17" target="uc16" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="ext3" value="«extend»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" edge="1" source="uc12" target="uc11" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-        <mxCell id="ext4" value="«extend»" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" edge="1" source="uc13" target="uc8" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
-
-        <mxCell id="note" value="⚠ BUSINESS RULE: (1) NV chỉ Confirm Enrollment SAU KHI xác nhận thanh toán hợp lệ. (2) Không được tự phân công GV chưa có hợp đồng tại Trung tâm. (3) QB phải đủ Topic+Difficulty+Môn mới Approve." style="text;html=1;strokeColor=#cbd5e1;fillColor=#fffbeb;align=left;fontSize=10;fontColor=#78350f;rounded=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="196" y="1052" width="1280" height="36" as="geometry" />
+        <mxCell id="uc18" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-18&lt;br/&gt;Kiểm tra phân phối QB (thống kê Topic, Bloom, Môn học)" vertex="1">
+          <mxGeometry height="58" width="200" x="813" y="697" as="geometry" />
+        </mxCell>
+        <mxCell id="uc19" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-19&lt;br/&gt;Vô hiệu hóa câu hỏi lỗi thời (Status = Inactive)" vertex="1">
+          <mxGeometry height="58" width="200" x="1098" y="668" as="geometry" />
+        </mxCell>
+        <mxCell id="uc20" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontSize=10;fontColor=#2e1065;" value="UC-NV-20&lt;br/&gt;Xem Dashboard Tổng hợp vận hành (enrollment, khai giảng)" vertex="1">
+          <mxGeometry height="58" width="200" x="227" y="883" as="geometry" />
+        </mxCell>
+        <mxCell id="as1" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as2" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as3" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as4" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as5" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as6" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as7" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as8" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as9" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="as10" edge="1" parent="1" source="actor" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#6d28d9;" target="uc20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc1" edge="1" parent="1" source="uc3" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" target="uc2" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc2" edge="1" parent="1" source="uc8" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" target="uc9" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc3" edge="1" parent="1" source="uc10" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" target="uc14" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc4" edge="1" parent="1" source="uc16" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#374151;fontSize=10;fontStyle=2;fontColor=#374151;" target="uc18" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext1" edge="1" parent="1" source="uc4" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" target="uc3" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext2" edge="1" parent="1" source="uc17" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" target="uc16" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext3" edge="1" parent="1" source="uc12" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" target="uc11" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ext4" edge="1" parent="1" source="uc13" style="edgeStyle=none;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#9f1239;fontSize=10;fontStyle=2;fontColor=#9f1239;" target="uc8" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="text;html=1;strokeColor=#cbd5e1;fillColor=#fffbeb;align=left;fontSize=10;fontColor=#78350f;rounded=1;whiteSpace=wrap;" value="⚠ BUSINESS RULE: (1) NV chỉ Confirm Enrollment SAU KHI xác nhận thanh toán hợp lệ. (2) Không được tự phân công GV chưa có hợp đồng tại Trung tâm. (3) QB phải đủ Topic+Difficulty+Môn mới Approve." vertex="1">
+          <mxGeometry height="36" width="1280" x="196" y="1052" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

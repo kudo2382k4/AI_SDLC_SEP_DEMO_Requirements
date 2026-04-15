@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SF02 — Lecturer Screen Flow | HSA Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--hub-fill:#d1fae5;--hub-stroke:#047857;--hub-text:#022c22;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#0f172a;}
+  .hdr{background:#0f172a;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px #0004;}
+  .hdr-l{display:flex;align-items:center;gap:14px;}
+  .badge{padding:3px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#d1fae5;color:#065f46;}
+  .hdr-title{color:#f1f5f9;font-size:15px;font-weight:700;}
+  .hdr-sub{color:#94a3b8;font-size:11px;}
+  .hdr-meta{color:#475569;font-size:11px;}
+  .legend{background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .li{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569;}
+  .ld{width:28px;height:14px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
+  .lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;}
+  .canvas-wrap{overflow:auto;padding:24px 28px;background:#f8fafc;}
+  .sf-canvas{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 4px 20px #0001;overflow:visible;}
+  .sf-node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:5px;font-size:10.5px;line-height:1.3;padding:6px 8px;cursor:default;transition:box-shadow .15s;}
+  .sf-node:hover{box-shadow:0 4px 16px #0003;z-index:20;}
+  .sf-arrows{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
+  .note-bar{background:#fffbeb;border-top:2px solid #fbbf24;padding:10px 28px;font-size:11.5px;color:#78350f;font-style:italic;}
+  footer{background:#0f172a;color:#475569;text-align:center;font-size:11px;padding:10px;}
+  .section-label{position:absolute;font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-l">
+    <span class="badge">Lecturer</span>
+    <div>
+      <div class="hdr-title">SF02 — Lecturer Screen Flow</div>
+      <div class="hdr-sub">Luồng màn hình Giảng viên | 29 màn hình | Smart HSA Platform</div>
+    </div>
+  </div>
+  <div class="hdr-meta">Phase 1 &nbsp;|&nbsp; BA v1.0 &nbsp;|&nbsp; Smart HSA Platform</div>
+</header>
+
+<div class="legend">
+  <span class="lbl">Legend:</span>
+  <div class="li"><div class="ld" style="background:#d1fae5;border-color:#047857;"></div>Hub/Dashboard</div>
+  <div class="li"><div class="ld" style="background:#fff;border-color:#94a3b8;"></div>Screen</div>
+  <div class="li"><div class="ld" style="background:#fef9c3;border-color:#ca8a04;"></div>Auth/Action</div>
+  <div class="li"><div class="ld" style="background:#f0fdf4;border-color:#16a34a;"></div>Success</div>
+  <div class="li"><div class="ld" style="background:#ffe4e6;border-color:#be123c;"></div>Error/Rejected</div>
+  <div class="li"><div class="ld" style="background:#fffbeb;border-color:#ca8a04;"></div>Pending/Warning</div>
+  <div class="li"><div class="ld" style="background:#0f172a;border-color:#0f172a;border-radius:999px;"></div>Entry Point</div>
+</div>
+
+<div class="canvas-wrap">
+<div class="sf-canvas" style="width:1380px;height:860px;">
+
+  <svg class="sf-arrows" width="1380" height="860">
+    <defs><marker id="arr-047857" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#047857"/>
+        </marker>
+<marker id="arr-16a34a" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+        </marker>
+<marker id="arr-64748b" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+        </marker>
+<marker id="arr-be123c" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#be123c"/>
+        </marker>
+<marker id="arr-ca8a04" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#ca8a04"/>
+        </marker>
+</defs>
+    <line x1="178.0" y1="360.4" x2="222.0" y2="360.6" stroke="#047857" stroke-width="1.5" marker-end="url(#arr-047857)" /><line x1="398.0" y1="303.0" x2="442.0" y2="273.3" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="398.0" y1="342.1" x2="882.0" y2="236.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="309.7" y1="386.0" x2="306.4" y2="422.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="310.7" y1="386.0" x2="305.3" y2="492.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="304.0" y1="540.0" x2="304.0" y2="562.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="526.2" y1="240.0" x2="529.3" y2="272.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="529.7" y1="322.0" x2="526.6" y2="352.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="530.8" y1="322.0" x2="525.3" y2="432.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="531.2" y1="322.0" x2="524.9" y2="512.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="531.4" y1="322.0" x2="524.7" y2="592.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="618.0" y1="266.1" x2="662.0" y2="249.3" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="746.2" y1="240.0" x2="749.3" y2="272.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="749.7" y1="322.0" x2="746.6" y2="352.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="750.8" y1="322.0" x2="745.3" y2="432.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="751.3" y1="322.0" x2="744.8" y2="532.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="744.0" y1="580.0" x2="744.0" y2="612.0" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><line x1="1042.0" y1="118.0" x2="1102.0" y2="118.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="196.0" x2="964.0" y2="144.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="240.0" x2="964.0" y2="282.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="240.0" x2="964.0" y2="372.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="330.0" x2="964.0" y2="452.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="420.0" x2="964.0" y2="452.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="330.0" x2="964.0" y2="532.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="580.0" x2="964.0" y2="612.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="660.0" x2="964.0" y2="692.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="964.0" y1="740.0" x2="964.0" y2="762.0" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)" /><text x="964" y="743" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">Rejected</text><line x1="964.0" y1="766.0" x2="964.0" y2="664.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)"  stroke-dasharray="5,3"/><text x="964" y="707" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Re-submit</text><line x1="1184.0" y1="140.0" x2="1184.0" y2="182.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1184.0" y1="230.0" x2="1184.0" y2="272.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1184.0" y1="320.0" x2="1184.0" y2="362.0" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" />
+  </svg>
+
+  <div id="n-login" class="sf-node" style="left:30px;top:340px;width:145px;min-height:40px;background:#0f172a;color:#fff;border:2px solid #0f172a;border-radius:999px;font-weight:700;">Trang Đăng nhập</div><div id="n-dashboard" class="sf-node" style="left:230px;top:340px;width:165px;min-height:42px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">👨‍🏫 Dashboard GV</div><div id="n-notifs" class="sf-node" style="left:230px;top:430px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Thông báo</div><div id="n-profile" class="sf-node" style="left:230px;top:500px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Hồ sơ Giảng viên</div><div id="n-change_pw" class="sf-node" style="left:230px;top:570px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Đổi Mật khẩu</div><div id="n-course_list" class="sf-node" style="left:450px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS KH được phân công</div><div id="n-course_dash" class="sf-node" style="left:450px;top:280px;width:165px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">Dashboard KH cụ thể</div><div id="n-upload" class="sf-node" style="left:450px;top:360px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Upload Bài giảng / Tài liệu</div><div id="n-histogram" class="sf-node" style="left:450px;top:440px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Phổ điểm KH (Histogram)</div><div id="n-radar_class" class="sf-node" style="left:450px;top:520px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Radar Chart tập thể KH</div><div id="n-export_rpt" class="sf-node" style="left:450px;top:600px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Export Báo cáo KH</div><div id="n-student_list" class="sf-node" style="left:670px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Học viên trong KH</div><div id="n-comp_profile" class="sf-node" style="left:670px;top:280px;width:165px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">Competency Profile HV</div><div id="n-radar_ind" class="sf-node" style="left:670px;top:360px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Radar Chart cá nhân HV</div><div id="n-exam_hist" class="sf-node" style="left:670px;top:440px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Lịch sử bài thi của HV</div><div id="n-assign_mat" class="sf-node" style="left:670px;top:540px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Giao tài liệu bổ trợ</div><div id="n-assign_ok" class="sf-node" style="left:670px;top:620px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">✅ Xác nhận giao TL</div><div id="n-qb_search" class="sf-node" style="left:890px;top:100px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Tìm kiếm CQ trong QB</div><div id="n-qb_mgmt" class="sf-node" style="left:890px;top:200px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Quản lý Câu hỏi (QB)</div><div id="n-compose" class="sf-node" style="left:890px;top:290px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Soạn Câu hỏi đơn lẻ</div><div id="n-import_q" class="sf-node" style="left:890px;top:380px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Import Câu hỏi từ File</div><div id="n-preview_q" class="sf-node" style="left:890px;top:460px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Preview (MathJax)</div><div id="n-tag_q" class="sf-node" style="left:890px;top:540px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Gắn Tag Topic/Bloom/Môn</div><div id="n-submit_q" class="sf-node" style="left:890px;top:620px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Submit để Phê duyệt</div><div id="n-pending_q" class="sf-node" style="left:890px;top:700px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS CQ đang chờ duyệt</div><div id="n-reject_edit" class="sf-node" style="left:890px;top:770px;width:148px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">Hiệu chỉnh CQ Rejected</div><div id="n-create_exam" class="sf-node" style="left:1110px;top:100px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">Tạo Đề thi từ QB</div><div id="n-matrix_cfg" class="sf-node" style="left:1110px;top:190px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Cấu hình Ma trận Đề thi</div><div id="n-preview_exam" class="sf-node" style="left:1110px;top:280px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Preview Đề thi</div><div id="n-publish_exam" class="sf-node" style="left:1110px;top:370px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">✅ Publish Đề thi vào KH</div>
+
+</div>
+</div>
+
+<div class="note-bar">⚠ Giảng viên chỉ xem dữ liệu KH được phân công. QB Search chỉ trả câu hỏi của chính GV đó.</div>
+
+<footer>SF02 — Lecturer Screen Flow&nbsp;|&nbsp;Luồng màn hình Giảng viên | 29 màn hình | Smart HSA Platform&nbsp;|&nbsp;Generated 2026-04-15</footer>
+</body>
+</html>

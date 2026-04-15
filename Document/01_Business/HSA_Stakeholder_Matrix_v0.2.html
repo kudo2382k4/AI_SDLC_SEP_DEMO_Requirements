@@ -17,7 +17,7 @@
         .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; gap: 2rem; }
         .title { font-size: 2rem; margin: 0 0 0.4rem 0; color: var(--primary); }
         .subtitle { color: #64748b; font-size: 0.98rem; }
-        .status-draft { display: inline-block; background: #fefce8; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.82rem; font-weight: bold; border: 1px solid #fef08a; white-space: nowrap; }
+        .status-badge { display: inline-block; background: #fefce8; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.82rem; font-weight: bold; border: 1px solid #fef08a; white-space: nowrap; }
         table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; }
         th, td { border: 1px solid var(--border); padding: 0.85rem 1rem; text-align: left; vertical-align: top; }
         th { background: #f5f3ff; color: var(--primary); font-weight: 700; font-size: 0.88rem; }
@@ -39,8 +39,12 @@
         td li { font-size: 0.87rem; margin-bottom: 0.25rem; }
         .ba-note { background: #f5f3ff; border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; margin-top: 2rem; border-radius: 6px; }
         .ba-note p { margin: 0; font-size: 0.92rem; color: #374151; }
-        .biz-model-banner { background: linear-gradient(135deg, #1e1b4b, #312e81); color: #c7d2fe; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.93rem; }
+        .biz-model-banner { background: linear-gradient(135deg, #1e1b4b, #312e81); color: #c7d2fe; padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 1rem; font-size: 0.93rem; }
         .biz-model-banner strong { color: #e0e7ff; }
+        .core-flow-banner { background: #f0f9ff; border: 1px solid #bae6fd; padding: 0.9rem 1.5rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.88rem; color: #0369a1; }
+        .core-flow-banner strong { color: #0c4a6e; }
+        .flow-pill { display: inline-block; background: #0284c7; color: white; padding: 0.15rem 0.6rem; border-radius: 20px; font-size: 0.78rem; font-weight: 600; margin: 0.1rem 0.1rem; }
+        .new-tag { background: #fef2f2; color: #b91c1c; font-size: 0.7rem; padding: 0.05rem 0.35rem; border-radius: 3px; font-weight: 700; margin-left: 0.3rem; vertical-align: middle; border: 1px solid #fecaca; }
     </style>
 </head>
 <body>
@@ -51,12 +55,25 @@
                 <div class="subtitle">Phân tích &amp; Quản lý các Stakeholder của <strong>Smart HSA Platform</strong> — Trung tâm Ôn luyện ĐGNL tư nhân</div>
             </div>
             <div style="flex-shrink: 0;">
-                <span class="status-draft">Version: v0.2</span>
+                <span class="status-badge">Version: v0.2 (Updated)</span>
             </div>
         </div>
 
         <div class="biz-model-banner">
             <strong>🏢 Bối cảnh tổ chức:</strong> Trung tâm Ôn luyện ĐGNL là tổ chức tư nhân — thu học phí từ Học viên đăng ký Khóa học qua website, mời Giảng viên chuyên gia về giảng dạy theo hợp đồng thời vụ. Nhân viên vận hành quản lý quy trình đăng ký và phân công Giảng viên.
+        </div>
+
+        <div class="core-flow-banner">
+            <strong>🎯 4 Luồng học tập cốt lõi mà mọi Stakeholder đều tham gia:</strong><br>
+            <span class="flow-pill">📋 Đăng ký Khóa học</span>
+            <span style="color: #94a3b8; font-weight: 700;">→</span>
+            <span class="flow-pill">📚 Học Nội dung Bài giảng</span>
+            <span style="color: #94a3b8; font-weight: 700;">→</span>
+            <span class="flow-pill">🎯 Thi thử theo Giai đoạn</span>
+            <span style="color: #94a3b8; font-weight: 700;">→</span>
+            <span class="flow-pill">💬 Trao đổi với Giảng viên (Q&A)</span>
+            <span style="color: #94a3b8; font-weight: 700;">→</span>
+            <span class="flow-pill">📈 Phân tích Năng lực</span>
         </div>
 
         <h2>Phân tích Lưới Quyền lực / Mức độ Quan tâm (Power/Interest Grid)</h2>
@@ -84,17 +101,17 @@
                     <td><span class="tag high">Cao</span></td>
                     <td><span class="tag high">Cao</span></td>
                     <td>
-                        Quan tâm bức tranh kinh doanh tổng thể: số lượng học viên đăng ký, doanh thu học phí theo khóa học, chất lượng đào tạo (tỷ lệ học viên cải thiện điểm). Muốn hệ thống giúp tăng trưởng tuyển sinh mà không cần tuyển thêm nhân sự vận hành.
+                        Quan tâm bức tranh kinh doanh tổng thể: số lượng học viên đăng ký, tình trạng học tập theo từng giai đoạn, chất lượng đào tạo (tỷ lệ học viên cải thiện điểm) và mức độ tương tác Q&A. Muốn hệ thống giúp tăng trưởng tuyển sinh mà không cần tuyển thêm nhân sự vận hành.
                         <ul>
                             <li>KPI: +40% đăng ký online sau 3 tháng Go-Live.</li>
-                            <li>Dashboard tổng quan: tuyển sinh, tracking thanh toán, hiệu quả khóa học.</li>
-                            <li>So sánh performance giữa các Giảng viên khác nhau.</li>
+                            <li>Dashboard tổng quan: tuyển sinh, tracking thanh toán, tiến độ giai đoạn học, hiệu quả khóa học.</li>
+                            <li>So sánh performance giữa các Giảng viên khác nhau (bao gồm chỉ số Q&A phản hồi).</li>
                         </ul>
                     </td>
                     <td>
                         <span class="strategy-label">🔐 Manage Closely (Quản lý Chặt chẽ):</span>
                         <ul>
-                            <li>Trình bày Demo Prototype Enrollment Portal &amp; Center Dashboard và xin duyệt trực tiếp.</li>
+                            <li>Trình bày Demo Prototype Enrollment Portal, Course Content Viewer, Phase Exam &amp; Center Dashboard và xin duyệt trực tiếp.</li>
                             <li>Gửi báo cáo tiến độ dự án hàng tuần (1 trang tóm tắt).</li>
                             <li>Cảnh báo ngay nếu có rủi ro phình phạm vi (Scope Creep) hoặc trễ milestone.</li>
                         </ul>
@@ -111,19 +128,20 @@
                     <td><span class="tag medium">Trung bình</span></td>
                     <td><span class="tag high">Cao</span></td>
                     <td>
-                        Người sử dụng hệ thống hàng ngày nhiều nhất. Cần công cụ giúp tiếp nhận đăng ký, xác nhận thanh toán, phân công Giảng viên vào khóa học và gửi thông báo cho học viên — tất cả trên một nơi, không cần nhớ nhiều bước.
+                        Người sử dụng hệ thống hàng ngày nhiều nhất. Cần công cụ giúp tiếp nhận đăng ký, xác nhận thanh toán, phân công Giảng viên vào khóa học, quản lý nội dung bài giảng và gửi thông báo cho học viên — tất cả trên một nơi, không cần nhớ nhiều bước.
                         <ul>
                             <li>Online form thay thế nhận đăng ký qua Zalo/điện thoại.</li>
-                            <li>Danh sách học viên theo khóa học, filter trạng thái thanh toán.</li>
+                            <li>Danh sách học viên theo khóa học, filter trạng thái thanh toán và giai đoạn học.</li>
                             <li>Phân công Giảng viên bằng vài click, email thông báo tự động.</li>
+                            <li>Upload và quản lý tài liệu bài giảng, video theo từng buổi học. <span class="new-tag">MỚI</span></li>
                         </ul>
                     </td>
                     <td>
                         <span class="strategy-label">✅ Keep Satisfied (Giữ hài lòng):</span>
                         <ul>
-                            <li>Phỏng vấn chuyên sâu về quy trình đăng ký và vận hành hiện tại.</li>
+                            <li>Phỏng vấn chuyên sâu về quy trình đăng ký, vận hành và upload nội dung hiện tại.</li>
                             <li>Cho nhân viên thử nghiệm Prototype Admin Panel trực tiếp để lấy phản hồi UX.</li>
-                            <li><strong>Đây là Persona quyết định User Adoption nội bộ</strong> — nếu không thuận tiện, nhân viên sẽ quay về Excel.</li>
+                            <li><strong>Đây là Persona quyết định User Adoption nội bộ</strong> — nếu không thuận tiện, nhân viên sẽ quay về Excel và Zalo.</li>
                         </ul>
                     </td>
                 </tr>
@@ -138,11 +156,14 @@
                     <td><span class="tag low">Thấp</span></td>
                     <td><span class="tag high">Cao</span></td>
                     <td>
-                        Người dùng trung tâm, đã <strong>ĐĂNG KÝ và THANH TOÁN học phí</strong> — kỳ vọng cao về ROI. Muốn đăng ký khóa học dễ dàng qua website, làm bài thi thử đúng chuẩn ĐGNL và biết rõ mình đang tiến bộ thế nào.
+                        Người dùng trung tâm, đã <strong>ĐĂNG KÝ và THANH TOÁN học phí</strong> — kỳ vọng cao về ROI. Muốn được học nội dung bài giảng đầy đủ, thi thử theo từng giai đoạn lộ trình rõ ràng, và có thể hỏi Giảng viên bất kỳ khi nào gặp bế tắc.
                         <ul>
-                            <li>Completion Rate ≥ 70%, quay lại ≥ 3 lần/tuần.</li>
-                            <li>Xem thông tin Giảng viên trước khi đăng ký.</li>
+                            <li>Đăng ký khóa học online 24/7, xem profile Giảng viên trước khi quyết định.</li>
+                            <li>Xem tài liệu bài giảng (PDF/video) theo từng buổi học. <span class="new-tag">MỚI</span></li>
+                            <li>Thi thử theo Giai đoạn (Nền tảng → Nâng cao → Chinh phục). <span class="new-tag">UPDATE</span></li>
+                            <li>Đặt câu hỏi học thuật cho Giảng viên, nhận phản hồi trong app. <span class="new-tag">MỚI</span></li>
                             <li>Kết quả &amp; Competency Profile (Radar Chart) hiển thị ngay sau nộp bài.</li>
+                            <li>Completion Rate ≥ 70%, quay lại ≥ 3 lần/tuần.</li>
                             <li>Câu trả lời lưu cache khi mất mạng (Offline-safe).</li>
                         </ul>
                     </td>
@@ -150,8 +171,8 @@
                         <span class="strategy-label">🎯 Design Focus (Thiết kế ưu tiên):</span>
                         <ul>
                             <li><strong>Persona số 1 về UX</strong> — mọi quyết định thiết kế giao diện phải lấy học viên làm thước đo.</li>
-                            <li>QA Tester mô phỏng hành trình từ "Đăng ký khóa học" → "Nộp bài thi thử lần đầu".</li>
-                            <li>Usability Test với 5–10 học viên thật trước khi Go-Live.</li>
+                            <li>QA Tester mô phỏng hành trình đầy đủ: "Đăng ký" → "Xem bài giảng" → "Thi thử Giai đoạn 1" → "Hỏi Giảng viên".</li>
+                            <li>Usability Test với 5–10 học viên thật trước khi Go-Live. Đặc biệt kiểm tra UX Q&A và Phase Exam flow.</li>
                         </ul>
                     </td>
                 </tr>
@@ -166,19 +187,22 @@
                     <td><span class="tag medium">Trung bình</span></td>
                     <td><span class="tag medium">Trung bình</span></td>
                     <td>
-                        Được Trung tâm mời về giảng dạy, không phải nhân viên cơ hữu. Chỉ cần truy cập hệ thống để quản lý khóa học được phân công: xem danh sách học viên, theo dõi kết quả thi, giao bài tập bổ trợ.
+                        Được Trung tâm mời về giảng dạy, không phải nhân viên cơ hữu. Cần truy cập hệ thống để quản lý khóa học được phân công: xem danh sách học viên, theo dõi kết quả thi từng giai đoạn, phản hồi câu hỏi Q&A và upload nội dung bài giảng.
                         <ul>
                             <li>Chỉ xem dữ liệu học viên của khóa học <strong>được phân công</strong> (phân quyền rõ ràng).</li>
                             <li>Auto-grading → không cần chấm tay, tiết kiệm ≥ 90% thời gian hành chính.</li>
-                            <li>Import và chia sẻ câu hỏi vào Question Bank chung.</li>
+                            <li>Import và chia sẻ câu hỏi vào Question Bank chung, phân theo giai đoạn.</li>
+                            <li>Nhận thông báo và phản hồi câu hỏi Q&A của học viên trong Lecturer Portal. <span class="new-tag">MỚI</span></li>
+                            <li>Upload tài liệu bài giảng (PDF/video) cho từng buổi học. <span class="new-tag">MỚI</span></li>
                         </ul>
                     </td>
                     <td>
                         <span class="strategy-label">📋 Consult &amp; Keep Informed:</span>
                         <ul>
-                            <li>Demo Lecturer Portal ngắn 30 phút + video hướng dẫn khi onboard.</li>
-                            <li>UI Lecturer Portal phải cực kỳ đơn giản — chỉ 3 bước để xem kết quả học viên.</li>
-                            <li>Phỏng vấn 1–2 Giảng viên đại diện về quy trình soạn đề/chấm bài hiện tại.</li>
+                            <li>Demo Lecturer Portal ngắn 30 phút + video hướng dẫn khi onboard — bao gồm cả Q&A Portal và Course Content upload.</li>
+                            <li>UI Lecturer Portal phải cực kỳ đơn giản — chỉ 3 bước để xem kết quả học viên, phản hồi Q&A trong 3 clicks.</li>
+                            <li>Phỏng vấn 1–2 Giảng viên đại diện về quy trình soạn đề, chấm bài và cách họ đang trao đổi với học viên hiện tại (Zalo/Messenger).</li>
+                            <li><strong>Rule quan trọng:</strong> Nếu Giảng viên không dùng Q&A Portal mà tiếp tục dùng Zalo cá nhân → toàn bộ tính năng Q&A thất bại. Phải đảm bảo trải nghiệm tốt hơn Zalo.</li>
                         </ul>
                     </td>
                 </tr>
@@ -193,17 +217,17 @@
                     <td><span class="tag low">Thấp</span></td>
                     <td><span class="tag medium">Trung bình</span></td>
                     <td>
-                        Thường là người ra quyết định đăng ký và đóng học phí thay con. Muốn biết con đang học tiến bộ ra sao, học phí có xứng đáng không. Không muốn phải đăng nhập nhiều hệ thống phức tạp.
+                        Thường là người ra quyết định đăng ký và đóng học phí thay con. Muốn biết con đang học tiến bộ ra sao qua từng giai đoạn, học phí có xứng đáng không. Không muốn phải đăng nhập nhiều hệ thống phức tạp.
                         <ul>
-                            <li>Nhận email/thông báo tự động về kết quả thi thử của con.</li>
+                            <li>Nhận email/thông báo tự động về kết quả thi thử của con theo từng giai đoạn.</li>
                             <li>Xem báo cáo kết quả cơ bản (Read-only, không cần login đầy đủ) — Phase 1.</li>
                         </ul>
                     </td>
                     <td>
                         <span class="strategy-label">📌 Keep Informed (Phase 2):</span>
                         <ul>
-                            <li>Phase 1: Cung cấp link báo cáo kết quả thi thử qua Email tự động sau mỗi bài thi.</li>
-                            <li>Phase 2: Xem xét thiết kế Parent View và Push Notification.</li>
+                            <li>Phase 1: Cung cấp link báo cáo kết quả thi thử theo giai đoạn qua Email tự động sau mỗi bài thi.</li>
+                            <li>Phase 2: Xem xét thiết kế Parent View và Push Notification về tiến độ giai đoạn học.</li>
                             <li>Không đưa nhu cầu Phụ huynh vào phạm vi Phase 1 để tránh Scope Creep.</li>
                         </ul>
                     </td>
@@ -218,17 +242,19 @@
                     <td><span class="tag medium">Trung bình</span></td>
                     <td><span class="tag medium">Trung bình</span></td>
                     <td>
-                        Đảm bảo hệ thống tuân thủ tiêu chuẩn bảo mật: SSL/TLS, mã hóa mật khẩu BCrypt, chống gian lận thi cử (Tab-switching Detection, Disable Copy-paste). Chịu trách nhiệm Deploy &amp; Monitor hạ tầng Cloud.
+                        Đảm bảo hệ thống tuân thủ tiêu chuẩn bảo mật: SSL/TLS, mã hóa mật khẩu BCrypt, chống gian lận thi cử (Tab-switching Detection, Disable Copy-paste). Chịu trách nhiệm Deploy &amp; Monitor hạ tầng Cloud, lưu trữ nội dung bài giảng (video/PDF) và đảm bảo hiệu năng Q&A Messaging.
                         <ul>
                             <li>CCU ≥ 2,000 học viên đồng thời. API Submit &lt; 1,000ms.</li>
                             <li>Offline cache &amp; Sync khi mạng phục hồi — bắt buộc trong SRS.</li>
+                            <li>CDN + Object Storage (S3) cho video bài giảng — đảm bảo tải nhanh. <span class="new-tag">MỚI</span></li>
+                            <li>Q&A Messaging latency &lt; 500ms, thông báo push trong 5 giây. <span class="new-tag">MỚI</span></li>
                         </ul>
                     </td>
                     <td>
                         <span class="strategy-label">🔧 Consult (Tư vấn Kỹ thuật):</span>
                         <ul>
-                            <li>Gửi tài liệu NFR (Non-functional Requirements) cho IT review và sign-off sớm.</li>
-                            <li>Họp kỹ thuật tuần 2 để chốt Cloud stack, chuẩn bảo mật, và cơ chế Load Balancing.</li>
+                            <li>Gửi tài liệu NFR (Non-functional Requirements) cho IT review và sign-off sớm — bao gồm yêu cầu CDN cho video và latency Q&A.</li>
+                            <li>Họp kỹ thuật tuần 2 để chốt Cloud stack, chuẩn bảo mật, cơ chế Load Balancing và chiến lược lưu trữ nội dung (video/PDF).</li>
                         </ul>
                     </td>
                 </tr>
@@ -237,10 +263,11 @@
         </table>
 
         <div class="ba-note">
-            <p><strong>📝 BA Note — 3 Key Insights cho Trung tâm Ôn luyện:</strong><br><br>
-            <strong>1. Enrollment = Revenue Gate:</strong> Tính năng Đăng ký Khóa học Online là cổng vào doanh thu. Nếu trải nghiệm đăng ký phức tạp, học viên sẽ chọn trung tâm khác có website dễ dùng hơn. <strong>Ưu tiên UX Enrollment Portal ngang bằng UX Student Portal.</strong><br><br>
-            <strong>2. Giảng viên thời vụ = Rủi ro chấp nhận thấp:</strong> Vì không phải nhân viên cơ hữu, Giảng viên không có nghĩa vụ học công cụ mới. Nếu Lecturer Portal không đơn giản và mang lại giá trị tức thì, họ sẽ bỏ qua và làm theo cách cũ. <strong>Rule: Nếu không thể dùng được trong 5 phút đầu, phải redesign.</strong><br><br>
-            <strong>3. Nhân viên vận hành = Người gác cửa User Adoption:</strong> Chị Lan (Quản lý vận hành) là người sẽ "bán" hệ thống này cho Học viên và Giảng viên. Nếu chị không hài lòng, toàn bộ quy trình vận hành sẽ quay về Excel và Zalo.</p>
+            <p><strong>📝 BA Note — 4 Key Insights cho Trung tâm Ôn luyện:</strong><br><br>
+            <strong>1. Enrollment = Revenue Gate:</strong> Tính năng Đăng ký Khóa học Online là cổng vào doanh thu. Nếu trải nghiệm đăng ký phức tạp, học viên sẽ chọn trung tâm khác. <strong>Ưu tiên UX Enrollment Portal ngang bằng UX Student Portal.</strong><br><br>
+            <strong>2. Q&A Portal = Key Differentiator:</strong> <span class="new-tag">MỚI</span> Tính năng trao đổi trực tuyến với Giảng viên là điểm khác biệt cạnh tranh quan trọng. Thành công phụ thuộc vào việc Giảng viên thời vụ có sẵn sàng phản hồi trong hệ thống hay không. <strong>Rule: Nếu UX Q&A không tốt hơn Zalo trong 5 phút đầu — phải redesign ngay.</strong><br><br>
+            <strong>3. Phase-based Learning = Trust Builder:</strong> <span class="new-tag">MỚI</span> Việc thi thử theo giai đoạn rõ ràng giúp học viên và phụ huynh thấy được tiến trình học tập cụ thể — đây là bằng chứng trực quan nhất về chất lượng của trung tâm. <strong>Mỗi giai đoạn phải có milestone đo lường được.</strong><br><br>
+            <strong>4. Nhân viên vận hành = Người gác cửa User Adoption:</strong> Chị Lan (Quản lý vận hành) là người sẽ "bán" hệ thống này cho Học viên và Giảng viên. Nếu chị không hài lòng với quy trình quản lý nội dung và enrollment — toàn bộ quy trình vận hành sẽ quay về Excel và Zalo.</p>
         </div>
     </div>
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SF03 — Operations Staff Screen Flow | HSA Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--hub-fill:#ede9fe;--hub-stroke:#6d28d9;--hub-text:#2e1065;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#0f172a;}
+  .hdr{background:#0f172a;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px #0004;}
+  .hdr-l{display:flex;align-items:center;gap:14px;}
+  .badge{padding:3px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#ede9fe;color:#4c1d95;}
+  .hdr-title{color:#f1f5f9;font-size:15px;font-weight:700;}
+  .hdr-sub{color:#94a3b8;font-size:11px;}
+  .hdr-meta{color:#475569;font-size:11px;}
+  .legend{background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .li{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569;}
+  .ld{width:28px;height:14px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
+  .lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;}
+  .canvas-wrap{overflow:auto;padding:24px 28px;background:#f8fafc;}
+  .sf-canvas{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 4px 20px #0001;overflow:visible;}
+  .sf-node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:5px;font-size:10.5px;line-height:1.3;padding:6px 8px;cursor:default;transition:box-shadow .15s;}
+  .sf-node:hover{box-shadow:0 4px 16px #0003;z-index:20;}
+  .sf-arrows{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
+  .note-bar{background:#fffbeb;border-top:2px solid #fbbf24;padding:10px 28px;font-size:11.5px;color:#78350f;font-style:italic;}
+  footer{background:#0f172a;color:#475569;text-align:center;font-size:11px;padding:10px;}
+  .section-label{position:absolute;font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-l">
+    <span class="badge">Ops Staff</span>
+    <div>
+      <div class="hdr-title">SF03 — Operations Staff Screen Flow</div>
+      <div class="hdr-sub">Luồng màn hình Quản lý / NV Vận hành | 27 màn hình | Smart HSA Platform</div>
+    </div>
+  </div>
+  <div class="hdr-meta">Phase 1 &nbsp;|&nbsp; BA v1.0 &nbsp;|&nbsp; Smart HSA Platform</div>
+</header>
+
+<div class="legend">
+  <span class="lbl">Legend:</span>
+  <div class="li"><div class="ld" style="background:#ede9fe;border-color:#6d28d9;"></div>Hub/Dashboard</div>
+  <div class="li"><div class="ld" style="background:#fff;border-color:#94a3b8;"></div>Screen</div>
+  <div class="li"><div class="ld" style="background:#fef9c3;border-color:#ca8a04;"></div>Auth/Action</div>
+  <div class="li"><div class="ld" style="background:#f0fdf4;border-color:#16a34a;"></div>Success</div>
+  <div class="li"><div class="ld" style="background:#ffe4e6;border-color:#be123c;"></div>Error/Rejected</div>
+  <div class="li"><div class="ld" style="background:#fffbeb;border-color:#ca8a04;"></div>Pending/Warning</div>
+  <div class="li"><div class="ld" style="background:#0f172a;border-color:#0f172a;border-radius:999px;"></div>Entry Point</div>
+</div>
+
+<div class="canvas-wrap">
+<div class="sf-canvas" style="width:1400px;height:880px;">
+
+  <svg class="sf-arrows" width="1400" height="880">
+    <defs><marker id="arr-16a34a" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+        </marker>
+<marker id="arr-64748b" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+        </marker>
+<marker id="arr-6d28d9" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#6d28d9"/>
+        </marker>
+<marker id="arr-be123c" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#be123c"/>
+        </marker>
+<marker id="arr-ca8a04" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#ca8a04"/>
+        </marker>
+</defs>
+    <line x1="178.0" y1="400.4" x2="222.0" y2="400.6" stroke="#6d28d9" stroke-width="1.5" marker-end="url(#arr-6d28d9)" /><line x1="404.0" y1="322.8" x2="452.0" y2="280.7" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="361.9" x2="682.0" y2="239.8" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="374.4" x2="912.0" y2="222.5" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="404.0" y1="381.1" x2="1142.0" y2="216.3" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="311.8" y1="426.0" x2="307.3" y2="462.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="313.2" y1="426.0" x2="305.8" y2="532.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="542.2" y1="222.0" x2="537.2" y2="262.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="534.0" y1="310.0" x2="534.0" y2="352.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="534.0" y1="400.0" x2="534.0" y2="442.0" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><text x="534" y="413" text-anchor="middle" font-size="9" fill="#16a34a" font-style="italic">OK</text><line x1="534.0" y1="400.0" x2="534.0" y2="532.0" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)" /><text x="534" y="458" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">Không HV</text><line x1="544.4" y1="222.0" x2="534.6" y2="622.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="534.0" y1="670.0" x2="534.0" y2="702.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="772.2" y1="222.0" x2="767.2" y2="262.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="310.0" x2="764.0" y2="352.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="400.0" x2="764.0" y2="442.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="774.3" y1="222.0" x2="764.8" y2="532.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="580.0" x2="764.0" y2="622.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="670.0" x2="764.0" y2="702.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="764.0" y1="490.0" x2="764.0" y2="702.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><text x="764" y="588" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Đủ HV</text><line x1="774.6" y1="222.0" x2="764.5" y2="782.0" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)" /><text x="770" y="494" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">Hủy</text><line x1="994.0" y1="220.0" x2="994.0" y2="262.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="994.0" y1="310.0" x2="994.0" y2="352.0" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><text x="994" y="323" text-anchor="middle" font-size="9" fill="#16a34a" font-style="italic">Approved</text><line x1="994.0" y1="310.0" x2="994.0" y2="452.0" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)" /><text x="994" y="373" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">Rejected</text><line x1="994.0" y1="220.0" x2="994.0" y2="552.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="994.0" y1="220.0" x2="994.0" y2="642.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1224.0" y1="220.0" x2="1224.0" y2="262.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1224.0" y1="310.0" x2="1224.0" y2="352.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" />
+  </svg>
+
+  <div id="n-login" class="sf-node" style="left:30px;top:380px;width:145px;min-height:40px;background:#0f172a;color:#fff;border:2px solid #0f172a;border-radius:999px;font-weight:700;">Trang Đăng nhập</div><div id="n-dashboard" class="sf-node" style="left:230px;top:380px;width:170px;min-height:42px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">🧑‍💼 Dashboard Vận hành</div><div id="n-notifs" class="sf-node" style="left:230px;top:470px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Thông báo / Alerts</div><div id="n-staff_prof" class="sf-node" style="left:230px;top:540px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Hồ sơ Nhân viên</div><div id="n-enr_list" class="sf-node" style="left:460px;top:180px;width:170px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">DS Enrollment (PENDING)</div><div id="n-enr_detail" class="sf-node" style="left:460px;top:270px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Chi tiết Enrollment</div><div id="n-payment_ck" class="sf-node" style="left:460px;top:360px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xác nhận Thanh toán</div><div id="n-confirm" class="sf-node" style="left:460px;top:450px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">✅ CONFIRM Enrollment</div><div id="n-reject" class="sf-node" style="left:460px;top:540px;width:148px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">❌ REJECT + Lý do</div><div id="n-active_stu" class="sf-node" style="left:460px;top:630px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Học viên hoạt động</div><div id="n-broadcast" class="sf-node" style="left:460px;top:710px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Gửi Thông báo hàng loạt</div><div id="n-course_list" class="sf-node" style="left:690px;top:180px;width:170px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">DS Khóa học Trung tâm</div><div id="n-create_c" class="sf-node" style="left:690px;top:270px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Tạo Khóa học Mới</div><div id="n-config_c" class="sf-node" style="left:690px;top:360px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Cấu hình KH (lịch,phí,sl)</div><div id="n-publish_c" class="sf-node" style="left:690px;top:450px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">Publish KH (Mở ĐK)</div><div id="n-lect_list" class="sf-node" style="left:690px;top:540px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Giảng viên Hợp lệ</div><div id="n-assign" class="sf-node" style="left:690px;top:630px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Phân công GV vào KH</div><div id="n-activate" class="sf-node" style="left:690px;top:710px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">✅ Xác nhận Khai giảng</div><div id="n-cancel_c" class="sf-node" style="left:690px;top:790px;width:148px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">Đóng / Hủy Khóa học</div><div id="n-qb_pending" class="sf-node" style="left:920px;top:180px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">DS CQ chờ Phê duyệt</div><div id="n-qb_preview" class="sf-node" style="left:920px;top:270px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xem chi tiết + Preview</div><div id="n-qb_approve" class="sf-node" style="left:920px;top:360px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">✅ APPROVE → Publish QB</div><div id="n-qb_reject" class="sf-node" style="left:920px;top:460px;width:148px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">❌ REJECT + Ghi chú</div><div id="n-qb_stats" class="sf-node" style="left:920px;top:560px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Kiểm tra Phân phối QB</div><div id="n-qb_disable" class="sf-node" style="left:920px;top:650px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Vô hiệu hóa CQ lỗi thời</div><div id="n-rpt_enroll" class="sf-node" style="left:1150px;top:180px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Báo cáo Tuyển sinh</div><div id="n-rpt_chart" class="sf-node" style="left:1150px;top:270px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xem Thống kê & Biểu đồ</div><div id="n-rpt_export" class="sf-node" style="left:1150px;top:360px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">Xuất File (PDF / Excel)</div>
+
+</div>
+</div>
+
+<div class="note-bar">⚠ Confirm Enrollment chỉ thực hiện ĐƯỢC sau khi Xác nhận Thanh toán hợp lệ.</div>
+
+<footer>SF03 — Operations Staff Screen Flow&nbsp;|&nbsp;Luồng màn hình Quản lý / NV Vận hành | 27 màn hình | Smart HSA Platform&nbsp;|&nbsp;Generated 2026-04-15</footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SF00 — System Master Screen Flow | HSA Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--hub-fill:#e2e8f0;--hub-stroke:#1e293b;--hub-text:#0f172a;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#0f172a;}
+  .hdr{background:#0f172a;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px #0004;}
+  .hdr-l{display:flex;align-items:center;gap:14px;}
+  .badge{padding:3px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#e2e8f0;color:#1e293b;}
+  .hdr-title{color:#f1f5f9;font-size:15px;font-weight:700;}
+  .hdr-sub{color:#94a3b8;font-size:11px;}
+  .hdr-meta{color:#475569;font-size:11px;}
+  .legend{background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .li{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569;}
+  .ld{width:28px;height:14px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
+  .lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;}
+  .canvas-wrap{overflow:auto;padding:24px 28px;background:#f8fafc;}
+  .sf-canvas{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 4px 20px #0001;overflow:visible;}
+  .sf-node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:5px;font-size:10.5px;line-height:1.3;padding:6px 8px;cursor:default;transition:box-shadow .15s;}
+  .sf-node:hover{box-shadow:0 4px 16px #0003;z-index:20;}
+  .sf-arrows{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
+  .note-bar{background:#fffbeb;border-top:2px solid #fbbf24;padding:10px 28px;font-size:11.5px;color:#78350f;font-style:italic;}
+  footer{background:#0f172a;color:#475569;text-align:center;font-size:11px;padding:10px;}
+  .section-label{position:absolute;font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-l">
+    <span class="badge">System</span>
+    <div>
+      <div class="hdr-title">SF00 — System Master Screen Flow</div>
+      <div class="hdr-sub">Tổng quan Luồng Màn hình toàn Hệ thống | Smart HSA Platform</div>
+    </div>
+  </div>
+  <div class="hdr-meta">Phase 1 &nbsp;|&nbsp; BA v1.0 &nbsp;|&nbsp; Smart HSA Platform</div>
+</header>
+
+<div class="legend">
+  <span class="lbl">Legend:</span>
+  <div class="li"><div class="ld" style="background:#e2e8f0;border-color:#1e293b;"></div>Hub/Dashboard</div>
+  <div class="li"><div class="ld" style="background:#fff;border-color:#94a3b8;"></div>Screen</div>
+  <div class="li"><div class="ld" style="background:#fef9c3;border-color:#ca8a04;"></div>Auth/Action</div>
+  <div class="li"><div class="ld" style="background:#f0fdf4;border-color:#16a34a;"></div>Success</div>
+  <div class="li"><div class="ld" style="background:#ffe4e6;border-color:#be123c;"></div>Error/Rejected</div>
+  <div class="li"><div class="ld" style="background:#fffbeb;border-color:#ca8a04;"></div>Pending/Warning</div>
+  <div class="li"><div class="ld" style="background:#0f172a;border-color:#0f172a;border-radius:999px;"></div>Entry Point</div>
+</div>
+
+<div class="canvas-wrap">
+<div class="sf-canvas" style="width:1300px;height:860px;">
+
+  <svg class="sf-arrows" width="1300" height="860">
+    <defs><marker id="arr-4338ca" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#4338ca"/>
+        </marker>
+<marker id="arr-047857" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#047857"/>
+        </marker>
+<marker id="arr-16a34a" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+        </marker>
+<marker id="arr-64748b" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+        </marker>
+<marker id="arr-6d28d9" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#6d28d9"/>
+        </marker>
+<marker id="arr-be123c" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#be123c"/>
+        </marker>
+<marker id="arr-1e293b" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#1e293b"/>
+        </marker>
+<marker id="arr-b45309" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#b45309"/>
+        </marker>
+<marker id="arr-ca8a04" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#ca8a04"/>
+        </marker>
+</defs>
+    <line x1="110.5" y1="376.0" x2="105.6" y2="294.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="198.0" y1="399.8" x2="242.0" y2="399.2" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="104.0" y1="246.0" x2="104.0" y2="224.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="344.7" y1="376.0" x2="523.6" y2="186.0" stroke="#4338ca" stroke-width="1.5" marker-end="url(#arr-4338ca)" /><text x="434" y="273" text-anchor="middle" font-size="9" fill="#4338ca" font-style="italic">Học viên</text><line x1="402.0" y1="370.6" x2="462.0" y2="349.5" stroke="#047857" stroke-width="1.5" marker-end="url(#arr-047857)" /><text x="432" y="352" text-anchor="middle" font-size="9" fill="#047857" font-style="italic">Giảng viên</text><line x1="402.0" y1="426.1" x2="462.0" y2="447.7" stroke="#6d28d9" stroke-width="1.5" marker-end="url(#arr-6d28d9)" /><text x="432" y="429" text-anchor="middle" font-size="9" fill="#6d28d9" font-style="italic">Quản lý/NV</text><line x1="344.5" y1="420.0" x2="523.8" y2="612.0" stroke="#b45309" stroke-width="1.5" marker-end="url(#arr-b45309)" /><text x="434" y="508" text-anchor="middle" font-size="9" fill="#b45309" font-style="italic">Giám đốc</text><line x1="632.0" y1="138.4" x2="672.0" y2="128.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="166.7" x2="672.0" y2="170.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="832.0" y1="108.0" x2="872.0" y2="108.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1032.0" y1="108.0" x2="1072.0" y2="108.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1154.0" y1="130.0" x2="1154.0" y2="152.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="302.4" x2="672.0" y2="294.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="330.7" x2="672.0" y2="336.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="832.0" y1="334.4" x2="872.0" y2="327.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="470.5" x2="672.0" y2="466.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="832.0" y1="458.0" x2="872.0" y2="458.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="498.8" x2="672.0" y2="508.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="832.0" y1="528.0" x2="872.0" y2="528.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="630.5" x2="672.0" y2="626.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="658.8" x2="672.0" y2="668.4" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="632.0" y1="641.9" x2="872.0" y2="650.2" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="644.0" y1="768.0" x2="682.0" y2="768.0" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)"  stroke-dasharray="5,3"/>
+  </svg>
+
+  <div id="n-home" class="sf-node" style="left:30px;top:380px;width:165px;min-height:42px;background:#0f172a;color:#fff;border:2px solid #0f172a;border-radius:999px;font-weight:700;">🏠 Home Page / Landing</div><div id="n-catalog" class="sf-node" style="left:30px;top:250px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Khóa học & GV (Public)</div><div id="n-detail" class="sf-node" style="left:30px;top:180px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Chi tiết Khóa học</div><div id="n-login" class="sf-node" style="left:250px;top:380px;width:148px;min-height:36px;background:#fef9c3;color:#713f12;border:1.5px solid #ca8a04;">Trang Đăng nhập</div><div id="n-s_dash" class="sf-node" style="left:470px;top:140px;width:158px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">Dashboard Học viên</div><div id="n-s_courses" class="sf-node" style="left:680px;top:90px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Khóa học của tôi</div><div id="n-s_enroll" class="sf-node" style="left:680px;top:160px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Trạng thái ĐK</div><div id="n-s_exam" class="sf-node" style="left:880px;top:90px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Giao diện Thi Thử</div><div id="n-s_result" class="sf-node" style="left:1080px;top:90px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">Kết quả & Radar Chart</div><div id="n-s_ai" class="sf-node" style="left:1080px;top:160px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Gợi ý AI Adaptive</div><div id="n-l_dash" class="sf-node" style="left:470px;top:300px;width:158px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">Dashboard Giảng viên</div><div id="n-l_qb" class="sf-node" style="left:680px;top:260px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Quản lý Câu hỏi (QB)</div><div id="n-l_khdash" class="sf-node" style="left:680px;top:330px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Dashboard Khóa học</div><div id="n-l_student" class="sf-node" style="left:880px;top:295px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Profile Học viên</div><div id="n-o_dash" class="sf-node" style="left:470px;top:460px;width:158px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">Dashboard Vận hành</div><div id="n-o_enroll" class="sf-node" style="left:680px;top:440px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Enrollment Mới</div><div id="n-o_confirm" class="sf-node" style="left:880px;top:440px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Confirm / Reject</div><div id="n-o_course" class="sf-node" style="left:680px;top:510px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Quản lý Khóa học</div><div id="n-o_qb" class="sf-node" style="left:880px;top:510px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Phê duyệt Câu hỏi</div><div id="n-d_dash" class="sf-node" style="left:470px;top:620px;width:158px;min-height:38px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">Dashboard KPI TT</div><div id="n-d_kpi" class="sf-node" style="left:680px;top:600px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Doanh thu & Tuyển sinh</div><div id="n-d_perf" class="sf-node" style="left:680px;top:670px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Hiệu suất KH & GV</div><div id="n-d_report" class="sf-node" style="left:880px;top:635px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xuất Báo cáo Tổng hợp</div><div id="n-p_report" class="sf-node" style="left:470px;top:750px;width:170px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">📧 Báo cáo HT con (Email)</div><div id="n-p_radar" class="sf-node" style="left:690px;top:750px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Radar Chart con</div>
+
+</div>
+</div>
+
+
+
+<footer>SF00 — System Master Screen Flow&nbsp;|&nbsp;Tổng quan Luồng Màn hình toàn Hệ thống | Smart HSA Platform&nbsp;|&nbsp;Generated 2026-04-15</footer>
+</body>
+</html>

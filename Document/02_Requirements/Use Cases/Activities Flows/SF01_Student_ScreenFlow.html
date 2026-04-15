@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SF01 — Student Screen Flow | HSA Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--hub-fill:#eef2ff;--hub-stroke:#4338ca;--hub-text:#1e1b4b;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:#f1f5f9;color:#0f172a;}
+  .hdr{background:#0f172a;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:50;box-shadow:0 2px 10px #0004;}
+  .hdr-l{display:flex;align-items:center;gap:14px;}
+  .badge{padding:3px 12px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#e0e7ff;color:#3730a3;}
+  .hdr-title{color:#f1f5f9;font-size:15px;font-weight:700;}
+  .hdr-sub{color:#94a3b8;font-size:11px;}
+  .hdr-meta{color:#475569;font-size:11px;}
+  .legend{background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .li{display:flex;align-items:center;gap:6px;font-size:11px;color:#475569;}
+  .ld{width:28px;height:14px;border-radius:3px;border:1.5px solid;flex-shrink:0;}
+  .lbl{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em;}
+  .canvas-wrap{overflow:auto;padding:24px 28px;background:#f8fafc;}
+  .sf-canvas{position:relative;background:#fff;border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 4px 20px #0001;overflow:visible;}
+  .sf-node{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:5px;font-size:10.5px;line-height:1.3;padding:6px 8px;cursor:default;transition:box-shadow .15s;}
+  .sf-node:hover{box-shadow:0 4px 16px #0003;z-index:20;}
+  .sf-arrows{position:absolute;top:0;left:0;pointer-events:none;overflow:visible;}
+  .note-bar{background:#fffbeb;border-top:2px solid #fbbf24;padding:10px 28px;font-size:11.5px;color:#78350f;font-style:italic;}
+  footer{background:#0f172a;color:#475569;text-align:center;font-size:11px;padding:10px;}
+  .section-label{position:absolute;font-size:10px;font-weight:700;color:#94a3b8;letter-spacing:.06em;text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-l">
+    <span class="badge">Student</span>
+    <div>
+      <div class="hdr-title">SF01 — Student Screen Flow</div>
+      <div class="hdr-sub">Luồng màn hình Học viên | 32 màn hình | Smart HSA Platform</div>
+    </div>
+  </div>
+  <div class="hdr-meta">Phase 1 &nbsp;|&nbsp; BA v1.0 &nbsp;|&nbsp; Smart HSA Platform</div>
+</header>
+
+<div class="legend">
+  <span class="lbl">Legend:</span>
+  <div class="li"><div class="ld" style="background:#eef2ff;border-color:#4338ca;"></div>Hub/Dashboard</div>
+  <div class="li"><div class="ld" style="background:#fff;border-color:#94a3b8;"></div>Screen</div>
+  <div class="li"><div class="ld" style="background:#fef9c3;border-color:#ca8a04;"></div>Auth/Action</div>
+  <div class="li"><div class="ld" style="background:#f0fdf4;border-color:#16a34a;"></div>Success</div>
+  <div class="li"><div class="ld" style="background:#ffe4e6;border-color:#be123c;"></div>Error/Rejected</div>
+  <div class="li"><div class="ld" style="background:#fffbeb;border-color:#ca8a04;"></div>Pending/Warning</div>
+  <div class="li"><div class="ld" style="background:#0f172a;border-color:#0f172a;border-radius:999px;"></div>Entry Point</div>
+</div>
+
+<div class="canvas-wrap">
+<div class="sf-canvas" style="width:1500px;height:800px;">
+
+  <svg class="sf-arrows" width="1500" height="800">
+    <defs><marker id="arr-4338ca" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#4338ca"/>
+        </marker>
+<marker id="arr-16a34a" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+        </marker>
+<marker id="arr-64748b" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+        </marker>
+<marker id="arr-94a3b8" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+        </marker>
+<marker id="arr-be123c" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#be123c"/>
+        </marker>
+<marker id="arr-ca8a04" markerWidth="8" markerHeight="8" refX="4" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#ca8a04"/>
+        </marker>
+</defs>
+    <line x1="100.9" y1="376.0" x2="103.1" y2="314.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="174.0" y1="399.3" x2="217.0" y2="398.8" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="104.0" y1="266.0" x2="104.0" y2="244.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="104.0" y1="196.0" x2="104.0" y2="174.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="182.0" y1="159.7" x2="422.0" y2="195.7" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><text x="302" y="170" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Submit</text><line x1="299.0" y1="420.0" x2="299.0" y2="452.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="299.0" y1="420.0" x2="299.0" y2="532.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="377.0" y1="399.1" x2="422.0" y2="399.7" stroke="#4338ca" stroke-width="1.5" marker-end="url(#arr-4338ca)" /><text x="400" y="391" text-anchor="middle" font-size="9" fill="#4338ca" font-style="italic">Login success</text><line x1="299.0" y1="580.0" x2="299.0" y2="612.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="299.0" y1="660.0" x2="299.0" y2="692.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="299.0" y1="696.0" x2="299.0" y2="424.0" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr-94a3b8)"  stroke-dasharray="5,3"/><text x="299" y="552" text-anchor="middle" font-size="9" fill="#94a3b8" font-style="italic">→ Re-login</text><line x1="512.8" y1="376.0" x2="506.3" y2="304.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="511.8" y1="426.0" x2="507.3" y2="462.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="513.2" y1="426.0" x2="505.8" y2="532.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="513.8" y1="426.0" x2="505.2" y2="612.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="504.0" y1="256.0" x2="504.0" y2="234.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="504.0" y1="256.0" x2="504.0" y2="164.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="504.0" y1="160.0" x2="504.0" y2="462.0" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><line x1="582.0" y1="453.8" x2="627.0" y2="434.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="582.0" y1="558.0" x2="627.0" y2="558.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="582.0" y1="638.0" x2="627.0" y2="638.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="582.0" y1="668.4" x2="627.0" y2="686.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="709.0" y1="376.0" x2="709.0" y2="324.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="709.0" y1="376.0" x2="709.0" y2="244.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="709.0" y1="376.0" x2="709.0" y2="164.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="787.0" y1="218.0" x2="832.0" y2="218.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="915.9" y1="240.0" x2="919.5" y2="282.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1008.0" y1="289.5" x2="1052.0" y2="278.5" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><text x="1030" y="276" text-anchor="middle" font-size="9" fill="#64748b" font-style="italic">Nộp bài</text><line x1="1008.0" y1="338.2" x2="1052.0" y2="352.1" stroke="#be123c" stroke-width="1.5" marker-end="url(#arr-be123c)" /><text x="1030" y="337" text-anchor="middle" font-size="9" fill="#be123c" font-style="italic">Hết giờ</text><line x1="1212.0" y1="235.7" x2="1262.0" y2="221.4" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><line x1="1212.0" y1="311.1" x2="1262.0" y2="268.3" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-16a34a)" /><line x1="787.0" y1="145.4" x2="1262.0" y2="190.3" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr-94a3b8)"  stroke-dasharray="5,3"/><text x="1024" y="160" text-anchor="middle" font-size="9" fill="#94a3b8" font-style="italic">view past</text><line x1="1344.0" y1="220.0" x2="1344.0" y2="252.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1344.0" y1="220.0" x2="1344.0" y2="332.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1344.0" y1="220.0" x2="1344.0" y2="412.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" /><line x1="1344.0" y1="220.0" x2="1344.0" y2="492.0" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-64748b)" />
+  </svg>
+
+  <div id="n-home" class="sf-node" style="left:30px;top:380px;width:140px;min-height:40px;background:#0f172a;color:#fff;border:2px solid #0f172a;border-radius:999px;font-weight:700;">🏠 Home Page</div><div id="n-catalog" class="sf-node" style="left:30px;top:270px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Khóa học công khai</div><div id="n-course_detail" class="sf-node" style="left:30px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Chi tiết Khóa học</div><div id="n-enroll_form" class="sf-node" style="left:30px;top:130px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Form Đăng ký KH</div><div id="n-login" class="sf-node" style="left:225px;top:380px;width:148px;min-height:36px;background:#fef9c3;color:#713f12;border:1.5px solid #ca8a04;">Trang Đăng nhập</div><div id="n-register" class="sf-node" style="left:225px;top:460px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Đăng ký Tài khoản mới</div><div id="n-forgot_pw" class="sf-node" style="left:225px;top:540px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Quên Mật khẩu</div><div id="n-otp" class="sf-node" style="left:225px;top:620px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xác thực OTP Email</div><div id="n-new_pw" class="sf-node" style="left:225px;top:700px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Đặt Mật khẩu mới</div><div id="n-dashboard" class="sf-node" style="left:430px;top:380px;width:170px;min-height:42px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">📊 Dashboard Học viên</div><div id="n-enroll_status" class="sf-node" style="left:430px;top:260px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Trạng thái Đăng ký</div><div id="n-pending" class="sf-node" style="left:430px;top:190px;width:148px;min-height:36px;background:#fffbeb;color:#713f12;border:1.5px solid #ca8a04;">⏳ PENDING</div><div id="n-confirmed" class="sf-node" style="left:430px;top:120px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">✅ CONFIRMED</div><div id="n-my_courses" class="sf-node" style="left:430px;top:470px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Khóa học của tôi</div><div id="n-notifs" class="sf-node" style="left:430px;top:540px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Thông báo & Alerts</div><div id="n-profile" class="sf-node" style="left:430px;top:620px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Hồ sơ Học viên</div><div id="n-notif_detail" class="sf-node" style="left:635px;top:540px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Chi tiết Thông báo</div><div id="n-change_pw" class="sf-node" style="left:635px;top:620px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Đổi Mật khẩu</div><div id="n-edit_profile" class="sf-node" style="left:635px;top:700px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Chỉnh sửa Hồ sơ</div><div id="n-course_home" class="sf-node" style="left:635px;top:380px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Trang KH (Home)</div><div id="n-lectures" class="sf-node" style="left:635px;top:280px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Bài giảng / Tài liệu</div><div id="n-exam_list" class="sf-node" style="left:635px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">DS Bài Thi Thử</div><div id="n-exam_history" class="sf-node" style="left:635px;top:120px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Lịch sử Bài thi</div><div id="n-exam_intro" class="sf-node" style="left:840px;top:200px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Giới thiệu Bài thi</div><div id="n-exam_ui" class="sf-node" style="left:840px;top:290px;width:165px;min-height:42px;background:var(--hub-fill);color:var(--hub-text);border:2.5px solid var(--hub-stroke);font-weight:700;">🖊 Giao diện Làm bài</div><div id="n-confirm_sub" class="sf-node" style="left:1060px;top:240px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xác nhận Nộp bài (Dialog)</div><div id="n-force_sub" class="sf-node" style="left:1060px;top:360px;width:148px;min-height:36px;background:#ffe4e6;color:#881337;border:1.5px solid #be123c;">⏰ Force-Submit (Hết giờ)</div><div id="n-result" class="sf-node" style="left:1270px;top:180px;width:148px;min-height:36px;background:#f0fdf4;color:#14532d;border:1.5px solid #16a34a;font-weight:600;">🏆 Kết quả & Điểm số</div><div id="n-answer_rev" class="sf-node" style="left:1270px;top:260px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Xem Lời giải Đáp án</div><div id="n-radar" class="sf-node" style="left:1270px;top:340px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Radar Chart Năng lực</div><div id="n-ai" class="sf-node" style="left:1270px;top:420px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">Gợi ý AI Adaptive</div><div id="n-timeline" class="sf-node" style="left:1270px;top:500px;width:148px;min-height:36px;background:#fff;color:#1e293b;border:1.5px solid #94a3b8;">So sánh Tiến độ</div>
+
+</div>
+</div>
+
+<div class="note-bar">⚠ Học viên chỉ truy cập Course sau khi Enrollment = CONFIRMED. Không có nút Pause trong giờ thi. Force-Submit khi hết giờ.</div>
+
+<footer>SF01 — Student Screen Flow&nbsp;|&nbsp;Luồng màn hình Học viên | 32 màn hình | Smart HSA Platform&nbsp;|&nbsp;Generated 2026-04-15</footer>
+</body>
+</html>
