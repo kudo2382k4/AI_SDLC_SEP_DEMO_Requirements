@@ -1,0 +1,160 @@
+<mxfile host="app.diagrams.net" version="21.6.5" type="device">
+  <diagram id="WF05" name="WF05 - Progress Report Workflow">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" pageWidth="1700" pageHeight="880" math="0" shadow="0">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr" value="" style="rounded=0;fillColor=#0f172a;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr_t" value="HSA Platform — Smart High School Assessment | WF05: Quy trình Báo cáo &amp; Theo dõi Học tập (Progress &amp; Reporting Workflow) | Phase 1 | Senior BA v1.0" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- POOL -->
+        <mxCell id="pool" value="WF05 — Quy trình Báo cáo &amp; Theo dõi Học tập (Progress &amp; Reporting Workflow)" style="swimlane;startSize=40;horizontal=1;fillColor=#0f172a;fontColor=#e2e8f0;strokeColor=#4338ca;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="55" width="1650" height="775" as="geometry" />
+        </mxCell>
+
+        <!-- PHASE HEADERS -->
+        <mxCell id="ph_bg" value="" style="rounded=0;fillColor=#e2e8f0;strokeColor=#94a3b8;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="40" width="1620" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" value="① Trigger &amp; Tổng hợp kết quả" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="40" width="450" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" value="② Phân tích &amp; Tạo báo cáo cá nhân" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="480" y="40" width="500" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" value="③ Phân phối &amp; Hành động Can thiệp" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="980" y="40" width="670" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pd1" value="" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" vertex="1" parent="pool">
+          <mxGeometry x="480" y="40" width="1" height="735" as="geometry" />
+        </mxCell>
+        <mxCell id="pd2" value="" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" vertex="1" parent="pool">
+          <mxGeometry x="980" y="40" width="1" height="735" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 1: Hệ thống (trigger + processing) — y=68, h=165 -->
+        <mxCell id="l1" value="Hệ thống" style="swimlane;startSize=30;horizontal=0;fillColor=#f0fdf4;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="68" width="1650" height="165" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 2: Học viên — y=233, h=150 -->
+        <mxCell id="l2" value="Học viên" style="swimlane;startSize=30;horizontal=0;fillColor=#eef2ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="233" width="1650" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 3: Phụ huynh — y=383, h=130 -->
+        <mxCell id="l3" value="Phụ huynh" style="swimlane;startSize=30;horizontal=0;fillColor=#fff1f2;strokeColor=#be123c;fontColor=#881337;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="383" width="1650" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 4: Giảng viên — y=513, h=185 -->
+        <mxCell id="l4" value="Giảng viên" style="swimlane;startSize=30;horizontal=0;fillColor=#ecfdf5;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="513" width="1650" height="185" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 5: Giám đốc — y=698, h=77 -->
+        <mxCell id="l5" value="Giám đốc / Chủ Trung tâm" style="swimlane;startSize=30;horizontal=0;fillColor=#fffbeb;strokeColor=#b45309;fontColor=#78350f;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="698" width="1650" height="77" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 1 SHAPES (Hệ thống) ═══ -->
+        <mxCell id="s11s" value="&lt;b&gt;Trigger: Học viên hoàn tất bài thi có Answered rate &gt; 30%&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;fontStyle=1;" vertex="1" parent="l1">
+          <mxGeometry x="40" y="60" width="180" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="s11a" value="Tổng hợp điểm số theo từng Topic / Phân môn từ ExamAttempt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="260" y="57" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11b" value="Tạo Radar Chart cá nhân. Cập nhật Competency Profile tích lũy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="510" y="57" width="170" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11dec" value="Điểm giảm đột ngột so với lần trước?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="720" y="42" width="165" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s11c" value="Tạo &amp; gửi Email kết quả thi cho HV. Gửi email link báo cáo cho Phụ huynh. Gửi Push Notification (FCM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="1000" y="57" width="195" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11d" value="Gửi cảnh báo đến Giảng viên phụ trách &amp; Phụ huynh (Email alert)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="920" y="118" width="165" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="s11e" value="Cập nhật Center Dashboard: Thống kê tổng hợp phổ điểm, tỷ lệ hoàn thành KH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="1250" y="57" width="195" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 2 SHAPES (Học viên) ═══ -->
+        <mxCell id="s21a" value="Nhận Email kết quả &amp; Push Notification. Xem Điểm số tức thì" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="1000" y="50" width="175" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21b" value="Xem Radar Chart năng lực chi tiết. So sánh với lần thi trước. Xem gợi ý ôn tập từ AI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="1230" y="50" width="185" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 3 SHAPES (Phụ huynh) ═══ -->
+        <mxCell id="s31a" value="Nhận Email link báo cáo (Read-only access, không cần login)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="1000" y="40" width="175" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s31b" value="Xem tiến độ học tập của con: điểm, Radar Chart, so sánh theo tuần" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="1230" y="40" width="185" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 4 SHAPES (Giảng viên) ═══ -->
+        <mxCell id="s41a" value="Nhận cảnh báo điểm giảm (nếu có). Xem Dashboard KH: Phổ điểm, Radar Chart tập thể" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="1000" y="67" width="185" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s41dec" value="Cần can thiệp học viên yếu?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="1220" y="52" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s41yes" value="Click HV yếu → Xem Competency Profile → Giao tài liệu bổ trợ theo lỗ hổng kiến thức" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="1415" y="67" width="185" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s41no" value="Tiếp tục theo dõi định kỳ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#94a3b8;fontColor=#475569;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="1220" y="143" width="145" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 5 SHAPES (Giám đốc) ═══ -->
+        <mxCell id="s51a" value="Xem Center Dashboard: Tuyển sinh, Doanh thu, % HV hoàn thành, Phổ điểm tổng hợp theo KH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontColor=#78350f;fontSize=10;" vertex="1" parent="l5">
+          <mxGeometry x="1250" y="14" width="285" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ EDGES ═══ -->
+        <!-- L1 processing flow -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11s" target="s11a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11a" target="s11b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11b" target="s11dec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Không ✓" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" edge="1" source="s11dec" target="s11c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Có ⚠" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ca8a04;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#ca8a04;fontStyle=1;fontSize=10;" edge="1" source="s11dec" target="s11d" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Alert → notify (alert branch merges back to notify) -->
+        <mxCell id="e6" value="then notify" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ca8a04;dashed=1;endArrow=open;endFill=0;fontColor=#ca8a04;fontSize=9;" edge="1" source="s11d" target="s11c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L1 → distribute -->
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11c" target="s11e" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L1 → L2 (student receives) -->
+        <mxCell id="e8" value="email + push" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s11c" target="s21a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L1 → L3 (parent receives) -->
+        <mxCell id="e9" value="email link" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s11c" target="s31a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L1 → L4 (lecturer alert if drop) -->
+        <mxCell id="e10" value="alert (if drop)" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ca8a04;dashed=1;endArrow=open;endFill=0;fontColor=#ca8a04;fontSize=9;" edge="1" source="s11d" target="s41a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L2 views detail -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s21a" target="s21b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L3 reads report -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#be123c;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s31a" target="s31b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L4 dashboard → intervene decision -->
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s41a" target="s41dec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" value="Cần ✓" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" edge="1" source="s41dec" target="s41yes" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" value="Không ✗" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#94a3b8;strokeWidth=1;endArrow=open;endFill=0;fontColor=#94a3b8;fontStyle=1;fontSize=10;" edge="1" source="s41dec" target="s41no" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- L1 → L5 dashboard update -->
+        <mxCell id="e16" value="KPI update" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b45309;dashed=1;endArrow=open;endFill=0;fontColor=#b45309;fontSize=9;" edge="1" source="s11e" target="s51a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- FOOTNOTE -->
+        <mxCell id="note" value="⚠ Business Rules: (1) Competency Profile chỉ update khi Answered rate &gt; 30%. (2) Giảng viên chỉ xem dữ liệu HV của KH được phân công. (3) Phụ huynh có Read-only access qua Email link — không cần tài khoản hệ thống." style="text;html=1;strokeColor=#cbd5e1;fillColor=#f8fafc;align=left;fontSize=9;fontColor=#475569;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="840" width="1200" height="26" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

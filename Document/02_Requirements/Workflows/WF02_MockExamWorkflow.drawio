@@ -1,0 +1,165 @@
+<mxfile host="app.diagrams.net" version="21.6.5" type="device">
+  <diagram id="WF02" name="WF02 - Mock Exam Workflow">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" pageWidth="1700" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+
+        <mxCell id="bg" value="" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="800" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr" value="" style="rounded=0;fillColor=#0f172a;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr_t" value="HSA Platform — Smart High School Assessment | WF02: Quy trình Học viên Làm Bài Thi Thử (Mock Exam Workflow) | Phase 1 | Senior BA v1.0" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- POOL -->
+        <mxCell id="pool" value="WF02 — Quy trình Học viên Làm Bài Thi Thử (Mock Exam Workflow)" style="swimlane;startSize=40;horizontal=1;fillColor=#0f172a;fontColor=#e2e8f0;strokeColor=#4338ca;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="55" width="1650" height="680" as="geometry" />
+        </mxCell>
+
+        <!-- PHASE HEADERS -->
+        <mxCell id="ph_bg" value="" style="rounded=0;fillColor=#e2e8f0;strokeColor=#94a3b8;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="40" width="1620" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" value="① Khởi tạo Bài thi" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="40" width="360" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" value="② Làm bài (Timed Exam)" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="390" y="40" width="610" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" value="③ Chấm điểm &amp; Phân tích Năng lực" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="1000" y="40" width="650" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Dividers -->
+        <mxCell id="pd1" value="" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" vertex="1" parent="pool">
+          <mxGeometry x="390" y="40" width="1" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="pd2" value="" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" vertex="1" parent="pool">
+          <mxGeometry x="1000" y="40" width="1" height="640" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 1: Học viên — y=68, h=165 -->
+        <mxCell id="l1" value="Học viên" style="swimlane;startSize=30;horizontal=0;fillColor=#eef2ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="68" width="1650" height="165" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 2: Hệ thống — y=233, h=175 -->
+        <mxCell id="l2" value="Hệ thống" style="swimlane;startSize=30;horizontal=0;fillColor=#f0fdf4;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="233" width="1650" height="175" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 3: AI / Adaptive Engine — y=408, h=165 -->
+        <mxCell id="l3" value="AI / Adaptive Engine" style="swimlane;startSize=30;horizontal=0;fillColor=#f0f9ff;strokeColor=#0284c7;fontColor=#0c4a6e;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="408" width="1650" height="165" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 4: Giảng viên — y=573, h=107 -->
+        <mxCell id="l4" value="Giảng viên" style="swimlane;startSize=30;horizontal=0;fillColor=#ecfdf5;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="573" width="1650" height="107" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 1 SHAPES (Học viên) ═══ -->
+        <mxCell id="s11s" value="&lt;b&gt;Bắt đầu&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c7d2fe;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" vertex="1" parent="l1">
+          <mxGeometry x="45" y="60" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="s11a" value="Vào KH đã ĐK, chọn 'Mock Exam', nhấn 'Bắt đầu làm bài'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="180" y="57" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11b" value="Làm bài: Đọc đề, chọn đáp án trắc nghiệm (splitscreen layout)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="440" y="57" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11c" value="Nộp bài (click 'Nộp bài' HOẶC hết giờ → force-submit)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="650" y="57" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11d" value="Xem Điểm số ngay lập tức (≤ 1s) &amp; Lời giải đáp án chi tiết" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="1060" y="57" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11e" value="Xem Radar Chart Năng lực &amp; Gợi ý Ôn tập từ AI" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="1280" y="57" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11e2" value="&lt;b&gt;Hoàn tất&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#c7d2fe;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" vertex="1" parent="l1">
+          <mxGeometry x="1510" y="60" width="90" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 2 SHAPES (Hệ thống) ═══ -->
+        <mxCell id="s21a" value="Xác thực Status = CONFIRMED. Khởi tạo ExamAttempt (Status=InProgress), bắt đầu đồng hồ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="180" y="62" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21a2" value="Tạo đề thi theo ma trận từ Question Bank (random seed)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="390" y="62" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21b" value="Lưu tạm câu trả lời (Cache), theo dõi Tab-switch &amp; countdown timer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="600" y="62" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21c" value="Auto-grading: Chấm điểm tức thì, cập nhật ExamAttempt = Submitted, lưu Score" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="850" y="62" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21d" value="Cập nhật Competency Profile. Gửi Push Notification (FCM) kết quả" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="1280" y="62" width="165" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 3 SHAPES (AI Engine) ═══ -->
+        <mxCell id="s31a" value="Nhận ExamAttempt data. Tính điểm từng Topic/Phân môn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontColor=#0c4a6e;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="850" y="57" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s31dec" value="Answered rate &gt; 30% ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontColor=#0c4a6e;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="1060" y="42" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s31b" value="Xây dựng Radar Chart. Flag 'Lỗ hổng kiến thức' (topic đúng &lt; 50%). Tạo Adaptive suggestions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0f2fe;strokeColor=#0284c7;fontColor=#0c4a6e;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="1240" y="57" width="175" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s31c" value="Bỏ qua cập nhật Competency (dữ liệu chưa đủ tin cậy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="1060" y="122" width="130" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 4 SHAPES (Giảng viên) ═══ -->
+        <mxCell id="s41a" value="Xem Radar Chart tập thể trên Dashboard KH. Phát hiện HV có điểm giảm hoặc lỗ hổng nghiêm trọng → Giao tài liệu bổ trợ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="1280" y="28" width="240" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ EDGES ═══ -->
+        <!-- L1 happy path -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11s" target="s11a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11a" target="s11b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11b" target="s11c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11d" target="s11e" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#4338ca;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11e" target="s11e2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L1 → L2 -->
+        <mxCell id="e6" value="start exam" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s11a" target="s21a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="submit" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s11c" target="s21c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L2 internal -->
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s21a" target="s21a2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s21a2" target="s21b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L2 → L3 -->
+        <mxCell id="e10" value="exam data" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s21c" target="s31a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L3 internal -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#0284c7;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s31a" target="s31dec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" value="Có ✓" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" edge="1" source="s31dec" target="s31b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" value="Không ✗" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#be123c;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#be123c;fontStyle=1;fontSize=10;" edge="1" source="s31dec" target="s31c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L3 → L2 (competency updated) -->
+        <mxCell id="e14" value="competency updated" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s31b" target="s21d" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L2 → L1 (show result) -->
+        <mxCell id="e15" value="score + radar" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s21d" target="s11d" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e16" value="adaptive data" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s31b" target="s11e" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- L2/L3 → L4 (lecturer sees updated dashboard) -->
+        <mxCell id="e17" value="dashboard update" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s31b" target="s41a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- FOOTNOTE -->
+        <mxCell id="note" value="⚠ BUSINESS RULES: (1) KHÔNG có tính năng Pause trong Mock Exam — áp lực thời gian thực. (2) Hết giờ → Force-submit tự động. (3) Chấm điểm Auto-grading ≤ 1s. (4) Profile cập nhật chỉ khi Answered rate &gt; 30%." style="text;html=1;strokeColor=#cbd5e1;fillColor=#f8fafc;align=left;fontSize=9;fontColor=#475569;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="745" width="1000" height="26" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Personas - Smart HSA Platform (Trung tâm Ôn luyện)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #3b82f6;
+            --student-color: #6366f1;
+            --lecturer-color: #10b981;
+            --director-color: #f59e0b;
+            --manager-color: #8b5cf6;
+            --bg: #f8fafc;
+            --text-main: #334155;
+            --border: #e2e8f0;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; margin: 0; padding: 2rem; }
+        .container { max-width: 1260px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 3rem; padding: 2.5rem 2rem; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); border-radius: 16px; color: white; }
+        .header .badge-project { display: inline-block; background: rgba(99,102,241,0.3); border: 1px solid rgba(99,102,241,0.6); color: #a5b4fc; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.82rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 1rem; }
+        .header h1 { color: white; font-size: 2.4rem; margin-bottom: 0.5rem; }
+        .header p { color: #94a3b8; font-size: 1rem; max-width: 720px; margin: 0 auto; }
+        .personas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; }
+        .persona-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07); border: 1px solid var(--border); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+        .persona-card:hover { transform: translateY(-6px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .p-header { padding: 2rem; color: white; position: relative; overflow: hidden; }
+        .p-header::before { content: ''; position: absolute; right: -20px; top: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.08); border-radius: 50%; }
+        .p-header::after { content: ''; position: absolute; right: 20px; top: 30px; width: 50px; height: 50px; background: rgba(255,255,255,0.06); border-radius: 50%; }
+        .p-student  { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+        .p-lecturer { background: linear-gradient(135deg, #10b981, #047857); }
+        .p-director { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .p-manager  { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+        .avatar-placeholder { width: 72px; height: 72px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin-bottom: 1rem; border: 2px solid rgba(255,255,255,0.5); }
+        .p-name { font-size: 1.4rem; font-weight: 700; margin: 0; }
+        .p-role { font-size: 0.88rem; opacity: 0.85; margin: 0.25rem 0 0 0; }
+        .p-body { padding: 1.75rem; }
+        .section-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.2px; color: #94a3b8; font-weight: 700; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-top: 1.4rem; margin-bottom: 0.9rem; }
+        .section-title:first-child { margin-top: 0; }
+        ul { padding-left: 1.2rem; margin: 0; }
+        li { margin-bottom: 0.45rem; font-size: 0.92rem; }
+        .quote { font-style: italic; color: #475569; background: #f1f5f9; padding: 0.9rem 1rem; border-radius: 8px; border-left: 4px solid var(--secondary); margin-bottom: 1.5rem; font-size: 0.9rem; }
+        .tech-savvy { display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; }
+        .bar { flex-grow: 1; background: #e2e8f0; height: 7px; border-radius: 4px; overflow: hidden; }
+        .fill { height: 100%; border-radius: 4px; }
+        .badge { background: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 16px; font-size: 0.78rem; font-weight: 600; color: #475569; display: inline-block; margin-right: 0.35rem; margin-bottom: 0.4rem; border: 1px solid #e2e8f0; }
+        .ba-note { margin-top: 2.5rem; background: #eff6ff; border-left: 4px solid #6366f1; padding: 1.5rem; border-radius: 8px; font-size: 0.93rem; color: #1e40af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="badge-project">📘 SMART HSA PLATFORM — TRUNG TÂM ÔN LUYỆN ĐGNL | PHASE 1</div>
+            <h1>Hồ sơ Người dùng (User Personas)</h1>
+            <p>Xây dựng dựa trên kết quả phỏng vấn các đối tượng trong Stakeholder Matrix của Trung tâm Ôn luyện ĐGNL. Đây là Kim chỉ nam (North Star) cho quá trình thiết kế UI/UX và ưu tiên Backlog.</p>
+        </div>
+
+        <div class="personas-grid">
+
+            <!-- Persona 1: Học viên -->
+            <div class="persona-card">
+                <div class="p-header p-student">
+                    <div class="avatar-placeholder">🎓</div>
+                    <h2 class="p-name">Minh Khang - "Sĩ Tử"</h2>
+                    <p class="p-role">End User (Primary) | Học viên Lớp 12 đăng ký khóa học ĐGNL</p>
+                </div>
+                <div class="p-body">
+                    <div class="quote">"Em bỏ tiền ra đóng học phí 3 triệu cho trung tâm mà chỉ nhận được đề thi thử, không biết mình đang ở đâu so với target vào ĐHQG."</div>
+
+                    <h3 class="section-title">Hành vi & Tính cách</h3>
+                    <p style="font-size: 0.92rem;">Học sinh lớp 12 chịu áp lực thi HSA, tự bỏ tiền (hoặc được Phụ huynh đóng) để đăng ký khóa ôn luyện tại trung tâm. Kỳ vọng cao về ROI học phí. Học trên điện thoại và laptop, hay ôn khuya lúc 10-11h đêm.</p>
+
+                    <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
+                    <ul>
+                        <li>Đóng học phí cao nhưng <strong>không biết mình đang tiến bộ như thế nào</strong>. Chỉ nhận điểm số thô, không có phân tích theo chuyên đề.</li>
+                        <li>Quy trình đăng ký khóa học <strong>vẫn phải đến trực tiếp hoặc gọi điện</strong>, không thể đăng ký online 24/7.</li>
+                        <li>Không biết <strong>giảng viên khóa học là ai, kinh nghiệm thế nào</strong> trước khi đăng ký.</li>
+                        <li>Mạng đứt giữa bài thi — <strong>mất hết câu trả lời</strong>, phải làm lại từ đầu.</li>
+                    </ul>
+
+                    <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
+                    <ul>
+                        <li><span class="badge">Enrollment</span> Đăng ký và xem thông tin khóa học online 24/7, xem profile Giảng viên trước khi quyết định.</li>
+                        <li><span class="badge">Mock Exam</span> Làm bài thi thử đúng cấu trúc ĐGNL, cảm nhận áp lực thời gian thật.</li>
+                        <li><span class="badge">Radar Chart</span> Xem Competency Profile trực quan — biết đang yếu phần nào.</li>
+                        <li><span class="badge">Adaptive</span> Nhận gợi ý chuyên đề ôn tập cá nhân hoá sau mỗi lần nộp bài.</li>
+                        <li><span class="badge">Offline-safe</span> Câu trả lời được lưu cache khi mất mạng, tự đồng bộ khi có kết nối.</li>
+                    </ul>
+
+                    <div class="tech-savvy">
+                        <span style="font-size: 0.82rem; font-weight: 600; min-width: 110px;">Tech Savvy:</span>
+                        <div class="bar"><div class="fill" style="width: 85%; background: var(--student-color);"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Persona 2: Giảng viên được mời -->
+            <div class="persona-card">
+                <div class="p-header p-lecturer">
+                    <div class="avatar-placeholder">👨🏻‍🏫</div>
+                    <h2 class="p-name">Thầy Hùng Bảo - "Chuyên Gia"</h2>
+                    <p class="p-role">Key User | Giảng viên được Trung tâm mời về giảng dạy (Hợp đồng thời vụ)</p>
+                </div>
+                <div class="p-body">
+                    <div class="quote">"Tôi được mời dạy 2 khóa ở đây, nhưng không có công cụ nào để biết học viên của tôi đang ở level nào. Tôi phải dạy chay theo giáo trình mà không biết ai đang yếu gì."</div>
+
+                    <h3 class="section-title">Hành vi & Tính cách</h3>
+                    <p style="font-size: 0.92rem;">Chuyên gia/Giáo viên có kinh nghiệm ôn thi HSA, nhận hợp đồng thời vụ từ trung tâm. Có thể dạy ở nhiều nơi cùng lúc. Không phải nhân viên cơ hữu, truy cập hệ thống khi cần để theo dõi học viên của mình.</p>
+
+                    <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
+                    <ul>
+                        <li><strong>Chấm bài thủ công</strong> nếu trung tâm tổ chức thi offline — tốn thời gian, không track được lịch sử.</li>
+                        <li><strong>Không có dữ liệu học viên</strong> — không biết ai đang tiến bộ, ai cần chú ý thêm trong khóa học mình phụ trách.</li>
+                        <li>Phải <strong>tự soạn đề thi thử từ đầu</strong> — không có ngân hàng câu hỏi chung.</li>
+                        <li><strong>Quyền truy cập rời rạc</strong> — không phân biệt rõ khóa học nào của mình.</li>
+                    </ul>
+
+                    <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
+                    <ul>
+                        <li><span class="badge">Auto-grading</span> Không cần chấm tay — hệ thống chấm tức thì, GV chỉ cần phân tích kết quả.</li>
+                        <li><span class="badge">Class Dashboard</span> Xem phổ điểm, Radar Chart toàn khóa học của mình theo real-time.</li>
+                        <li><span class="badge">Question Bank</span> Import và tái sử dụng ngân hàng đề thi chung của trung tâm.</li>
+                        <li><span class="badge">Giao bài</span> Phân công bài tập bổ trợ cho học viên yếu trực tiếp trong app.</li>
+                    </ul>
+
+                    <div class="tech-savvy">
+                        <span style="font-size: 0.82rem; font-weight: 600; min-width: 110px;">Tech Savvy:</span>
+                        <div class="bar"><div class="fill" style="width: 65%; background: var(--lecturer-color);"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Persona 3: Giám đốc / Chủ Trung tâm -->
+            <div class="persona-card">
+                <div class="p-header p-director">
+                    <div class="avatar-placeholder">👔</div>
+                    <h2 class="p-name">Anh Tuấn - "Nhà Đầu Tư"</h2>
+                    <p class="p-role">Project Sponsor | Giám đốc / Chủ Trung tâm Ôn luyện ĐGNL</p>
+                </div>
+                <div class="p-body">
+                    <div class="quote">"Tôi không biết mỗi tháng có bao nhiêu người đăng ký mới, khóa nào đang hot, giảng viên nào học viên đánh giá cao. Tôi cần số liệu thật để quyết định mở khóa mới."</div>
+
+                    <h3 class="section-title">Hành vi & Tính cách</h3>
+                    <p style="font-size: 0.92rem;">Người ra quyết định và đầu tư cho hệ thống. Bận rộn, không trực tiếp vận hành. Cần bức tranh số liệu tổng quan: tuyển sinh, doanh thu, chất lượng đào tạo. Tư duy kinh doanh — muốn biết ROI đầu tư vào nền tảng này.</p>
+
+                    <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
+                    <ul>
+                        <li><strong>Không có dữ liệu tuyển sinh real-time</strong>: phải hỏi nhân viên thủ công mỗi tuần.</li>
+                        <li>Không biết <strong>khóa học nào hiệu quả nhất</strong> (học viên cải thiện điểm nhiều nhất) để đầu tư marketing.</li>
+                        <li>Quy trình đăng ký còn <strong>thủ công nhiều</strong> — nhân viên phải nghe điện thoại, ghi tay, nhiều sai sót.</li>
+                        <li>Không so sánh được <strong>chất lượng đào tạo giữa các Giảng viên khác nhau</strong>.</li>
+                    </ul>
+
+                    <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
+                    <ul>
+                        <li><span class="badge">Enrollment Analytics</span> Dashboard tuyển sinh theo thời gian thực: số đăng ký, tỷ lệ chốt, doanh thu theo khóa.</li>
+                        <li><span class="badge">Course Performance</span> So sánh kết quả học viên giữa các khóa học — đánh giá chất lượng giảng dạy.</li>
+                        <li><span class="badge">Online Enrollment</span> Học viên tự đăng ký 24/7 trên website, giảm tải nhân viên.</li>
+                    </ul>
+
+                    <div class="tech-savvy">
+                        <span style="font-size: 0.82rem; font-weight: 600; min-width: 110px;">Tech Savvy:</span>
+                        <div class="bar"><div class="fill" style="width: 45%; background: var(--director-color);"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Persona 4: Quản lý Trung tâm -->
+            <div class="persona-card">
+                <div class="p-header p-manager">
+                    <div class="avatar-placeholder">👩🏻‍💼</div>
+                    <h2 class="p-name">Chị Lan - "Điều Phối Viên"</h2>
+                    <p class="p-role">Key Operator | Quản lý / Nhân viên vận hành Trung tâm</p>
+                </div>
+                <div class="p-body">
+                    <div class="quote">"Mỗi ngày chị nhận 20-30 tin nhắn hỏi đăng ký, phải trả lời từng người, ghi vào Excel, rồi báo lại cho các thầy cô. Nhiều hôm ghi nhầm lớp của học viên."</div>
+
+                    <h3 class="section-title">Hành vi & Tính cách</h3>
+                    <p style="font-size: 0.92rem;">Nhân viên vận hành chịu trách nhiệm tiếp nhận đăng ký, xác nhận thanh toán, phân lớp cho học viên và liên lạc với Giảng viên. Xử lý đa nhiệm, thường xuyên bị ngập đầu với tin nhắn Zalo/Facebook.</p>
+
+                    <h3 class="section-title">Nỗi Đau (Pain-Points)</h3>
+                    <ul>
+                        <li><strong>Nhận đăng ký thủ công qua Zalo/FB/điện thoại</strong> — sai sót cao, mất thời gian, không có lịch sử rõ ràng.</li>
+                        <li>Phải <strong>nhắc nhở thanh toán từng học viên</strong> — dễ quên, không có hệ thống cảnh báo tự động.</li>
+                        <li><strong>Phân công Giảng viên thủ công</strong> qua điện thoại/tin nhắn — khó quản lý lịch dạy.</li>
+                        <li>Báo cáo tuyển sinh cuối tháng <strong>tốn nửa ngày tổng hợp Excel</strong>.</li>
+                    </ul>
+
+                    <h3 class="section-title">Mục tiêu từ Smart HSA Platform</h3>
+                    <ul>
+                        <li><span class="badge">Online Form</span> Học viên tự điền form đăng ký online — chị chỉ cần xác nhận thanh toán.</li>
+                        <li><span class="badge">Enrollment List</span> Danh sách học viên đăng ký theo khóa, filter và tìm kiếm nhanh.</li>
+                        <li><span class="badge">Phân công</span> Giao khóa học cho Giảng viên chỉ bằng vài click trên hệ thống.</li>
+                        <li><span class="badge">Auto Email</span> Hệ thống tự gửi email xác nhận đăng ký / nhắc thanh toán cho học viên.</li>
+                    </ul>
+
+                    <div class="tech-savvy">
+                        <span style="font-size: 0.82rem; font-weight: 600; min-width: 110px;">Tech Savvy:</span>
+                        <div class="bar"><div class="fill" style="width: 70%; background: var(--manager-color);"></div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="ba-note">
+            <strong>📌 BA Note — Priority Personas:</strong>
+            <br>• <strong>Học viên (Minh Khang)</strong> = Persona số 1. Mọi quyết định UX phải lấy trải nghiệm học viên làm thước đo ưu tiên.
+            <br>• <strong>Quản lý Trung tâm (Chị Lan)</strong> = Persona vận hành cốt lõi. Nếu quy trình Enrollment không đơn giản hóa đủ cho chị, hệ thống sẽ không được nhân viên chấp nhận.
+            <br>• <strong>Giảng viên (Thầy Hùng Bảo)</strong> = Key User chất lượng. Giảng viên hài lòng → dạy tốt hơn → học viên cải thiện điểm → tăng uy tín trung tâm.
+            <br>• <strong>Giám đốc (Anh Tuấn)</strong> = Người quyết định ngân sách. Phải thấy ROI rõ ràng từ Platform mới duyệt đầu tư Phase 2.
+        </div>
+    </div>
+</body>
+</html>

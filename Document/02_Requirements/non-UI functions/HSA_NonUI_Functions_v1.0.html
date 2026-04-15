@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSA Platform — Non-UI Functions v1.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --batch:   #7c3aed; --batch-bg:   #ede9fe;
+      --service: #0369a1; --service-bg: #e0f2fe;
+      --event:   #047857; --event-bg:   #d1fae5;
+      --api:     #b45309; --api-bg:     #fef3c7;
+      --cron:    #be123c; --cron-bg:    #ffe4e6;
+      --client:  #374151; --client-bg:  #f1f5f9;
+      --gray-50:#f8fafc; --gray-100:#f1f5f9; --gray-200:#e2e8f0;
+      --gray-300:#cbd5e1; --gray-400:#94a3b8; --gray-700:#334155;
+      --gray-900:#0f172a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:#f8fafc;color:#334155;font-size:13px;}
+
+    .header{background:var(--gray-900);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .header-brand{display:flex;align-items:center;gap:14px;}
+    .header-logo{width:36px;height:36px;background:linear-gradient(135deg,#7c3aed,#0ea5e9);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;color:#fff;letter-spacing:-0.5px;}
+    .header-title{font-size:15px;font-weight:600;color:#e2e8f0;}
+    .header-sub{font-size:11px;color:#94a3b8;margin-top:2px;}
+    .header-meta{text-align:right;font-size:11px;color:#64748b;}
+
+    .page{max-width:1500px;margin:0 auto;padding:24px 32px 48px;}
+
+    .doc-strip{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:14px 20px;display:flex;gap:28px;margin-bottom:20px;flex-wrap:wrap;}
+    .doc-field{display:flex;flex-direction:column;gap:2px;}
+    .doc-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);font-weight:600;}
+    .doc-value{font-size:12px;font-weight:500;color:var(--gray-700);}
+
+    /* LEGEND ROW */
+    .legend-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;align-items:stretch;}
+    .legend-card{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:12px 16px;display:flex;flex-direction:column;gap:6px;flex:1;min-width:130px;}
+    .legend-card-head{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;}
+    .type-pill{display:inline-flex;align-items:center;justify-content:center;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;white-space:nowrap;}
+    .legend-card-desc{font-size:10px;color:var(--gray-400);line-height:1.4;}
+
+    /* STATS BAR */
+    .stats-row{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+    .stat-item{display:flex;flex-direction:column;align-items:center;gap:2px;}
+    .stat-num{font-size:22px;font-weight:700;color:var(--gray-900);}
+    .stat-label{font-size:10px;color:var(--gray-400);text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
+
+    /* CONTROLS */
+    .controls{display:flex;gap:12px;margin-bottom:16px;align-items:center;flex-wrap:wrap;}
+    .search-box{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:8px 14px;flex:1;min-width:220px;max-width:420px;}
+    .search-box input{border:none;outline:none;font-family:'Inter',sans-serif;font-size:13px;width:100%;color:var(--gray-700);}
+    .search-box input::placeholder{color:var(--gray-400);}
+    .filter-sel{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:8px 12px;font-family:'Inter',sans-serif;font-size:12px;color:var(--gray-700);cursor:pointer;outline:none;}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border:none;transition:.15s;}
+    .btn-outline{background:#fff;border:1px solid var(--gray-200);color:var(--gray-700);}
+    .btn-outline:hover{background:var(--gray-50);border-color:var(--gray-300);}
+    .count-label{margin-left:auto;font-size:12px;color:var(--gray-400);font-weight:500;}
+
+    /* TABLE */
+    .table-wrapper{background:#fff;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;overflow-x:auto;}
+    table{width:100%;border-collapse:collapse;}
+
+    thead th{padding:12px 14px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#94a3b8;background:var(--gray-900);white-space:nowrap;border-right:1px solid #1e293b;}
+    thead th:last-child{border-right:none;}
+    thead th.col-num{width:46px;text-align:center;}
+    thead th.col-feat{min-width:160px;width:160px;}
+    thead th.col-fn{min-width:230px;width:230px;}
+    thead th.col-type{width:120px;}
+    thead th.col-trigger{min-width:170px;width:170px;}
+    thead th.col-desc{min-width:320px;}
+    thead th.col-prio{width:90px;text-align:center;}
+
+    tr.feature-group td{
+      padding:9px 20px;
+      font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+      color:var(--gray-700);border-top:2px solid var(--gray-200);
+      background:var(--gray-50);
+    }
+    tr.feature-group.first-group td{border-top:none;}
+
+    tr.fn-row td{padding:10px 14px;border-top:1px solid var(--gray-100);vertical-align:top;font-size:12px;color:var(--gray-700);}
+    tr.fn-row:hover td{background:var(--gray-50);}
+    tr.fn-row td.col-num{text-align:center;color:var(--gray-400);font-size:11px;font-weight:600;}
+    tr.fn-row td.col-feat{font-size:11px;color:var(--gray-400);font-weight:500;}
+    tr.fn-row td.col-fn{font-weight:600;color:var(--gray-900);font-size:12px;}
+    tr.fn-row td.col-desc{line-height:1.55;font-size:12px;}
+    tr.fn-row td.col-trigger{font-size:11px;color:var(--gray-700);line-height:1.4;}
+    tr.fn-row td.col-prio{text-align:center;}
+
+    .prio-pill{display:inline-flex;align-items:center;justify-content:center;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;}
+    .prio-must{background:#fca5a5;color:#7f1d1d;}
+    .prio-should{background:#fcd34d;color:#78350f;}
+    .prio-nice{background:#a7f3d0;color:#065f46;}
+
+    /* NFR SECTION */
+    .nfr-section{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:20px 24px;margin-top:20px;}
+    .nfr-section h3{font-size:12px;font-weight:700;color:var(--gray-700);margin-bottom:14px;text-transform:uppercase;letter-spacing:.06em;}
+    .nfr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;}
+    .nfr-card{background:var(--gray-50);border:1px solid var(--gray-200);border-radius:8px;padding:12px 16px;}
+    .nfr-card-title{font-size:12px;font-weight:700;color:var(--gray-700);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+    .nfr-card-body{font-size:11px;color:var(--gray-700);line-height:1.55;}
+
+    .footer{text-align:center;margin-top:32px;font-size:11px;color:var(--gray-400);}
+    @media print{.controls{display:none!important;}.page{padding:0;max-width:100%;}body{background:#fff;}.table-wrapper{border:1px solid #ccc;border-radius:0;}tr.fn-row:hover td{background:transparent;}}
+    .hidden{display:none!important;}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">HSA</div>
+    <div>
+      <div class="header-title">Smart HSA Platform — Non-UI Functions Specification</div>
+      <div class="header-sub">Dac ta cac ham he thong phi giao dien: Dich vu nen, Batch Job, API, Xu ly su kien, Cron</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div>Version 1.0 &bull; Phase 1</div>
+    <div style="margin-top:3px;color:#64748b;">Prepared by: Senior BA | 15/04/2026</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="doc-strip">
+    <div class="doc-field"><span class="doc-label">Du an</span><span class="doc-value">Smart HSA Platform — Trung tam On luyen DGNL</span></div>
+    <div class="doc-field"><span class="doc-label">Tai lieu</span><span class="doc-value">Non-UI Functions Specification</span></div>
+    <div class="doc-field"><span class="doc-label">Phien ban</span><span class="doc-value">v1.0</span></div>
+    <div class="doc-field"><span class="doc-label">Giai doan</span><span class="doc-value">Phase 1</span></div>
+    <div class="doc-field"><span class="doc-label">Ngay tao</span><span class="doc-value">15/04/2026</span></div>
+    <div class="doc-field"><span class="doc-label">Trang thai</span><span class="doc-value" style="color:#047857;font-weight:700;">&#9679; Draft for Review</span></div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend-row">
+    <div class="legend-card">
+      <div class="legend-card-head"><span class="type-pill" style="background:var(--service-bg);color:var(--service);">Service</span></div>
+      <div class="legend-card-desc">Dich vu nen chay lien tuc, khong co giao dien, xu ly yeu cau theo thoi gian thuc khi duoc goi.</div>
+    </div>
+    <div class="legend-card">
+      <div class="legend-card-head"><span class="type-pill" style="background:var(--event-bg);color:var(--event);">Event-driven</span></div>
+      <div class="legend-card-desc">Ham duoc kich hoat boi su kien he thong (VD: sau khi HV nop bai, sau khi NV Confirm Enrollment).</div>
+    </div>
+    <div class="legend-card">
+      <div class="legend-card-head"><span class="type-pill" style="background:var(--cron-bg);color:var(--cron);">Cron Job</span></div>
+      <div class="legend-card-desc">Tac vu theo lich dinh ky tu dong (hang gio, hang ngay, hang tuan). Khong can tuong tac nguoi dung.</div>
+    </div>
+    <div class="legend-card">
+      <div class="legend-card-head"><span class="type-pill" style="background:var(--api-bg);color:var(--api);">API Endpoint</span></div>
+      <div class="legend-card-desc">Diem cuoi API REST duoc giao dien (FE) hoac he thong ben ngoai goi den. Co SLA ve toc do phan hoi.</div>
+    </div>
+    <div class="legend-card">
+      <div class="legend-card-head"><span class="type-pill" style="background:var(--batch-bg);color:var(--batch);">Batch Process</span></div>
+      <div class="legend-card-desc">Xu ly hang loat du lieu theo lo (VD: import file, tinh toan thong ke, tong hop bao cao).</div>
+    </div>
+    <div class="legend-card">
+      <div class="legend-card-head"><span class="type-pill" style="background:var(--client-bg);color:var(--client);">Client-side</span></div>
+      <div class="legend-card-desc">Logic chay tren trinh duyet cua nguoi dung (JavaScript), khong co server. VD: chong gian lan, cache offline.</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row" id="statsRow">
+    <div class="stat-item"><span class="stat-num" id="statTotal">—</span><span class="stat-label">Tong so ham</span></div>
+    <div style="width:1px;background:var(--gray-200);height:36px;"></div>
+    <div class="stat-item"><span class="stat-num" id="statMust" style="color:#dc2626;">—</span><span class="stat-label">Must Have</span></div>
+    <div class="stat-item"><span class="stat-num" id="statShould" style="color:#d97706;">—</span><span class="stat-label">Should Have</span></div>
+    <div class="stat-item"><span class="stat-num" id="statNice" style="color:#059669;">—</span><span class="stat-label">Nice to Have</span></div>
+    <div style="width:1px;background:var(--gray-200);height:36px;"></div>
+    <div class="stat-item"><span class="stat-num" id="statSvc" style="color:var(--service);">—</span><span class="stat-label">Service</span></div>
+    <div class="stat-item"><span class="stat-num" id="statEvent" style="color:var(--event);">—</span><span class="stat-label">Event-driven</span></div>
+    <div class="stat-item"><span class="stat-num" id="statCron" style="color:var(--cron);">—</span><span class="stat-label">Cron Job</span></div>
+    <div class="stat-item"><span class="stat-num" id="statApi" style="color:var(--api);">—</span><span class="stat-label">API</span></div>
+    <div class="stat-item"><span class="stat-num" id="statBatch" style="color:var(--batch);">—</span><span class="stat-label">Batch</span></div>
+    <div class="stat-item"><span class="stat-num" id="statClient" style="color:var(--client);">—</span><span class="stat-label">Client-side</span></div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <div class="search-box">
+      <span style="color:#94a3b8;font-size:14px;">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="Tim kiem ten ham hoac mo ta..." oninput="filterTable()">
+    </div>
+    <select class="filter-sel" id="featureFilter" onchange="filterTable()">
+      <option value="">-- Tat ca Feature --</option>
+    </select>
+    <select class="filter-sel" id="typeFilter" onchange="filterTable()">
+      <option value="">-- Tat ca Type --</option>
+      <option value="Service">Service</option>
+      <option value="Event-driven">Event-driven</option>
+      <option value="Cron Job">Cron Job</option>
+      <option value="API Endpoint">API Endpoint</option>
+      <option value="Batch Process">Batch Process</option>
+      <option value="Client-side">Client-side</option>
+    </select>
+    <select class="filter-sel" id="prioFilter" onchange="filterTable()">
+      <option value="">-- Tat ca Priority --</option>
+      <option value="Must">Must Have</option>
+      <option value="Should">Should Have</option>
+      <option value="Nice">Nice to Have</option>
+    </select>
+    <button class="btn btn-outline" onclick="window.print()">&#128424; In / PDF</button>
+    <button class="btn btn-outline" onclick="resetFilters()">&#8634; Xoa bo loc</button>
+    <span class="count-label" id="fnCount"></span>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-num">#</th>
+          <th class="col-feat">Feature</th>
+          <th class="col-fn">System Function</th>
+          <th class="col-type">Type</th>
+          <th class="col-trigger">Trigger / Schedule</th>
+          <th class="col-desc">Mo ta (Description)</th>
+          <th class="col-prio">Priority</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- NFR CONSTRAINTS -->
+  <div class="nfr-section">
+    <h3>&#128203; Rang buoc Phi Chuc nang (NFR) lien quan den Non-UI Functions</h3>
+    <div class="nfr-grid">
+      <div class="nfr-card">
+        <div class="nfr-card-title">&#9889; Hieu suat Auto-grading</div>
+        <div class="nfr-card-body">API nhan bai thi va tra ve Score + Ket qua phai hoan thanh trong <strong>&lt; 1,000ms</strong> ke tu thoi diem nhan request (ke ca khi co 2,000 HV nop bai dong thoi).</div>
+      </div>
+      <div class="nfr-card">
+        <div class="nfr-card-title">&#128231; Email SLA</div>
+        <div class="nfr-card-body">Enrollment Confirmation Email phai duoc gui trong <strong>vong 30 giay</strong> sau khi NV click Confirm. OTP Email phai den trong <strong>&lt; 60 giay</strong>.</div>
+      </div>
+      <div class="nfr-card">
+        <div class="nfr-card-title">&#128312; Offline Resilience</div>
+        <div class="nfr-card-body">Answer Cache Service phai luu du lieu cau tra loi tuc thoi vao LocalStorage. Khi ket noi phuc hoi, Sync Service phai dong bo trong <strong>&lt; 5 giay</strong> ma khong mat du lieu.</div>
+      </div>
+      <div class="nfr-card">
+        <div class="nfr-card-title">&#128274; Bao mat Token</div>
+        <div class="nfr-card-body">Parent Report Token phai co Time-to-Live (TTL) <strong>72 gio</strong>. JWT Access Token het han sau <strong>8 gio</strong>. Refresh Token: <strong>30 ngay</strong>. Tokens phai duoc ky bang HMAC-SHA256.</div>
+      </div>
+      <div class="nfr-card">
+        <div class="nfr-card-title">&#128202; Adaptive Engine Rule</div>
+        <div class="nfr-card-body">Competency Profile chi duoc cap nhat khi Answered Rate (so cau da tra loi / tong so cau) <strong>&gt; 30%</strong>. Bai tin hieu hoac bo cuoc khong tinh.</div>
+      </div>
+      <div class="nfr-card">
+        <div class="nfr-card-title">&#128203; Audit & Compliance</div>
+        <div class="nfr-card-body">Moi hanh dong write (Confirm Enrollment, Approve QB, Delete User) phai ghi Audit Log voi: Actor ID, Timestamp (UTC), Action type, Before/After state. Log luu tru <strong>toi thieu 1 nam</strong>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    HSA Platform — Non-UI Functions Specification v1.0 | Phase 1 | Senior BA | 15/04/2026<br>
+    Tai lieu nay bo sung cho: Context Diagram &rarr; Use Case Diagram &rarr; Screen Flow &rarr; Screen Authorization &rarr; Non-UI Functions
+  </div>
+</div>
+
+<script>
+  const typeColors = {
+    'Service':      {bg:'#e0f2fe', txt:'#0369a1'},
+    'Event-driven': {bg:'#d1fae5', txt:'#047857'},
+    'Cron Job':     {bg:'#ffe4e6', txt:'#be123c'},
+    'API Endpoint': {bg:'#fef3c7', txt:'#b45309'},
+    'Batch Process':{bg:'#ede9fe', txt:'#7c3aed'},
+    'Client-side':  {bg:'#f1f5f9', txt:'#374151'},
+  };
+
+  // F = Must Have, S = Should Have, N = Nice to Have
+  const features = [
+    {
+      name: 'Authentication & Security',
+      fns: [
+        {
+          fn:      'OTP Generator & Validator',
+          type:    'Service',
+          trigger: 'Khi user click "Quen mat khau" hoac "Dang ky tai khoan"',
+          desc:    'Tao ma OTP 6 chu so ngau nhien, luu vao Redis voi TTL = 10 phut. Xac thuc: so sanh OTP nhap vao voi gia tri trong Redis. Huy hieu luc sau 1 lan su dung thanh cong.',
+          prio:    'Must'
+        },
+        {
+          fn:      'JWT Token Lifecycle Manager',
+          type:    'Service',
+          trigger: 'Khi user dang nhap thanh cong; khi FE gui Refresh Token',
+          desc:    'Cap Access Token (TTL 8h) va Refresh Token (TTL 30 ngay). Xu ly logic Refresh: cap moi Access Token ma khong yeu cau dang nhap lai. Blacklist token bi thu hoi khi dang xuat.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Session Timeout Handler',
+          type:    'Service',
+          trigger: 'Khong co tuong tac sau 30 phut (tru khi dang thi)',
+          desc:    'Tu dong dang xuat user sau 30 phut khong hoat dong. Ngoai le: neu user dang trong bai thi (ExamAttempt.status = InProgress), khong duoc logout; thay vao do keo dai session den khi force-submit.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Password Hashing Service',
+          type:    'Service',
+          trigger: 'Khi tao tai khoan moi hoac doi mat khau',
+          desc:    'Bam mat khau bang thuat toan bcrypt (cost factor = 12 tren production). Tuyet doi khong luu mat khau dang plaintext. So sanh bang bcrypt.compare() khi xac thuc.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Rate Limiter (Auth endpoints)',
+          type:    'Service',
+          trigger: 'Moi request den /auth/login, /auth/otp, /auth/refresh',
+          desc:    'Gioi han toi da 10 lan thu dang nhap that bai trong 5 phut / IP. Sau khi vuot nguong, khoa tam thoi 15 phut va ghi canh bao Security Log. Bao ve chong Brute-force.',
+          prio:    'Must'
+        },
+      ]
+    },
+    {
+      name: 'Mock Exam Engine',
+      fns: [
+        {
+          fn:      'Exam Timer Countdown Engine',
+          type:    'Client-side',
+          trigger: 'Khoi dong khi HV click "Bat dau lam bai"',
+          desc:    'Dem nguoc thoi gian lam bai (JavaScript setInterval). Dong bo voi server-side StartTime de chong gian lan chinh gio may tinh. Hien thi canh bao khi con 10 phut va 5 phut.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Force-Submit Trigger',
+          type:    'Event-driven',
+          trigger: 'Khi Countdown = 0 HOAC server phat hien EndTime da qua',
+          desc:    'Tu dong nop bai khi het gio. Uu tien: (1) Client-side auto-call API Submit khi dem nguoc ve 0; (2) Server-side cron check ExamAttempt.EndTime - quet moi 1 phut, force-submit cac bai chua nop. Dam bao khong co bai nao bi treo.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Answer Cache Service (Offline Guard)',
+          type:    'Client-side',
+          trigger: 'Moi lan HV chon/thay doi dap an trong luc thi',
+          desc:    'Luu tuc thoi cau tra loi vao localStorage voi key = attemptId + questionId. Dam bao neu rut mang hoac lam moi trang, cau tra loi van duoc giu nguyen. Xoa cache sau khi Submit thanh cong.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Answer Sync Service (Reconnect Handler)',
+          type:    'Client-side',
+          trigger: 'Khi trinh duyet phat hien ket noi mang phuc hoi (online event)',
+          desc:    'Doc cache tu localStorage, gui batch PATCH /exam-attempts/{id}/answers len server. Dam bao dong bo trong < 5 giay sau khi co mang. Tranh mat du lieu khi mat mang trong luc thi.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Question Randomization Engine',
+          type:    'Service',
+          trigger: 'Khi HV bat dau mot ExamAttempt moi',
+          desc:    'Lay cau hoi tu Exam bang cach tron ngau nhien thu tu cau hoi va thu tu dap an A/B/C/D cho moi luot lam. Dam bao 2 HV lam cung de thi thay sap xep khac nhau. Ghi snapshot thu tu vao ExamAttempt.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Tab-switching Detector',
+          type:    'Client-side',
+          trigger: 'Khi HV chuyen sang tab khac hoac thu nho trinh duyet trong luc thi',
+          desc:    'Lang nghe su kien visibilitychange va blur tren window. Moi lan phat hien: ghi log canh bao len server (POST /exam-attempts/{id}/integrity-events). Sau 3 lan: hien popup canh bao cuoi cung. Sau 5 lan: tu dong force-submit. Disable chuot phai (contextmenu event) va Ctrl+C.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Exam Attempt Initializer API',
+          type:    'API Endpoint',
+          trigger: 'POST /exam-attempts — khi HV click "Bat dau lam bai"',
+          desc:    'Tao ban ghi ExamAttempt moi (status=InProgress, StartTime=now). Tra ve: danh sach cau hoi (da tron), thoi gian con lai (de sync voi server time). Kiem tra dieu kien tien quyet: Enrollment.status = CONFIRMED, chua co attempt InProgress nao cua de thi nay.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Exam Submit API',
+          type:    'API Endpoint',
+          trigger: 'POST /exam-attempts/{id}/submit — khi HV nop bai hoac force-submit',
+          desc:    'Nhan tap cau tra loi, cap nhat ExamAttempt (status=Submitted, EndTime=now, answers[]). Goi ngay Auto-grader de tinh diem. Phan hoi trong < 1,000ms voi Score va ket qua chi tiet. Idempotent: goi lai nhieu lan khong tinh diem 2 lan.',
+          prio:    'Must'
+        },
+      ]
+    },
+    {
+      name: 'Auto-grading & Scoring',
+      fns: [
+        {
+          fn:      'Multiple-Choice Auto-Grader',
+          type:    'Service',
+          trigger: 'Duoc goi ngay sau khi Exam Submit API nhan duoc request',
+          desc:    'So sanh tung cau tra loi cua HV voi CorrectAnswer trong Question entity. Khong ap dung negative marking (cau sai = 0 diem, khong tru diem). Tinh tong Score = (so cau dung / tong so cau) * MaxScore. Luu ket qua vao ExamAttempt.Score va ExamAttempt.answers[].isCorrect.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Per-Topic Score Breakdown Calculator',
+          type:    'Event-driven',
+          trigger: 'Sau khi Auto-Grader hoan thanh tinh diem tong',
+          desc:    'Nhom cac cau hoi theo TopicId, tinh diem trung binh tung chuyen de. Luu vao ExamAttempt.topicScores[]. Du lieu nay phuc vu cho RadarChart va Adaptive Engine. Phai xu ly truong hop Topic chua co cau nao de tranh chia cho 0.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Real-time Result API',
+          type:    'API Endpoint',
+          trigger: 'GET /exam-attempts/{id}/result — sau khi Submit thanh cong',
+          desc:    'Tra ve: Score tong, so cau dung/sai, Breakdown theo Topic, thu hang so voi lop (neu co du?). SLA: < 1,000ms. Cache ket qua 30 phut de tranh tinh toan lai khi HV tai trang nhieu lan.',
+          prio:    'Must'
+        },
+      ]
+    },
+    {
+      name: 'Adaptive Learning Engine',
+      fns: [
+        {
+          fn:      'Completion Rate Validator',
+          type:    'Event-driven',
+          trigger: 'Ngay sau khi Auto-Grader ghi ExamAttempt.answers[]',
+          desc:    'Tinh Answered Rate = (so cau da tra loi, ke ca sai) / tong so cau. Chi cho phep Adaptive Engine chay neu Answered Rate > 30%. Neu <= 30%: ghi log "Skipped: Low completion", khong cap nhat Competency Profile.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Competency Profile Updater',
+          type:    'Event-driven',
+          trigger: 'Sau khi Completion Rate Validator xac nhan >= 30%',
+          desc:    'Lay lich su topic scores cua HV (toi da 5 bai thi gan nhat), tinh diem trung binh truot (exponential weighted moving average). Cap nhat CompetencyProfile.topicScores[]. Ghi timestamp cap nhat cuoi cung.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Weak Topic Detector',
+          type:    'Event-driven',
+          trigger: 'Sau khi Competency Profile Updater hoan thanh',
+          desc:    'Dinh danh cac Topic co diem trung binh < 50% la "Lo hong kien thuc" (Knowledge Gap). Cap nhat flag CompetencyProfile.gaps[]. Danh sach nay duoc dung boi AI Recommendation Generator de goi y bai on.',
+          prio:    'Must'
+        },
+        {
+          fn:      'AI Recommendation Generator',
+          type:    'Event-driven',
+          trigger: 'Sau khi Weak Topic Detector cap nhat danh sach gaps[]',
+          desc:    'Dua tren gaps[], truy van Question Bank tim cac cau hoi cung Topic co do kho phu hop (Bloom Level thap hon) de on tap. Sap xep theo muc do uu tien (gap lon nhat truoc). Luu vao CompetencyProfile.recommendations[]. Gioi han toi da 10 goi y moi lan.',
+          prio:    'Should'
+        },
+        {
+          fn:      'Study Progress Timeline Builder',
+          type:    'Service',
+          trigger: 'GET /students/{id}/progress — khi HV xem man hinh tien do',
+          desc:    'Lay lich su cac ExamAttempt cua HV theo thu tu thoi gian, tinh Score tung bai, tao chuoi gia tri theo tung Topic qua cac moc thoi gian. Tra ve data series de ve Timeline Chart tren FE.',
+          prio:    'Should'
+        },
+      ]
+    },
+    {
+      name: 'Notification & Communication',
+      fns: [
+        {
+          fn:      'Email Dispatcher Service',
+          type:    'Service',
+          trigger: 'Nhan su kien tu Notification Queue (message broker)',
+          desc:    'Dich vu gui email dung SMTP / Transactional Email provider (SendGrid / Mailgun). Nhan message tu Queue, render HTML template, gui va ghi ket qua (Success/Fail). Co co che retry 3 lan neu that bai. Khong gui email truc tiep tu business logic.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Enrollment Confirmation Email Job',
+          type:    'Event-driven',
+          trigger: 'Khi NV click "Confirm Enrollment" — Enrollment.status -> CONFIRMED',
+          desc:    'Tao email xac nhan dang ky thanh cong gui cho HV: ten KH, thong tin GV, ngay khai giang, huong dan dang nhap. SLA: gui trong vong 30 giay. Dung template HTML co phong nguoi. Ghi log gui email.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Enrollment Rejection Email Job',
+          type:    'Event-driven',
+          trigger: 'Khi NV click "Reject Enrollment"',
+          desc:    'Gui email thong bao tu choi den HV kem theo ly do tu choi (lay tu truong Enrollment.rejectReason). Huong dan HV cac buoc tiep theo neu muon dang ky lai.',
+          prio:    'Must'
+        },
+        {
+          fn:      'OTP Email Sender',
+          type:    'Event-driven',
+          trigger: 'Khi user yeu cau Reset mat khau hoac xac thuc tai khoan moi',
+          desc:    'Gui email OTP 6 so. Ma OTP va cac thong so (tieu de, noi dung, dia chi nhan) phai duoc truyen qua Queue (khong hardcode). TTL cua OTP = 10 phut. SLA: email den trong < 60 giay.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Bulk Notification Broadcast Service',
+          type:    'Batch Process',
+          trigger: 'Khi NV click "Gui Thong bao hang loat" va chon danh sach HV',
+          desc:    'Lay danh sach UserId tu request, tao Notification record cho tung nguoi trong database, day vao Queue cho Email Dispatcher xu ly bat dong bo. Tranh block UI cua NV. Bao cao ket qua (so gui thanh cong / that bai) sau khi hoan thanh.',
+          prio:    'Should'
+        },
+        {
+          fn:      'Parent Report Link Generator',
+          type:    'Service',
+          trigger: 'Khi NV / GV xem ho so HV va click "Gui bao cao cho Phu huynh"',
+          desc:    'Tao URL duy nhat co chua signed token (HMAC-SHA256) voi payload: studentId, generatedAt, TTL = 72 gio. URL dang: /parent-report/{token}. Gui URL nay qua email den dia chi Phu huynh da dang ky. Khong yeu cau Phu huynh tao tai khoan.',
+          prio:    'Should'
+        },
+        {
+          fn:      'Under-enrollment Alert Cron',
+          type:    'Cron Job',
+          trigger: 'Chay moi ngay luc 08:00 SA (gio Viet Nam)',
+          desc:    'Quet toan bo Khoa hoc co status = Published va ngay khai giang trong vong 7 ngay toi. Neu so HV CONFIRMED < SoLuongToiThieu, tao thong bao "Canh bao KH sap khai giang chua du HV" gui cho GD va NV. Danh sach hien thi tren Director Dashboard.',
+          prio:    'Must'
+        },
+      ]
+    },
+    {
+      name: 'Enrollment Management',
+      fns: [
+        {
+          fn:      'Enrollment State Machine',
+          type:    'Service',
+          trigger: 'Moi khi NV thuc hien hanh dong tren Enrollment (Confirm / Reject)',
+          desc:    'Quan ly vong doi trang thai: PENDING -> CONFIRMED (sau xac nhan thanh toan) hoac PENDING -> REJECTED. Quy tac: mot Enrollment da CONFIRMED khong duoc chuyen lai PENDING. REJECTED co the tao Enrollment moi. Ghi lich su moi lan doi trang thai vao Audit Log.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Student Access Unlocker',
+          type:    'Event-driven',
+          trigger: 'Ngay sau khi Enrollment.status chuyen sang CONFIRMED',
+          desc:    'Cap quyen truy cap Khoa hoc cho Hoc vien: cap nhat Permission/ACL de HV thay Khoa hoc trong "Khoa hoc cua toi", mo khoa nut "Vao hoc", cho phep lam bai thi. Phai xu ly atomic voi viec cap nhat Enrollment.status.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Course Capacity Checker',
+          type:    'Service',
+          trigger: 'Khi co yeu cau tao Enrollment moi (POST /enrollments)',
+          desc:    'Kiem tra SoLuongHienTai (CONFIRMED enrollments) < SoLuongToiDa cua Khoa hoc truoc khi tao Enrollment. Neu da day: tra ve loi 409 Conflict voi message ro rang. Xu ly concurrency bang optimistic lock de tranh race condition.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Enrollment Auto-notification Fanout',
+          type:    'Event-driven',
+          trigger: 'Khi co Enrollment moi duoc tao (bat ke trang thai)',
+          desc:    'Sau khi Enrollment duoc tao, tu dong: (1) Tao Notification cho NV Ван hanh vao queue xu ly, (2) Gui ack email cho HV "Da nhan don dang ky, cho xac nhan". Phan tach logic notification khoi business logic chinh.',
+          prio:    'Must'
+        },
+      ]
+    },
+    {
+      name: 'Question Bank Processing',
+      fns: [
+        {
+          fn:      'QB File Import Parser',
+          type:    'Batch Process',
+          trigger: 'Khi GV upload file Word / Excel mau len /question-bank/import',
+          desc:    'Doc va parse file theo template chuan (cot: NoiDung, DapAnA, DapAnB, DapAnC, DapAnD, DapAnDung, Topic, Bloom, MonHoc). Validate tung hang: thieu truong bat buoc -> ghi loi, skip hang do. Khong luu du lieu thieu truong. Tra ve bao cao import: [tong hang, thanh cong, loi] sau khi hoan thanh.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Question Metadata Validator',
+          type:    'Service',
+          trigger: 'Truoc khi GV Submit cau hoi de phe duyet (POST /questions/{id}/submit)',
+          desc:    'Kiem tra cau hoi phai co du 3 metadata bat buoc: (1) TopicId khong rong, (2) DifficultyLevel / Bloom Level trong tap gia tri hop le [Nhan biet, Thong hieu, Van dung], (3) SubjectId hop le. Neu thieu bat ky truong nao: tra ve loi 422 voi danh sach truong bi thieu.',
+          prio:    'Must'
+        },
+        {
+          fn:      'QB Approval Workflow Engine',
+          type:    'Service',
+          trigger: 'Khi GV Submit (status: Draft -> Pending) hoac NV Approve/Reject (status: Pending -> Active/Rejected)',
+          desc:    'Quan ly vong doi trang thai cau hoi: Draft -> Pending -> Active / Rejected -> Draft (sua lai). Chi NV Ван hanh co quyen chuyen trang thai Pending sang Active hoac Rejected. Ghi Audit Log cho moi lan doi trang thai: ai doi, thoi gian, ly do (neu Reject).',
+          prio:    'Must'
+        },
+        {
+          fn:      'MathJax Server-side Pre-render Validator',
+          type:    'Service',
+          trigger: 'Khi GV luu cau hoi co chua cong thuc toan hoc (LaTeX syntax)',
+          desc:    'Kiem tra cu phap LaTeX / MathJax tren server truoc khi luu. Neu cu phap sai: tra ve canh bao va highlight phan bi loi. Khong block viec luu (vi FE da render MathJax rieng) nhung ghi flag "has_math_warning" vao Question record.',
+          prio:    'Should'
+        },
+        {
+          fn:      'QB Usage Statistics Aggregator',
+          type:    'Cron Job',
+          trigger: 'Chay moi dem luc 02:00 SA',
+          desc:    'Tinh lu so lan cau hoi duoc su dung trong cac de thi, ti le tra loi dung cua toan he thong per cau hoi. Luu vao Question.usageStats{timesUsed, globalAccuracyRate}. Phu vu man hinh "Kiem tra phan phoi QB" cho NV.',
+          prio:    'Should'
+        },
+      ]
+    },
+    {
+      name: 'Exam Creation',
+      fns: [
+        {
+          fn:      'Exam Matrix Builder (Auto-select)',
+          type:    'Service',
+          trigger: 'Khi GV click "Tao de thi tu QB" va chon cau hinh ma tran',
+          desc:    'Tu dong chon ngau nhien cau hoi tu QB theo ma tran: so luong cau hoi per Topic, per Bloom Level ma GV da cau hinh. Uu tien cau hoi chua duoc dung trong de nay. Neu QB khong du cau hoi theo ma tran: bao loi ro rang "Thieu X cau Topic Y Bloom Z".',
+          prio:    'Must'
+        },
+        {
+          fn:      'Exam Duplicate Guard',
+          type:    'Service',
+          trigger: 'Trong qua trinh Exam Matrix Builder chon cau hoi',
+          desc:    'Dam bao khong co cau hoi trung lap trong cung 1 ExamId. Neu cung 1 HV lam lai de thi nay, thu tu cau hoi se duoc tron lai nhung bo noi dung cau hoi van nhu cu (khong rut them cau hoi moi). Tron thu tu dap an moi lan.',
+          prio:    'Must'
+        },
+      ]
+    },
+    {
+      name: 'Reporting & Analytics',
+      fns: [
+        {
+          fn:      'Statistics Aggregation Cron',
+          type:    'Cron Job',
+          trigger: 'Chay moi dem luc 01:00 SA va vao 07:00 SA thu Hai hang tuan',
+          desc:    'Tong hop va ghi cache cac so lieu: tong Enrollment theo KH, doanh thu uoc tinh (hoc phi x CONFIRMED), ti le hoan thanh KH, diem trung binh toan trung tam. Luu vao bang Analytics_Snapshot. Director Dashboard doc tu bang nay de tranh query nang.',
+          prio:    'Must'
+        },
+        {
+          fn:      'PDF Report Exporter',
+          type:    'Batch Process',
+          trigger: 'Khi user click "Xuat PDF" tren cac man hinh bao cao',
+          desc:    'Render bao cao thanh PDF su dung HTML-to-PDF hoac thuat toan template. Xu ly bat dong bo: tao Job ID, tra ve ngay, FE poll trang thai. Khi PDF san sang: tra URL download (signed URL, het han sau 1 gio). Ho tro: Bao cao KH (GV/NV), Bao cao Tong hop Trung tam (GD/NV).',
+          prio:    'Should'
+        },
+        {
+          fn:      'Excel Report Exporter',
+          type:    'Batch Process',
+          trigger: 'Khi user click "Xuat Excel" tren cac man hinh bao cao',
+          desc:    'Tao file .xlsx tu du lieu bao cao. Bao gom nhieu Sheet: tong quan, chi tiet theo HV, chi tiet theo cau hoi. Xu dung thu vien ExcelJS hoac OpenpyXL. Cung mechanism bat dong bo nhu PDF Exporter. Gioi han kich thuoc file toi da 50MB.',
+          prio:    'Should'
+        },
+        {
+          fn:      'Radar Chart Data API',
+          type:    'API Endpoint',
+          trigger: 'GET /students/{id}/competency-profile — khi FE ve Radar Chart',
+          desc:    'Tra ve mang diem so theo tung Topic/Mon hoc tu CompetencyProfile. Format phu hop voi Chart.js RadarChart. Cache 15 phut. Neu chua co du lieu (HV chua lam bai), tra ve mang null/zero de FE hien thi trang thai chua co du lieu.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Lecturer Performance Calculator',
+          type:    'Cron Job',
+          trigger: 'Chay hang tuan vao Chu nhat 23:00',
+          desc:    'Tinh chi so hieu suat cho tung GV: diem trung binh HV cua KH do GV phu trach, ti le HV hoan thanh, so bai thi duoc tao và phe duyet. Luu vao LecturerStats. Hien thi tren Director Analytics > Hieu suat Giang vien.',
+          prio:    'Should'
+        },
+        {
+          fn:      'Class Histogram Builder API',
+          type:    'API Endpoint',
+          trigger: 'GET /courses/{id}/score-distribution — khi GV xem Pho diem KH',
+          desc:    'Group cac ExamAttempt theo khoang diem (0-10, 10-20, ..., 90-100), dem so HV trong moi khoang. Tra ve mang data de ve Histogram Chart. Loc theo: tat ca bai thi hoac chi bai thi gan nhat cua moi HV. Cache 30 phut.',
+          prio:    'Should'
+        },
+      ]
+    },
+    {
+      name: 'Data Integrity & System Maintenance',
+      fns: [
+        {
+          fn:      'Audit Log Writer',
+          type:    'Service',
+          trigger: 'Moi hanh dong write quan trong: Confirm Enrollment, Approve QB, doi trang thai KH, xoa/vo hieu hoa entity',
+          desc:    'Ghi ban ghi Audit Log bat dong bo vao bang AuditLog: ActorId, ActorRole, Action, EntityType, EntityId, OldValue (JSON), NewValue (JSON), Timestamp (UTC), IPAddress. Khong bao gio xoa AuditLog. Luu giu toi thieu 1 nam.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Soft Delete Handler',
+          type:    'Service',
+          trigger: 'Khi NV thuc hien hanh dong "Xoa" hoac "Vo hieu hoa" tren bat ky entity nao',
+          desc:    'Khong xoa du lieu vat ly (hard delete). Thay vao do: cap nhat cot isActive = false va deletedAt = now(). Moi query phai co filter WHERE isActive = true de loai tru ban ghi da xoa. Dam bao toan ven du lieu va kha nang audit.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Stale ExamAttempt Cleanup Cron',
+          type:    'Cron Job',
+          trigger: 'Chay moi 5 phut',
+          desc:    'Quet cac ban ghi ExamAttempt co status = InProgress nhung (StartTime + ThoiLuongDeThi + Buffer 5 phut) < now(). Force-submit nhung ban ghi nay: goi Auto-grader voi danh sach cau tra loi hien co. Tranh exams bi "treo" mai mai do loi mang hoac HV dong trinh duyet dot ngot.',
+          prio:    'Must'
+        },
+        {
+          fn:      'File Storage Service',
+          type:    'Service',
+          trigger: 'Khi GV upload bai giang, tai lieu; Khi NV import file cau hoi; Khi Export bao cao',
+          desc:    'Quan ly viec upload/download file qua Object Storage (AWS S3 / Cloudflare R2 / MinIO). Tao signed URL de FE upload truc tiep len storage (bypass server). Validate loai file va kich thuoc: bai giang max 100MB, PDF/Excel/Word; Import CQ max 10MB. Quyet dinh thu muc luu theo entityType/entityId.',
+          prio:    'Must'
+        },
+        {
+          fn:      'Cache Invalidation Service',
+          type:    'Event-driven',
+          trigger: 'Khi du lieu goc thay doi: Score duoc cap nhat, Enrollment duoc Confirm, QB duoc Approve',
+          desc:    'Xoa cache lien quan trong Redis khi du lieu goc bi thay doi. Vi du: Confirm Enrollment -> xoa cache "ds-khoa-hoc-hoc-vien-{userId}". Approve QB -> xoa cache "phan-phoi-qb-{courseId}". Tranh hien thi du lieu cu tren Dashboard.',
+          prio:    'Should'
+        },
+        {
+          fn:      'Database Backup Scheduler',
+          type:    'Cron Job',
+          trigger: 'Chay moi ngay luc 03:00 SA (gio Viet Nam)',
+          desc:    'Thuc hien backup toan bo database (full backup) len Object Storage voi retention 30 ngay. Tao snapshot de phuc hoi nhanh. Gui email bao cao backup thanh cong / that bai den Admin. Dam bao Disaster Recovery RPO <= 24 gio.',
+          prio:    'Must'
+        },
+      ]
+    },
+  ];
+
+  // ── RENDER TABLE ──
+  let fnIndex = 0;
+  const tbody = document.getElementById('tableBody');
+  const featFilter = document.getElementById('featureFilter');
+  let statMust=0, statShould=0, statNice=0;
+  const typeCounts = {};
+
+  features.forEach((feat, fi) => {
+    // Feature filter option
+    const opt = document.createElement('option');
+    opt.value = fi;
+    opt.textContent = feat.name;
+    featFilter.appendChild(opt);
+
+    // Feature group row
+    const gtr = document.createElement('tr');
+    gtr.className = 'feature-group' + (fi===0?' first-group':'');
+    gtr.dataset.group = fi;
+    gtr.innerHTML = '<td colspan="7">' + (fi+1) + '. ' + feat.name + '</td>';
+    tbody.appendChild(gtr);
+
+    feat.fns.forEach(f => {
+      fnIndex++;
+      if (f.prio==='Must') statMust++;
+      else if (f.prio==='Should') statShould++;
+      else statNice++;
+      typeCounts[f.type] = (typeCounts[f.type] || 0) + 1;
+
+      const tc = typeColors[f.type] || {bg:'#f1f5f9',txt:'#374155'};
+      const prioCls = f.prio==='Must' ? 'prio-must' : f.prio==='Should' ? 'prio-should' : 'prio-nice';
+      const prioLbl = f.prio==='Must' ? 'Must Have' : f.prio==='Should' ? 'Should Have' : 'Nice to Have';
+
+      const tr = document.createElement('tr');
+      tr.className = 'fn-row';
+      tr.dataset.group = fi;
+      tr.dataset.feat = feat.name.toLowerCase();
+      tr.dataset.fn = f.fn.toLowerCase();
+      tr.dataset.type = f.type;
+      tr.dataset.prio = f.prio;
+      tr.dataset.desc = f.desc.toLowerCase();
+
+      tr.innerHTML =
+        '<td class="col-num">' + String(fnIndex).padStart(2,'0') + '</td>' +
+        '<td class="col-feat">' + feat.name + '</td>' +
+        '<td class="col-fn">' + f.fn + '</td>' +
+        '<td class="col-type"><span class="type-pill" style="background:' + tc.bg + ';color:' + tc.txt + ';">' + f.type + '</span></td>' +
+        '<td class="col-trigger">' + f.trigger + '</td>' +
+        '<td class="col-desc">' + f.desc + '</td>' +
+        '<td class="col-prio"><span class="prio-pill ' + prioCls + '">' + prioLbl + '</span></td>';
+      tbody.appendChild(tr);
+    });
+  });
+
+  // Fill stats
+  document.getElementById('statTotal').textContent  = fnIndex;
+  document.getElementById('statMust').textContent   = statMust;
+  document.getElementById('statShould').textContent = statShould;
+  document.getElementById('statNice').textContent   = statNice;
+  document.getElementById('statSvc').textContent    = typeCounts['Service']      || 0;
+  document.getElementById('statEvent').textContent  = typeCounts['Event-driven'] || 0;
+  document.getElementById('statCron').textContent   = typeCounts['Cron Job']     || 0;
+  document.getElementById('statApi').textContent    = typeCounts['API Endpoint'] || 0;
+  document.getElementById('statBatch').textContent  = typeCounts['Batch Process']|| 0;
+  document.getElementById('statClient').textContent = typeCounts['Client-side']  || 0;
+
+  // ── FILTER ──
+  function filterTable() {
+    const search  = document.getElementById('searchInput').value.trim().toLowerCase();
+    const featVal = document.getElementById('featureFilter').value;
+    const typeVal = document.getElementById('typeFilter').value;
+    const prioVal = document.getElementById('prioFilter').value;
+    let visible = 0;
+
+    document.querySelectorAll('.fn-row').forEach(row => {
+      const matchSearch = !search || row.dataset.fn.includes(search) || row.dataset.desc.includes(search) || row.dataset.feat.includes(search);
+      const matchFeat   = !featVal || row.dataset.group === featVal;
+      const matchType   = !typeVal || row.dataset.type  === typeVal;
+      const matchPrio   = !prioVal || row.dataset.prio  === prioVal;
+      const show = matchSearch && matchFeat && matchType && matchPrio;
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    document.querySelectorAll('.feature-group').forEach(gtr => {
+      const any = [...document.querySelectorAll('.fn-row[data-group="' + gtr.dataset.group + '"]')].some(r => !r.classList.contains('hidden'));
+      gtr.classList.toggle('hidden', !any || (featVal && gtr.dataset.group !== featVal));
+    });
+
+    document.getElementById('fnCount').textContent = 'Hien thi ' + visible + ' / ' + fnIndex + ' ham';
+  }
+
+  function resetFilters() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('featureFilter').value = '';
+    document.getElementById('typeFilter').value = '';
+    document.getElementById('prioFilter').value = '';
+    filterTable();
+  }
+
+  filterTable();
+</script>
+</body>
+</html>

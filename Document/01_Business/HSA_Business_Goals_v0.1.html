@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Goals & KPIs - Smart HSA Platform (Trung tâm Ôn luyện)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #6366f1;
+            --text-main: #334155;
+            --border: #e2e8f0;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; color: var(--text-main); line-height: 1.6; padding: 2rem; }
+        .doc-container { max-width: 980px; margin: 0 auto; background: white; padding: 4rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08); border-top: 6px solid var(--accent); border-radius: 10px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 2rem; gap: 2rem; }
+        .title { font-size: 2rem; margin: 0 0 0.4rem 0; color: var(--primary); }
+        .subtitle { color: #64748b; font-size: 0.98rem; }
+        .status-draft { display: inline-block; background: #fefce8; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.82rem; font-weight: bold; border: 1px solid #fef08a; white-space: nowrap; }
+        h2 { color: var(--primary); font-size: 1.3rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; margin-top: 2.5rem; }
+        .grid-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem; }
+        .card { border: 1px solid var(--border); padding: 1.5rem; border-radius: 10px; background: #f8fafc; transition: box-shadow 0.2s; }
+        .card:hover { box-shadow: 0 4px 12px rgba(99,102,241,0.12); }
+        .card h3 { margin-top: 0; display: flex; align-items: center; gap: 0.5rem; font-size: 1rem; }
+        .card.blue h3 { color: #1d4ed8; }
+        .card.green h3 { color: #047857; }
+        .card.amber h3 { color: #b45309; }
+        .card.purple h3 { color: #5b21b6; }
+        .metric-badge { padding: 0.3rem 0.7rem; border-radius: 6px; font-weight: 700; font-size: 1.05rem; display: inline-block; margin-bottom: 0.9rem; }
+        .metric-badge.indigo { background: #e0e7ff; color: #3730a3; }
+        .metric-badge.green  { background: #dcfce7; color: #166534; }
+        .metric-badge.amber  { background: #fef3c7; color: #92400e; }
+        .metric-badge.purple { background: #f5f3ff; color: #5b21b6; }
+        ul { padding-left: 1.4rem; margin-bottom: 0; }
+        li { margin-bottom: 0.4rem; font-size: 0.92rem; }
+        .pain-item { background: #fef2f2; border-left: 3px solid #f87171; padding: 0.8rem 1rem; border-radius: 6px; margin-bottom: 0.8rem; font-size: 0.92rem; }
+        .pain-item strong { color: #b91c1c; }
+        .vision-box { background: linear-gradient(135deg, #1e1b4b, #312e81); color: white; padding: 2rem; border-radius: 10px; margin-top: 2.5rem; }
+        .vision-box h3 { color: #a5b4fc; margin-top: 0; font-size: 1rem; letter-spacing: 0.5px; }
+        .vision-box p { margin: 0; font-size: 0.93rem; color: #e0e7ff; line-height: 1.8; }
+        .kpi-note { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.82rem; color: #64748b; margin-top: 0.75rem; }
+        .kpi-note::before { content: '📊'; flex-shrink: 0; margin-top: 1px; }
+        .business-model-box { background: #f0fdf4; border: 1px solid #86efac; padding: 1.25rem 1.5rem; border-radius: 8px; margin-top: 1rem; }
+        .business-model-box strong { color: #15803d; }
+    </style>
+</head>
+<body>
+    <div class="doc-container">
+        <div class="header">
+            <div>
+                <h1 class="title">Danh sách Mục tiêu Kinh doanh & KPIs</h1>
+                <div class="subtitle">Hiện trạng (As-Is) &amp; Mục tiêu hướng tới (To-Be) của <strong>Smart HSA Platform</strong> — Trung tâm Ôn luyện ĐGNL</div>
+            </div>
+            <div style="flex-shrink: 0;">
+                <span class="status-draft">Version: v0.1 (Draft)</span>
+            </div>
+        </div>
+
+        <div class="business-model-box">
+            <strong>🏢 Mô hình Kinh doanh:</strong> Trung tâm Ôn luyện ĐGNL tư nhân — thu học phí từ Học viên đăng ký Khóa học, mời Giảng viên chuyên gia về giảng dạy theo hợp đồng thời vụ. Website là kênh tuyển sinh và nền tảng học tập chính thức.
+        </div>
+
+        <h2>1. Vấn đề Hiện tại (Pain Points — As-Is Context)</h2>
+        <p>Phân tích từ quá trình phỏng vấn Giám đốc, Nhân viên vận hành, Giảng viên và Học viên của Trung tâm Ôn luyện ĐGNL, chúng ta gặp <strong>4 điểm nghẽn</strong> cốt lõi:</p>
+
+        <div class="pain-item">
+            <strong>1. Quy trình Đăng ký Khóa học hoàn toàn thủ công:</strong> Học viên phải nhắn tin Zalo/Facebook hoặc đến trực tiếp để đăng ký. Nhân viên ghi tên vào Excel, dễ sai sót, không theo dõi được trạng thái đăng ký real-time. Không thể tuyển sinh ngoài giờ hành chính.
+        </div>
+        <div class="pain-item">
+            <strong>2. Học viên trả tiền nhưng không biết mình đang tiến bộ ra sao:</strong> Sau các buổi thi thử, học viên chỉ nhận được điểm tổng mà không có phân tích chuyên sâu theo chuyên đề. Không có lộ trình ôn tập cá nhân hóa để biết nên học gì tiếp theo.
+        </div>
+        <div class="pain-item">
+            <strong>3. Giảng viên thiếu dữ liệu để dạy hiệu quả:</strong> Giảng viên dạy theo giáo trình cố định mà không biết học viên nào đang yếu phần nào. Phải chấm bài thi tay tốn thời gian. Không có ngân hàng câu hỏi chung để chia sẻ giữa các giảng viên.
+        </div>
+        <div class="pain-item">
+            <strong>4. Không có dữ liệu quản trị để Giám đốc ra quyết định:</strong> Không biết khóa học nào đang đông học viên, khóa nào sắp hết chỗ, giảng viên nào đang được học viên đánh giá tốt nhất, doanh thu thực tế tháng này là bao nhiêu.
+        </div>
+
+        <h2>2. Mục tiêu Kinh doanh (SMART Business Goals)</h2>
+        <p>Smart HSA Platform Phase 1 khi đưa vào vận hành (dự kiến sau <strong>4 tháng</strong>) phải đạt được các KPI đo lường cụ thể dưới đây:</p>
+
+        <div class="grid-cards">
+            <div class="card blue">
+                <h3>📋 1. Số hóa Quy trình Tuyển sinh (Enrollment Digitalization)</h3>
+                <div class="metric-badge indigo">+40% đăng ký Online</div>
+                <p>Giải phóng nhân viên khỏi việc nhận đăng ký thủ công, mở rộng kênh tuyển sinh 24/7.</p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> 40% đơn đăng ký khóa học mới đến qua form online trong 3 tháng đầu vận hành.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Enrollment Portal với form đăng ký rõ ràng, thông tin Giảng viên và Khóa học minh bạch, Email xác nhận tự động trong 30 giây.</li>
+                </ul>
+                <div class="kpi-note">Đo lường: Tỷ lệ đơn đăng ký qua hệ thống / Tổng đơn đăng ký theo tháng.</div>
+            </div>
+
+            <div class="card green">
+                <h3>🎯 2. Nâng cao Kết quả Học viên (Learning Outcomes)</h3>
+                <div class="metric-badge green">+20% điểm HSA</div>
+                <p>Học viên bỏ học phí ra phải thấy được kết quả học tập rõ ràng — đây là uy tín cốt lõi của trung tâm.</p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> Tăng trung bình 20% điểm thi thử HSA của học viên sau 8 tuần sử dụng hệ thống.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Adaptive Learning phân tích Competency Profile và đề xuất chuyên đề ôn luyện phù hợp sau mỗi bài Mock Exam.</li>
+                </ul>
+                <div class="kpi-note">Đo lường: So sánh điểm thi thử T0 vs T8 của cùng nhóm học viên.</div>
+            </div>
+
+            <div class="card amber">
+                <h3>⚡ 3. Tối ưu Năng suất Giảng viên (Lecturer Productivity)</h3>
+                <div class="metric-badge amber">Tiết kiệm 90% thời gian chấm bài</div>
+                <p>Giải phóng Giảng viên khỏi công việc hành chính để tập trung vào chất lượng giảng dạy — điều học viên thực sự trả tiền cho.</p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> Chấm điểm trắc nghiệm tự động 100%, kết quả real-time ngay khi học viên nộp bài. Dashboard khóa học cập nhật tức thì.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Auto-grading Engine + Lecturer Dashboard với Radar Chart theo từng khóa học được phân công.</li>
+                </ul>
+                <div class="kpi-note">Đo lường: Khảo sát Giảng viên về giờ dành cho chấm bài/tổng hợp báo cáo trước và sau khi dùng hệ thống.</div>
+            </div>
+
+            <div class="card purple">
+                <h3>📈 4. Dữ liệu Quản trị Thông minh (Center Intelligence)</h3>
+                <div class="metric-badge purple">Dashboard 360° thời gian thực</div>
+                <p>Trao quyền kiểm soát cho Giám đốc Trung tâm thông qua dữ liệu — ra quyết định mở khóa mới, gia hạn hợp đồng Giảng viên dựa trên số liệu thực tế.</p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> Giám đốc có thể xem số lượng đăng ký, tỷ lệ hoàn thành khóa học, và hiệu quả học tập theo từng khóa học/giảng viên bất cứ lúc nào.</li>
+                    <li><strong>Cách Platform hỗ trợ:</strong> Center Management Dashboard với báo cáo tuyển sinh, doanh thu (tracking trạng thái thanh toán), performance theo khóa học.</li>
+                </ul>
+                <div class="kpi-note">Đo lường: Tần suất Giám đốc truy cập Dashboard/tuần + Số quyết định kinh doanh dựa trên dữ liệu được ghi nhận.</div>
+            </div>
+        </div>
+
+        <div class="vision-box">
+            <h3>🏆 TUYÊN NGÔN DỰ ÁN (PROJECT VISION STATEMENT)</h3>
+            <p>"Smart HSA Platform không chỉ là phần mềm quản lý trung tâm hay hệ thống thi online đơn thuần. Đây là <strong>Đòn bẩy tăng trưởng</strong> — giúp Trung tâm Ôn luyện ĐGNL mở rộng tuyển sinh 24/7 không cần thêm nhân sự, đồng thời là <strong>Cam kết chất lượng</strong> với học viên rằng mỗi đồng học phí đều được đo lường bằng kết quả điểm thi thật sự cải thiện." — <em>BA Lead</em></p>
+        </div>
+    </div>
+</body>
+</html>

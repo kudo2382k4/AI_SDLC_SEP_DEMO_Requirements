@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSA_Project_Charter_v0.2 - Trung tâm Ôn luyện ĐGNL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            color: #4a4a4a;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background: #e9ecef;
+        }
+        .document-wrapper {
+            background: #fff;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 60px 80px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            border-top: 5px solid #6366f1;
+        }
+        .project-badge {
+            display: inline-block;
+            background: #ede9fe;
+            color: #4f46e5;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 1.2rem;
+            border: 1px solid #c4b5fd;
+        }
+        .org-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            margin-left: 0.5rem;
+            border: 1px solid #fde68a;
+        }
+        h1 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 2.4em;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+        .header-divider {
+            border-bottom: 2px solid #c4b5fd;
+            margin-bottom: 35px;
+            margin-top: 20px;
+        }
+        h2 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.45em;
+            color: #6366f1;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1.12em;
+            color: #4f46e5;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        p {
+            margin-bottom: 16px;
+            font-size: 14.5px;
+            text-align: justify;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+        table, th, td {
+            border: 1px solid #d1d5db;
+        }
+        th, td {
+            padding: 10px 15px;
+        }
+        th {
+            font-weight: 600;
+            color: #4f46e5;
+            background: #f5f3ff;
+            text-align: center;
+        }
+        td {
+            color: #374151;
+        }
+        .overview-table td:first-child {
+            color: #6366f1;
+            font-weight: 600;
+            width: 38%;
+            background: #faf5ff;
+        }
+        .scope-in {
+            background: #f0fdf4;
+            border-left: 3px solid #16a34a;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 1rem;
+        }
+        .scope-out {
+            background: #fff1f2;
+            border-left: 3px solid #dc2626;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        .scope-in strong { color: #15803d; }
+        .scope-out strong { color: #b91c1c; }
+        .scope-out ul, .scope-in ul {
+            margin: 0.5rem 0 0 0;
+            padding-left: 1.2rem;
+        }
+        .scope-out li, .scope-in li { font-size: 14px; margin-bottom: 3px; }
+        .signatures {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            gap: 2rem;
+        }
+        .signature-block { width: 45%; }
+        .signature-line { border-bottom: 1px solid #6b7280; margin-bottom: 8px; height: 45px; }
+        .signature-name { font-size: 14px; color: #6b7280; }
+        .page-break { margin-top: 55px; }
+        .risk-high td:first-child { color: #b91c1c; font-weight: 600; }
+        .risk-med td:first-child  { color: #d97706; font-weight: 600; }
+        @media print {
+            body { background: #fff; }
+            .document-wrapper { box-shadow: none; margin: 0; padding: 20px; border-top: none; }
+            .page-break { page-break-before: always; margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="document-wrapper">
+    <div class="project-badge">📘 SMART HSA PLATFORM — EdTech Project</div>
+    <div class="org-badge">🏢 Trung tâm Ôn luyện Đánh giá Năng lực (ĐGNL)</div>
+    <h1>Project Charter</h1>
+    <div class="header-divider"></div>
+
+    <h2>Project Overview</h2>
+    <table class="overview-table">
+        <tbody>
+            <tr>
+                <td>Project Name:</td>
+                <td>Hệ thống Học tập Thông minh &amp; Đánh giá Năng lực (Smart HSA Platform)</td>
+            </tr>
+            <tr>
+                <td>Tổ chức phát triển:</td>
+                <td>Trung tâm Ôn luyện Đánh giá Năng lực ĐGNL (Tổ chức tư nhân)</td>
+            </tr>
+            <tr>
+                <td>Project Sponsor:</td>
+                <td>Giám đốc / Chủ sở hữu Trung tâm Ôn luyện ĐGNL</td>
+            </tr>
+            <tr>
+                <td>Project Manager (PM):</td>
+                <td>Business Analyst Lead (Senior BA — EdTech)</td>
+            </tr>
+            <tr>
+                <td>PM Email Address:</td>
+                <td>ba.lead@smarthsa.vn</td>
+            </tr>
+            <tr>
+                <td>PM Phone Number:</td>
+                <td>090x.xxx.xxx</td>
+            </tr>
+            <tr>
+                <td>Business Unit:</td>
+                <td>Ban Vận hành &amp; Bộ phận Công nghệ Thông tin Trung tâm</td>
+            </tr>
+            <tr>
+                <td>Expected Start Date:</td>
+                <td>01/04/2026</td>
+            </tr>
+            <tr>
+                <td>Expected Completion Date (Phase 1):</td>
+                <td>15/07/2026</td>
+            </tr>
+            <tr>
+                <td>Estimated Budget:</td>
+                <td>Theo dự toán nội bộ — Cloud infrastructure (AWS/GCP) + team phát triển</td>
+            </tr>
+            <tr>
+                <td>Target Users:</td>
+                <td>Học viên THPT lớp 11–12 đăng ký khóa học tại Trung tâm; Giảng viên được mời; Nhân viên vận hành Trung tâm</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Project Description</h2>
+
+    <h3>Purpose</h3>
+    <p>Dự án Smart HSA Platform nhằm số hóa và nâng cấp toàn bộ quy trình vận hành của Trung tâm Ôn luyện ĐGNL: từ việc học viên <strong>đăng ký khóa học trực tuyến</strong> qua website, đến quá trình học tập, luyện thi thử (Mock Exam) và nhận phân tích năng lực cá nhân hóa. Đồng thời, hệ thống tự động hóa quy trình chấm điểm cho Giảng viên và cung cấp Dashboard quản trị doanh thu/tuyển sinh cho Giám đốc Trung tâm.</p>
+    <p>Trung tâm hiện thu học phí từ học viên đăng ký và mời Giảng viên chuyên gia về giảng dạy theo hợp đồng thời vụ. Mô hình này đòi hỏi một nền tảng kỹ thuật số đủ mạnh để vừa phục vụ công tác tuyển sinh, vừa đảm bảo chất lượng đào tạo và trải nghiệm học viên xứng đáng với học phí đã bỏ ra.</p>
+
+    <h3>Scope</h3>
+    <div class="scope-in">
+        <strong>✅ Bao gồm (In-scope — Phase 1):</strong>
+        <ul>
+            <li><strong>Enrollment Portal (Cổng Đăng ký Khóa học):</strong> Học viên duyệt danh sách khóa học, xem thông tin Giảng viên, điền form đăng ký trực tuyến, nhận email xác nhận tự động.</li>
+            <li><strong>Student Portal:</strong> Làm bài Mock Exam chuẩn cấu trúc ĐGNL, xem kết quả và lời giải, xem Competency Profile (Radar Chart). UI responsive tối ưu Mobile/Tablet.</li>
+            <li><strong>Adaptive Learning Engine:</strong> Phân tích điểm mạnh/yếu theo phân môn, đề xuất chuyên đề ôn luyện cá nhân hoá.</li>
+            <li><strong>Question Bank Module:</strong> Tạo và import đề thi theo ma trận chuẩn, phân loại độ khó (Bloom's Taxonomy), dùng chung giữa các Giảng viên.</li>
+            <li><strong>Lecturer Portal:</strong> Quản lý khóa học được phân công, xem danh sách học viên đăng ký, Radar Chart năng lực, giao bài tập bổ trợ.</li>
+            <li><strong>Auto-grading Engine:</strong> Chấm điểm tự động tức thì (Real-time) ngay khi học viên nộp bài.</li>
+            <li><strong>Center Management Dashboard:</strong> Giám đốc/Nhân viên theo dõi số lượng đăng ký, tracking trạng thái thanh toán, số liệu học tập theo từng khóa học/giảng viên.</li>
+        </ul>
+    </div>
+    <div class="scope-out">
+        <strong>🚫 Không bao gồm (Out-of-scope — Phase 1, TUYỆT ĐỐI KHÔNG LÀM):</strong>
+        <ul>
+            <li>Tích hợp Cổng thanh toán trực tuyến (VNPAY, Momo, Banking API) — Phase 1 xác nhận thanh toán thủ công.</li>
+            <li>Module Quản lý Hợp đồng &amp; Thanh toán thù lao Giảng viên (HR/Payroll).</li>
+            <li>Livestream / Video học trực tiếp (chỉ ôn luyện qua Mock Exam và tài liệu tĩnh).</li>
+            <li>Cổng Xét tuyển Đại học thực tế (University Admission Portal).</li>
+            <li>Chatbot tư vấn tâm lý phi học thuật hoặc giải trí.</li>
+        </ul>
+    </div>
+
+    <div class="page-break"></div>
+
+    <h3>Key Deliverables</h3>
+    <p>
+        1. <strong>Enrollment Portal (Website công khai):</strong> Trang giới thiệu, danh sách khóa học, profile Giảng viên, form đăng ký online.<br>
+        2. <strong>Student Portal (Web App):</strong> Giao diện làm bài Mock Exam chuẩn ĐGNL, xem kết quả &amp; Competency Profile.<br>
+        3. <strong>Lecturer Portal (Web App):</strong> Dashboard quản lý khóa học được giao, theo dõi học viên, giao bài tập.<br>
+        4. <strong>Center Admin Panel:</strong> Quản lý đăng ký học viên, xác nhận thanh toán, phân công Giảng viên, Question Bank, báo cáo tổng quan.<br>
+        5. <strong>Bộ tài liệu Kỹ thuật:</strong> SRS (Software Requirements Specification), ERD Database Schema, System Context Diagram, API Documentation.
+    </p>
+
+    <h3>Resources</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Team Members</th>
+                <th>Infrastructure</th>
+                <th>Tools &amp; Platforms</th>
+                <th>Third-party Services</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1 Project Manager / Senior BA</td>
+                <td>Cloud Server (AWS/GCP)</td>
+                <td>Figma, Jira, Confluence</td>
+                <td>MathJax (LaTeX rendering)</td>
+            </tr>
+            <tr>
+                <td>1 UI/UX Designer, 1 QA Engineer</td>
+                <td>CDN &amp; Object Storage (S3)</td>
+                <td>PostgreSQL / Redis</td>
+                <td>Firebase Cloud Messaging (Push)</td>
+            </tr>
+            <tr>
+                <td>2 Backend Developer, 1 Frontend Dev</td>
+                <td>Load Balancer (High Availability)</td>
+                <td>React.js / Next.js + Node.js</td>
+                <td>SMTP Email Service (SendGrid / SES)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Schedule — Phase 1 Milestones</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Key Milestone</th>
+                <th>Start Date</th>
+                <th>Completion Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Khảo sát Requirement &amp; Chốt SRS Baseline</td>
+                <td>01/04/2026</td>
+                <td>14/04/2026</td>
+            </tr>
+            <tr>
+                <td>Thiết kế UI/UX (Enrollment Portal + Portal Học viên/GV) &amp; ERD / Context Diagram</td>
+                <td>15/04/2026</td>
+                <td>30/04/2026</td>
+            </tr>
+            <tr>
+                <td>Sprint 1: Enrollment Portal + Center Admin (Đăng ký, Quản lý Khóa học, Giảng viên)</td>
+                <td>01/05/2026</td>
+                <td>31/05/2026</td>
+            </tr>
+            <tr>
+                <td>Sprint 2: Student Portal (Mock Exam, Auto-grading) + Lecturer Portal + Adaptive Learning</td>
+                <td>01/06/2026</td>
+                <td>30/06/2026</td>
+            </tr>
+            <tr>
+                <td>User Acceptance Testing (UAT) &amp; Go-Live Phase 1</td>
+                <td>01/07/2026</td>
+                <td>15/07/2026</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Risks &amp; Mitigation</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Potential Risk</th>
+                <th>Perceived Impact</th>
+                <th>Proposed Mitigation Strategy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="risk-high">
+                <td>Học viên &amp; Phụ huynh không tin tưởng đăng ký online, muốn đến trực tiếp (Low Digital Adoption)</td>
+                <td>Cao (High)</td>
+                <td>Thiết kế Enrollment Portal đơn giản, dễ hiểu. Nhân viên xử lý song song cả kênh online và offline trong 3 tháng đầu. Email xác nhận tự động tạo sự tin tưởng.</td>
+            </tr>
+            <tr class="risk-high">
+                <td>Hệ thống quá tải khi 2,000+ học viên thi đồng thời (Load Spike)</td>
+                <td>Cao (High)</td>
+                <td>Thiết kế kiến trúc Auto-scaling trên Cloud từ đầu. Load Testing bằng k6/JMeter trước UAT tối thiểu 1 tuần.</td>
+            </tr>
+            <tr class="risk-med">
+                <td>Giảng viên (hợp đồng thời vụ) không nhiệt tình học cách dùng hệ thống mới</td>
+                <td>Trung bình (Medium)</td>
+                <td>Tổ chức Demo ngắn (30 phút) cho Giảng viên. Đảm bảo Lecturer Portal UI cực kỳ đơn giản, chỉ cần 3 bước để xem kết quả học viên của mình.</td>
+            </tr>
+            <tr>
+                <td>Chất lượng Ngân hàng Câu hỏi không đạt chuẩn ma trận ĐGNL</td>
+                <td>Trung bình (Medium)</td>
+                <td>Áp dụng Quy tắc Duyệt câu hỏi: bắt buộc gắn Chuyên đề + Mức độ khó (Bloom) + Môn học trước khi đưa vào đề thi chính thức.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Approval and Signatures</h2>
+    <div class="signatures">
+        <div class="signature-block">
+            <div class="signature-line"></div>
+            <div class="signature-name">[Tên], Project Sponsor (Giám đốc / Chủ Trung tâm Ôn luyện ĐGNL)</div>
+        </div>
+        <div class="signature-block">
+            <div class="signature-line"></div>
+            <div class="signature-name">[Tên], Project Manager / BA Lead</div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

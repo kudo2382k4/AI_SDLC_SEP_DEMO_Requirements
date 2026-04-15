@@ -1,0 +1,152 @@
+<mxfile host="app.diagrams.net" version="21.6.5" type="device">
+  <diagram id="WF04" name="WF04 - Course Management Workflow">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" pageWidth="1700" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0" /><mxCell id="1" parent="0" />
+        <mxCell id="bg" value="" style="rounded=0;fillColor=#f8fafc;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="820" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr" value="" style="rounded=0;fillColor=#0f172a;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="dochdr_t" value="HSA Platform — Smart High School Assessment | WF04: Quy trình Quản lý &amp; Khai giảng Khóa học (Course Management Workflow) | Phase 1 | Senior BA v1.0" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1700" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- POOL -->
+        <mxCell id="pool" value="WF04 — Quy trình Quản lý &amp; Khai giảng Khóa học (Course Management Workflow)" style="swimlane;startSize=40;horizontal=1;fillColor=#0f172a;fontColor=#e2e8f0;strokeColor=#4338ca;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="55" width="1650" height="710" as="geometry" />
+        </mxCell>
+
+        <!-- PHASE HEADERS -->
+        <mxCell id="ph_bg" value="" style="rounded=0;fillColor=#e2e8f0;strokeColor=#94a3b8;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="40" width="1620" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph1" value="① Lập kế hoạch &amp; Tạo Khóa học" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="30" y="40" width="480" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph2" value="② Phân công Giảng viên &amp; Chuẩn bị" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="510" y="40" width="550" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ph3" value="③ Khai giảng &amp; Vận hành" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=11;fontColor=#1e293b;" vertex="1" parent="pool">
+          <mxGeometry x="1060" y="40" width="590" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="pd1" value="" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" vertex="1" parent="pool">
+          <mxGeometry x="510" y="40" width="1" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="pd2" value="" style="line;strokeColor=#64748b;strokeWidth=1;dashed=1;" vertex="1" parent="pool">
+          <mxGeometry x="1060" y="40" width="1" height="670" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 1: Giám đốc — y=68, h=130 -->
+        <mxCell id="l1" value="Giám đốc / Chủ Trung tâm" style="swimlane;startSize=30;horizontal=0;fillColor=#fffbeb;strokeColor=#b45309;fontColor=#78350f;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="68" width="1650" height="130" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 2: Quản lý / NV — y=198, h=200 -->
+        <mxCell id="l2" value="Quản lý / NV Vận hành" style="swimlane;startSize=30;horizontal=0;fillColor=#f5f3ff;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="198" width="1650" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 3: Giảng viên — y=398, h=185 -->
+        <mxCell id="l3" value="Giảng viên" style="swimlane;startSize=30;horizontal=0;fillColor=#ecfdf5;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="398" width="1650" height="185" as="geometry" />
+        </mxCell>
+
+        <!-- LANE 4: Hệ thống — y=583, h=127 -->
+        <mxCell id="l4" value="Hệ thống" style="swimlane;startSize=30;horizontal=0;fillColor=#f0fdf4;strokeColor=#047857;fontColor=#022c22;fontSize=11;fontStyle=1;" vertex="1" parent="pool">
+          <mxGeometry y="583" width="1650" height="127" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 1 SHAPES (Giám đốc) ═══ -->
+        <mxCell id="s11s" value="&lt;b&gt;Bắt đầu&lt;/b&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontColor=#78350f;fontSize=10;fontStyle=1;" vertex="1" parent="l1">
+          <mxGeometry x="50" y="43" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="s11a" value="Xem xét đề xuất mở Khóa học mới (nhu cầu thị trường, KPI tuyển sinh)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontColor=#78350f;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="185" y="39" width="195" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11b" value="Phê duyệt mở Khóa học &amp; giao cho Quản lý triển khai" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontColor=#78350f;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="400" y="39" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s11c" value="Theo dõi Dashboard: Tuyển sinh, Doanh thu, Tỷ lệ khai giảng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontColor=#78350f;fontSize=10;" vertex="1" parent="l1">
+          <mxGeometry x="1130" y="39" width="200" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 2 SHAPES (Quản lý / NV) ═══ -->
+        <mxCell id="s21a" value="Tạo Khóa học trên hệ thống (Tên KH, môn, thời gian, học phí, số lượng HV tối đa)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="550" y="75" width="185" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21b" value="Chọn Giảng viên phù hợp &amp; gửi phân công vào KH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="760" y="75" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21dec" value="Đủ HV đăng ký tối thiểu?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="960" y="60" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s21yes" value="Chốt danh sách HV, xác nhận khai giảng" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="1150" y="75" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s21no" value="Tiếp tục thu hút HV đăng ký (marketing / gia hạn)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;" vertex="1" parent="l2">
+          <mxGeometry x="960" y="152" width="145" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 3 SHAPES (Giảng viên) ═══ -->
+        <mxCell id="s31a" value="Nhận thông báo được phân công vào Khóa học" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="760" y="67" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s31dec" value="Chấp nhận phân công?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="960" y="52" width="145" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s31yes" value="Upload bài giảng, tạo Exam trong KH được phân công" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="1150" y="67" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s31no" value="Từ chối — Quản lý phân công GV khác" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" vertex="1" parent="l3">
+          <mxGeometry x="960" y="143" width="145" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ LANE 4 SHAPES (Hệ thống) ═══ -->
+        <mxCell id="s41a" value="Lưu Khóa học, publish trang đăng ký. Set Status='Đang mở ĐK'" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="550" y="38" width="185" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s41b" value="Gửi thông báo đến Giảng viên (Email + Push)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="760" y="38" width="165" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="s41c" value="Kích hoạt Khóa học (Status='Active'). Gửi thông báo Khai giảng cho toàn bộ HV đã ĐK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;" vertex="1" parent="l4">
+          <mxGeometry x="1360" y="38" width="195" height="52" as="geometry" />
+        </mxCell>
+
+        <!-- ═══ EDGES ═══ -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b45309;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11s" target="s11a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b45309;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s11a" target="s11b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- GĐ approve → Quản lý create course -->
+        <mxCell id="e3" value="approved" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s11b" target="s21a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- NV creates → Sys publishes -->
+        <mxCell id="e4" value="create course" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s21a" target="s41a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- NV assigns lecturer -->
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6d28d9;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s21a" target="s21b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Sys notifies GV -->
+        <mxCell id="e6" value="notify" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s21b" target="s41b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- Sys → GV receives notification -->
+        <mxCell id="e7" value="notification" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s41b" target="s31a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- GV decides -->
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s31a" target="s31dec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" value="Nhận ✓" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" edge="1" source="s31dec" target="s31yes" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" value="Từ chối ✗" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#be123c;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#be123c;fontStyle=1;fontSize=10;" edge="1" source="s31dec" target="s31no" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- GV reject → NV reassign -->
+        <mxCell id="e11" value="reassign" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#be123c;dashed=1;endArrow=open;endFill=0;fontColor=#be123c;fontSize=9;" edge="1" source="s31no" target="s21b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- NV checks enrollment count -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6d28d9;strokeWidth=1.5;endArrow=open;endFill=0;" edge="1" source="s21b" target="s21dec" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" value="Đủ ✓" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#047857;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#047857;fontStyle=1;fontSize=10;" edge="1" source="s21dec" target="s21yes" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" value="Chưa đủ ✗" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#ca8a04;strokeWidth=1.5;endArrow=open;endFill=0;fontColor=#ca8a04;fontStyle=1;fontSize=10;" edge="1" source="s21dec" target="s21no" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- NV confirms → Sys activates -->
+        <mxCell id="e15" value="khai giảng" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#64748b;dashed=1;endArrow=open;endFill=0;fontColor=#64748b;fontSize=9;" edge="1" source="s21yes" target="s41c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <!-- GĐ monitors -->
+        <mxCell id="e16" value="monitor" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b45309;dashed=1;endArrow=open;endFill=0;fontColor=#b45309;fontSize=9;" edge="1" source="s41c" target="s11c" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- FOOTNOTE -->
+        <mxCell id="note" value="⚠ BUSINESS RULE: Giảng viên chỉ được xem dữ liệu học viên của KH mình được phân công — không được cross-access KH khác." style="text;html=1;strokeColor=#cbd5e1;fillColor=#f8fafc;align=left;fontSize=9;fontColor=#475569;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="778" width="900" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

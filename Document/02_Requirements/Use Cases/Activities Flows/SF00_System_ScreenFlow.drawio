@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" version="21.6.5" type="device">
+  <diagram id="SF00" name="SF00 - System Master Screen Flow">
+    <mxGraphModel dx="1400" dy="900" grid="0" pageWidth="1900" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="bg" value="" style="rounded=0;fillColor=#ffffff;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1900" height="900" as="geometry"/></mxCell>
+        <mxCell id="hdr" value="" style="rounded=0;fillColor=#0f172a;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1900" height="44" as="geometry"/></mxCell>
+        <mxCell id="hdr_t" value="HSA Platform | SF00: System Master Screen Flow — Tổng quan Luồng Màn hình | Phase 1 | BA v1.0" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1900" height="44" as="geometry"/></mxCell>
+
+        <!-- ═══ LEGEND ═══ -->
+        <mxCell id="leg" value="□ Màn hình / Screen   ○ Điểm vào   → Điều hướng   [Bold] = Hub/Dashboard chính" style="text;html=1;align=left;fontSize=10;fontColor=#475569;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="20" y="52" width="700" height="18" as="geometry"/></mxCell>
+
+        <!-- STYLES shorthand:
+             screen = rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;
+             hub    = rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;
+             auth   = rounded=0;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;
+             danger = rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;
+             entry  = ellipse;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#0f172a;fontColor=#ffffff;fontSize=10;fontStyle=1;
+        -->
+
+        <!-- ══════════ ENTRY & SHARED PORTAL ══════════ -->
+        <mxCell id="entry" value="Trang chủ / Landing Page" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#0f172a;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="415" width="150" height="48" as="geometry"/></mxCell>
+        <mxCell id="login" value="Trang Đăng nhập" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;" vertex="1" parent="1"><mxGeometry x="225" y="418" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="catalog" value="DS Khóa học &amp; GV (Public)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="225" y="330" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="detail" value="Chi tiết Khóa học" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="405" y="330" width="140" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ STUDENT PORTAL ══════════ -->
+        <mxCell id="lbl_student" value="📱 STUDENT PORTAL" style="text;html=1;fontColor=#1e1b4b;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="405" y="72" width="250" height="20" as="geometry"/></mxCell>
+        <mxCell id="s_dash" value="Dashboard Học viên" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="405" y="418" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s_courses" value="Khóa học của tôi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="95" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="s_enroll" value="Trạng thái ĐK" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="155" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="s_exam" value="Giao diện Thi Thử" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="760" y="95" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="s_result" value="Kết quả &amp; Radar Chart" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="940" y="95" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="s_ai" value="Gợi ý AI Adaptive" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="940" y="155" width="130" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ LECTURER PORTAL ══════════ -->
+        <mxCell id="lbl_lect" value="👨‍🏫 LECTURER PORTAL" style="text;html=1;fontColor=#022c22;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="590" y="250" width="250" height="20" as="geometry"/></mxCell>
+        <mxCell id="l_dash" value="Dashboard Giảng viên" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d1fae5;strokeColor=#047857;fontColor=#022c22;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="590" y="290" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="l_qb" value="Quản lý Câu hỏi (QB)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="255" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="l_khdash" value="Dashboard Khóa học" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="315" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="l_student" value="Profile Học viên" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="970" y="290" width="130" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ OPERATIONS PORTAL ══════════ -->
+        <mxCell id="lbl_ops" value="🧑‍💼 OPERATIONS PORTAL" style="text;html=1;fontColor=#2e1065;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="590" y="430" width="250" height="20" as="geometry"/></mxCell>
+        <mxCell id="o_dash" value="Dashboard Vận hành" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ede9fe;strokeColor=#6d28d9;fontColor=#2e1065;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="590" y="468" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="o_enroll" value="DS Enrollment Mới" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="440" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="o_confirm" value="Confirm / Reject" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="960" y="440" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="o_course" value="Quản lý Khóa học" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="500" width="130" height="36" as="geometry"/></mxCell>
+        <mxCell id="o_qb" value="Phê duyệt Câu hỏi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="960" y="500" width="130" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ DIRECTOR PORTAL ══════════ -->
+        <mxCell id="lbl_dir" value="👔 DIRECTOR PORTAL" style="text;html=1;fontColor=#78350f;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="590" y="600" width="250" height="20" as="geometry"/></mxCell>
+        <mxCell id="d_dash" value="Dashboard KPI TT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#b45309;fontColor=#78350f;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="590" y="635" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="d_kpi" value="Doanh thu &amp; Tuyển sinh" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="610" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="d_perf" value="Hiệu suất KH &amp; GV" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="660" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="d_report" value="Xuất Báo cáo Tổng hợp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="970" y="635" width="140" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ PARENT ACCESS ══════════ -->
+        <mxCell id="lbl_par" value="👨‍👩‍👧 PARENT ACCESS (Email Link)" style="text;html=1;fontColor=#881337;fontSize=12;fontStyle=1;align=left;" vertex="1" parent="1"><mxGeometry x="590" y="762" width="300" height="20" as="geometry"/></mxCell>
+        <mxCell id="p_report" value="Báo cáo Học tập con" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="796" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="p_radar" value="Radar Chart con" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="796" width="130" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ ARROWS ══════════ -->
+        <!-- Entry to catalog & login -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="entry" target="catalog" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="entry" target="login" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="catalog" target="detail" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Login → portals -->
+        <mxCell id="e4" value="Học viên" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#4338ca;strokeWidth=1.5;fontColor=#4338ca;fontSize=9;" edge="1" source="login" target="s_dash" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="Giảng viên" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#047857;strokeWidth=1.5;fontColor=#047857;fontSize=9;" edge="1" source="login" target="l_dash" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Quản lý/NV" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#6d28d9;strokeWidth=1.5;fontColor=#6d28d9;fontSize=9;" edge="1" source="login" target="o_dash" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="Giám đốc" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#b45309;strokeWidth=1.5;fontColor=#b45309;fontSize=9;" edge="1" source="login" target="d_dash" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Student flow -->
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s_dash" target="s_courses" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s_dash" target="s_enroll" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s_courses" target="s_exam" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s_exam" target="s_result" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s_result" target="s_ai" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Lecturer flow -->
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="l_dash" target="l_qb" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="l_dash" target="l_khdash" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="l_khdash" target="l_student" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Ops flow -->
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="o_dash" target="o_enroll" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="o_enroll" target="o_confirm" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="o_dash" target="o_course" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="o_course" target="o_qb" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Director flow -->
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="d_dash" target="d_kpi" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="d_dash" target="d_perf" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="d_dash" target="d_report" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Parent access (Email link, not login) -->
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#be123c;strokeWidth=1;dashed=1;" edge="1" source="p_report" target="p_radar" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="note_par" value="Email Link (no login required)" style="text;html=1;fontSize=9;fontColor=#be123c;fontStyle=2;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="590" y="780" width="180" height="15" as="geometry"/></mxCell>
+
+        <!-- Section dividers (visual) -->
+        <mxCell id="div_h1" value="" style="line;strokeColor=#e2e8f0;strokeWidth=1;fillColor=none;" vertex="1" parent="1"><mxGeometry x="570" y="75" width="1" height="775" as="geometry"/></mxCell>
+
+        <mxCell id="foot" value="SF00 — System Master Screen Flow | Smart HSA Platform | Xem chi tiết từng Portal tại SF01–SF04" style="text;html=1;align=center;fontSize=9;fontColor=#94a3b8;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="872" width="1900" height="18" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,139 @@
+<mxfile host="app.diagrams.net" version="21.6.5" type="device">
+  <diagram id="SF01" name="SF01 - Học viên Screen Flow">
+    <mxGraphModel dx="1400" dy="900" grid="0" pageWidth="1800" pageHeight="820" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="bg" value="" style="rounded=0;fillColor=#ffffff;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1800" height="820" as="geometry"/></mxCell>
+        <mxCell id="hdr" value="" style="rounded=0;fillColor=#0f172a;strokeColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1800" height="44" as="geometry"/></mxCell>
+        <mxCell id="hdr_t" value="HSA Platform | SF01: Screen Flow — Học viên (Student) | All Navigation Paths | Phase 1 | BA v1.0" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#e2e8f0;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="0" width="1800" height="44" as="geometry"/></mxCell>
+
+        <!-- SECTION LABELS -->
+        <mxCell id="lbl_pub" value="① PUBLIC" style="text;html=1;fontColor=#475569;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="20" y="52" width="80" height="16" as="geometry"/></mxCell>
+        <mxCell id="lbl_auth" value="② AUTH" style="text;html=1;fontColor=#475569;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="200" y="52" width="80" height="16" as="geometry"/></mxCell>
+        <mxCell id="lbl_hub" value="③ DASHBOARD" style="text;html=1;fontColor=#1e1b4b;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="390" y="52" width="120" height="16" as="geometry"/></mxCell>
+        <mxCell id="lbl_feat" value="④ FEATURES" style="text;html=1;fontColor=#475569;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="580" y="52" width="120" height="16" as="geometry"/></mxCell>
+        <mxCell id="lbl_course" value="⑤ COURSE" style="text;html=1;fontColor=#475569;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="780" y="52" width="120" height="16" as="geometry"/></mxCell>
+        <mxCell id="lbl_exam" value="⑥ EXAM FLOW" style="text;html=1;fontColor=#475569;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="1000" y="52" width="120" height="16" as="geometry"/></mxCell>
+        <mxCell id="lbl_result" value="⑦ RESULTS" style="text;html=1;fontColor=#475569;fontSize=10;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="1360" y="52" width="120" height="16" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 1: PUBLIC ══════════ -->
+        <mxCell id="s0" value="Trang chủ" style="ellipse;whiteSpace=wrap;html=1;fillColor=#0f172a;strokeColor=#0f172a;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="20" y="395" width="130" height="40" as="geometry"/></mxCell>
+        <mxCell id="s1" value="DS Khóa học công khai" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="20" y="260" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s2" value="Chi tiết Khóa học" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="20" y="185" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s3" value="Form Đăng ký Khóa học" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="20" y="110" width="140" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 2: AUTH ══════════ -->
+        <mxCell id="s4" value="Trang Đăng nhập" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fef9c3;strokeColor=#ca8a04;fontColor=#713f12;fontSize=10;" vertex="1" parent="1"><mxGeometry x="200" y="395" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s5" value="Đăng ký Tài khoản mới" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="200" y="475" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s6" value="Quên Mật khẩu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="200" y="555" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s7" value="Xác thực OTP Email" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="200" y="620" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s8" value="Đặt Mật khẩu mới" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="200" y="690" width="140" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 3: STUDENT DASHBOARD HUB ══════════ -->
+        <mxCell id="s9" value="Dashboard Học viên" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#4338ca;fontColor=#1e1b4b;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="390" y="395" width="150" height="40" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 4: MAIN FEATURES (from Dashboard) ══════════ -->
+        <mxCell id="s10" value="Khóa học của tôi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="135" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s11" value="Trạng thái Đăng ký" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="340" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s12" value="Thông báo" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="455" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s13" value="Hồ sơ Học viên" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="545" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s14" value="Đổi Mật khẩu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="590" y="620" width="140" height="36" as="geometry"/></mxCell>
+
+        <!-- Status sub-screens -->
+        <mxCell id="s11a" value="PENDING (Chờ xác nhận)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#ca8a04;fontColor=#713f12;fontSize=9;" vertex="1" parent="1"><mxGeometry x="590" y="240" width="140" height="32" as="geometry"/></mxCell>
+        <mxCell id="s11b" value="CONFIRMED (Đã xác nhận)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;fontColor=#14532d;fontSize=9;" vertex="1" parent="1"><mxGeometry x="590" y="288" width="140" height="32" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 5: COURSE SCREENS ══════════ -->
+        <mxCell id="s15" value="Trang Khóa học (Home)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="800" y="135" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s16" value="Bài giảng / Tài liệu" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="800" y="75" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s17" value="DS Bài Thi Thử" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;fontColor=#7c2d12;fontSize=10;" vertex="1" parent="1"><mxGeometry x="800" y="215" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s18" value="Lịch sử Bài thi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="800" y="295" width="150" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 6: EXAM FLOW ══════════ -->
+        <mxCell id="s19" value="Giới thiệu Bài thi (Intro)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1010" y="185" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s20" value="Giao diện Làm bài (In Progress)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffedd5;strokeColor=#ea580c;fontColor=#7c2d12;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1010" y="245" width="155" height="36" as="geometry"/></mxCell>
+        <mxCell id="s21" value="Xác nhận Nộp bài (Dialog)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1200" y="185" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s22" value="Force-Submit (Hết giờ)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe4e6;strokeColor=#be123c;fontColor=#881337;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1200" y="305" width="150" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ SECTION 7: RESULTS ══════════ -->
+        <mxCell id="s23" value="Kết quả &amp; Điểm số" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontColor=#14532d;fontSize=10;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1430" y="185" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s24" value="Xem Lời giải Đáp án" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1430" y="110" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s25" value="Radar Chart Năng lực" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1620" y="110" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s26" value="Gợi ý AI Adaptive (Ôn tập)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1620" y="185" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s27" value="So sánh Tiến độ (Timeline)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="1620" y="260" width="150" height="36" as="geometry"/></mxCell>
+        <mxCell id="s28" value="Chi tiết Thông báo" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="455" width="140" height="36" as="geometry"/></mxCell>
+        <mxCell id="s29" value="Chỉnh sửa Hồ sơ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#374151;fontColor=#374151;fontSize=10;" vertex="1" parent="1"><mxGeometry x="780" y="545" width="140" height="36" as="geometry"/></mxCell>
+
+        <!-- ══════════ NAVIGATION ARROWS ══════════ -->
+        <!-- Public section -->
+        <mxCell id="n1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s0" target="s1" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s0" target="s4" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s1" target="s2" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n4" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s2" target="s3" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n4b" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s3" target="s11a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Auth section -->
+        <mxCell id="n5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s4" target="s5" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n6" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s4" target="s6" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s6" target="s7" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n8" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s7" target="s8" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n8b" value="→ Đăng nhập lại" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#94a3b8;strokeWidth=1;dashed=1;fontSize=9;" edge="1" source="s8" target="s4" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Login → Dashboard -->
+        <mxCell id="n9" value="Login success" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#4338ca;strokeWidth=2;fontSize=9;fontColor=#4338ca;" edge="1" source="s4" target="s9" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Dashboard → Features -->
+        <mxCell id="n10" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s9" target="s10" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n11" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s9" target="s11" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s9" target="s12" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n13" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s9" target="s13" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Enrollment Status sub-screens -->
+        <mxCell id="n13b" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s11" target="s11a" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n13c" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s11" target="s11b" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n13d" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#16a34a;strokeWidth=1;" edge="1" source="s11b" target="s10" parent="1"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="660" y="304"/><mxPoint x="660" y="153"/></Array></mxGeometry></mxCell>
+
+        <!-- Profile screens -->
+        <mxCell id="n14" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s13" target="s14" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n14b" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s13" target="s29" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Notifications detail -->
+        <mxCell id="n15" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s12" target="s28" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- My Courses → Course Home -->
+        <mxCell id="n16" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s10" target="s15" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Course Home → sub-screens -->
+        <mxCell id="n17" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s15" target="s16" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n18" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s15" target="s17" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n19" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s15" target="s18" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Exam flow -->
+        <mxCell id="n20" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#ea580c;strokeWidth=1.5;" edge="1" source="s17" target="s19" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n21" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#ea580c;strokeWidth=1.5;" edge="1" source="s19" target="s20" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n22" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#ea580c;strokeWidth=1.5;" edge="1" source="s20" target="s21" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n23" value="Hết giờ" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#be123c;strokeWidth=1;fontSize=9;fontColor=#be123c;" edge="1" source="s20" target="s22" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Submit → Results -->
+        <mxCell id="n24" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#16a34a;strokeWidth=2;" edge="1" source="s21" target="s23" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n24b" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#16a34a;strokeWidth=2;" edge="1" source="s22" target="s23" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- Results → sub-views -->
+        <mxCell id="n25" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s23" target="s24" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n26" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s23" target="s25" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n27" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s23" target="s26" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n28" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s23" target="s27" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="n29" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;" edge="1" source="s24" target="s25" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- History → past results -->
+        <mxCell id="n30" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;strokeColor=#374151;strokeWidth=1;dashed=1;" edge="1" source="s18" target="s23" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- NOTES -->
+        <mxCell id="note_exam" value="🔴 Không có nút Pause trong giờ thi. Auto-submit khi Countdown = 0." style="text;html=1;align=left;fontSize=9;fontColor=#be123c;fontStyle=2;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="1000" y="310" width="350" height="15" as="geometry"/></mxCell>
+        <mxCell id="note_confirm" value="✅ Status CONFIRMED → unlock Course Home" style="text;html=1;align=left;fontSize=9;fontColor=#16a34a;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="590" y="330" width="239" height="13" as="geometry"/></mxCell>
+
+        <mxCell id="foot" value="SF01 — Học viên Screen Flow | 29 màn hình | Smart HSA Platform" style="text;html=1;align=center;fontSize=9;fontColor=#94a3b8;strokeColor=none;fillColor=none;" vertex="1" parent="1"><mxGeometry x="0" y="788" width="1800" height="18" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

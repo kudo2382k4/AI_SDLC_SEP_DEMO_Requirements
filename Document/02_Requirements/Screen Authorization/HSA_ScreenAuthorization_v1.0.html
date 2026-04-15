@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HSA Platform — Screen Authorization Matrix v1.1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --hv-dark:#4338ca; --hv-light:#e0e7ff; --hv-mid:#818cf8;
+      --gv-dark:#047857; --gv-light:#d1fae5; --gv-mid:#34d399;
+      --nv-dark:#6d28d9; --nv-light:#ede9fe; --nv-mid:#a78bfa;
+      --gd-dark:#b45309; --gd-light:#fef3c7; --gd-mid:#fbbf24;
+      --ph-dark:#be123c; --ph-light:#ffe4e6; --ph-mid:#fb7185;
+      --gray-50:#f8fafc; --gray-100:#f1f5f9; --gray-200:#e2e8f0;
+      --gray-300:#cbd5e1; --gray-400:#94a3b8; --gray-700:#334155;
+      --gray-900:#0f172a;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',sans-serif;background:#f8fafc;color:#334155;font-size:13px;}
+    .header{background:var(--gray-900);color:#fff;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:64px;}
+    .header-brand{display:flex;align-items:center;gap:14px;}
+    .header-logo{width:36px;height:36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;letter-spacing:-0.5px;}
+    .header-title{font-size:15px;font-weight:600;color:#e2e8f0;}
+    .header-sub{font-size:11px;color:#94a3b8;margin-top:2px;}
+    .header-meta{text-align:right;font-size:11px;color:#64748b;}
+    .page{max-width:1600px;margin:0 auto;padding:24px 32px 48px;}
+    .doc-strip{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:14px 20px;display:flex;gap:32px;margin-bottom:20px;flex-wrap:wrap;}
+    .doc-field{display:flex;flex-direction:column;gap:2px;}
+    .doc-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);font-weight:600;}
+    .doc-value{font-size:12px;font-weight:500;color:var(--gray-700);}
+    .info-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;}
+    @media(max-width:900px){.info-row{grid-template-columns:1fr;}}
+    .legend-box,.stats-box{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:16px 20px;}
+    .box-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--gray-400);margin-bottom:12px;}
+    .legend-items{display:flex;gap:20px;flex-wrap:wrap;align-items:center;}
+    .legend-item{display:flex;align-items:center;gap:8px;font-size:12px;}
+    .badge{display:inline-flex;align-items:center;justify-content:center;width:28px;height:22px;border-radius:4px;font-weight:700;font-size:12px;}
+    .badge-full{background:#0f172a;color:#fff;}
+    .badge-read{background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;}
+    .badge-none{background:#f8fafc;color:#94a3b8;border:1px solid #e2e8f0;}
+    .role-stats{display:flex;gap:12px;flex-wrap:wrap;}
+    .role-stat{display:flex;flex-direction:column;align-items:center;gap:4px;padding:8px 14px;border-radius:8px;min-width:80px;}
+    .role-stat-count{font-size:24px;font-weight:700;line-height:1;}
+    .role-stat-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+    .role-stat-sub{font-size:9px;font-weight:400;}
+
+    /* REVIEW BADGE */
+    .review-banner{background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:12px 20px;margin-bottom:20px;display:flex;gap:12px;align-items:flex-start;}
+    .review-banner-icon{font-size:16px;flex-shrink:0;}
+    .review-banner-content{font-size:12px;color:#78350f;line-height:1.6;}
+    .review-banner-title{font-weight:700;margin-bottom:4px;}
+    .review-tag{display:inline-block;background:#fde68a;color:#92400e;border-radius:4px;padding:1px 6px;font-size:10px;font-weight:700;margin:0 2px;}
+
+    .controls{display:flex;gap:12px;margin-bottom:16px;align-items:center;flex-wrap:wrap;}
+    .search-box{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:8px 14px;flex:1;min-width:200px;max-width:380px;}
+    .search-box input{border:none;outline:none;font-family:'Inter',sans-serif;font-size:13px;width:100%;color:var(--gray-700);}
+    .search-box input::placeholder{color:var(--gray-400);}
+    .filter-sel{background:#fff;border:1px solid var(--gray-200);border-radius:8px;padding:8px 12px;font-family:'Inter',sans-serif;font-size:12px;color:var(--gray-700);cursor:pointer;outline:none;}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-family:'Inter',sans-serif;font-size:12px;font-weight:600;cursor:pointer;border:none;transition:.15s;}
+    .btn-outline{background:#fff;border:1px solid var(--gray-200);color:var(--gray-700);}
+    .btn-outline:hover{background:var(--gray-50);border-color:var(--gray-300);}
+    .screen-count{margin-left:auto;font-size:12px;color:var(--gray-400);font-weight:500;}
+    .table-wrapper{background:#fff;border:1px solid var(--gray-200);border-radius:12px;overflow:hidden;overflow-x:auto;}
+    table{width:100%;border-collapse:collapse;}
+    thead tr.role-header th{padding:14px 10px 6px;text-align:center;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#fff;white-space:nowrap;}
+    thead tr.role-header th.col-screen{text-align:left;background:var(--gray-900);color:#94a3b8;min-width:340px;padding-left:20px;}
+    thead tr.role-header th.col-hv{background:var(--hv-dark);}
+    thead tr.role-header th.col-gv{background:var(--gv-dark);}
+    thead tr.role-header th.col-nv{background:var(--nv-dark);}
+    thead tr.role-header th.col-gd{background:var(--gd-dark);}
+    thead tr.role-header th.col-ph{background:var(--ph-dark);}
+    thead tr.role-sub th{padding:4px 10px 10px;text-align:center;font-size:10px;font-weight:500;color:#fff;white-space:nowrap;}
+    thead tr.role-sub th.col-screen{background:var(--gray-900);color:#64748b;text-align:left;padding-left:20px;}
+    thead tr.role-sub th.col-hv{background:var(--hv-dark);}
+    thead tr.role-sub th.col-gv{background:var(--gv-dark);}
+    thead tr.role-sub th.col-nv{background:var(--nv-dark);}
+    thead tr.role-sub th.col-gd{background:var(--gd-dark);}
+    thead tr.role-sub th.col-ph{background:var(--ph-dark);}
+    tr.module-row td{padding:10px 20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;border-top:2px solid var(--gray-200);}
+    tr.module-row.first-module td{border-top:none;}
+    tr.screen-row td{padding:9px 10px;border-top:1px solid var(--gray-100);vertical-align:middle;}
+    tr.screen-row:hover td{background:var(--gray-50);}
+    tr.screen-row td.col-screen{padding-left:20px;text-align:left;font-size:12px;color:var(--gray-700);}
+    tr.screen-row td.col-screen .screen-id{font-size:10px;color:var(--gray-400);margin-right:6px;font-weight:500;}
+    tr.screen-row td:not(.col-screen){text-align:center;width:100px;}
+    .cell-full{display:inline-flex;align-items:center;justify-content:center;width:34px;height:26px;border-radius:5px;font-weight:700;font-size:12px;}
+    .cell-full.hv{background:var(--hv-dark);color:#fff;}
+    .cell-full.gv{background:var(--gv-dark);color:#fff;}
+    .cell-full.nv{background:var(--nv-dark);color:#fff;}
+    .cell-full.gd{background:var(--gd-dark);color:#fff;}
+    .cell-full.ph{background:var(--ph-dark);color:#fff;}
+    .cell-read{display:inline-flex;align-items:center;justify-content:center;width:34px;height:26px;border-radius:5px;font-weight:600;font-size:11px;font-style:italic;}
+    .cell-read.hv{background:var(--hv-light);color:var(--hv-dark);}
+    .cell-read.gv{background:var(--gv-light);color:var(--gv-dark);}
+    .cell-read.nv{background:var(--nv-light);color:var(--nv-dark);}
+    .cell-read.gd{background:var(--gd-light);color:var(--gd-dark);}
+    .cell-read.ph{background:var(--ph-light);color:var(--ph-dark);}
+    .cell-none{display:inline-flex;align-items:center;justify-content:center;width:34px;height:26px;color:var(--gray-200);font-size:12px;}
+    .notes-section{background:#fff;border:1px solid var(--gray-200);border-radius:10px;padding:20px 24px;margin-top:20px;}
+    .notes-section h3{font-size:12px;font-weight:700;color:var(--gray-700);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em;}
+    .note-item{display:flex;gap:10px;margin-bottom:8px;font-size:12px;color:var(--gray-700);align-items:flex-start;line-height:1.5;}
+    .note-icon{font-size:14px;flex-shrink:0;margin-top:1px;}
+    .footer{text-align:center;margin-top:32px;font-size:11px;color:var(--gray-400);}
+    @media print{
+      .controls,.review-banner{display:none!important;}
+      .page{padding:0;max-width:100%;}
+      body{background:#fff;}
+      .table-wrapper{border:1px solid #ccc;border-radius:0;}
+      tr.screen-row:hover td{background:transparent;}
+    }
+    .hidden{display:none!important;}
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">
+    <div class="header-logo">HSA</div>
+    <div>
+      <div class="header-title">Smart HSA Platform — Screen Authorization Matrix</div>
+      <div class="header-sub">Phan quyen man hinh theo vai tro nguoi dung (Role-Based Access Control)</div>
+    </div>
+  </div>
+  <div class="header-meta">
+    <div>Version 1.1 (Post BA-Review) • Phase 1</div>
+    <div style="margin-top:3px;color:#64748b;">Prepared by: Senior BA | 15/04/2026</div>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="doc-strip">
+    <div class="doc-field"><span class="doc-label">Du an</span><span class="doc-value">Smart HSA Platform — Trung tam On luyen DGNL</span></div>
+    <div class="doc-field"><span class="doc-label">Tai lieu</span><span class="doc-value">Screen Authorization Matrix</span></div>
+    <div class="doc-field"><span class="doc-label">Phien ban</span><span class="doc-value">v1.1 — Post Senior BA Review</span></div>
+    <div class="doc-field"><span class="doc-label">Giai doan</span><span class="doc-value">Phase 1</span></div>
+    <div class="doc-field"><span class="doc-label">Ngay cap nhat</span><span class="doc-value">15/04/2026</span></div>
+    <div class="doc-field"><span class="doc-label">Trang thai</span><span class="doc-value" style="color:#047857;font-weight:700;">&#9679; Reviewed &amp; Updated</span></div>
+  </div>
+
+  <!-- BA REVIEW CHANGELOG -->
+  <div class="review-banner">
+    <div class="review-banner-icon">&#128269;</div>
+    <div class="review-banner-content">
+      <div class="review-banner-title">Senior BA Review — 9 van de da phat hien va sua trong v1.1</div>
+      <span class="review-tag">FIX-01</span> Tach ro man hinh "Xem KH (PENDING=chi xem)" vs "Course Home (chi sau CONFIRMED)" — them ghi chu tu phong.
+      <span class="review-tag">FIX-02</span> "Trang thai Enrollment" da duoc tach theo chu the: HV tu xem trang thai, NV xu ly DS.
+      <span class="review-tag">FIX-03</span> "Doi Mat khau" chuyen ve module AUTH / Cai dat ca nhan — khong con nam trong Student Portal.
+      <span class="review-tag">FIX-04</span> Bo "Thong bao" chung chung — da tach thanh Notification rieng theo tung role Hub.
+      <span class="review-tag">FIX-05</span> "Ket qua va Diem so" HV: sua tu <b>R</b> (Read-Only thu dong) sang <b>F</b> (Full — HV la nguoi khoi tao action xem ket qua).
+      <span class="review-tag">FIX-06</span> GD duoc them quyen R tren man hinh "Publish KH" de co toan quan trang thai vung tran.
+      <span class="review-tag">FIX-07</span> GV bi xoa khoi "Download Bao cao Tong hop Trung tam" — GV chi export bao cao KH rieng, khong co quyen vao Director Analytics module.
+      <span class="review-tag">FIX-08</span> GD duoc them quyen R xem "DS Enrollment PENDING" de biet tong quan van hanh.
+      <span class="review-tag">FIX-09</span> <b>Them module "SYSTEM ADMIN"</b> (Admin role) bi thieu hoan toan — project_context line 98 da de cap ro rang.
+    </div>
+  </div>
+
+  <div class="info-row">
+    <div class="legend-box">
+      <div class="box-title">Chu thich ky hieu phan quyen</div>
+      <div class="legend-items">
+        <div class="legend-item"><span class="badge badge-full">&#10003;</span><span><strong>Full Access</strong> — Toan quyen (Xem, Tao, Sua, Xoa / Thuc hien hanh dong)</span></div>
+        <div class="legend-item"><span class="badge badge-read">R</span><span><strong>Read Only</strong> — Chi xem, khong can thiep du lieu</span></div>
+        <div class="legend-item"><span class="badge badge-none">&ndash;</span><span><strong>No Access</strong> — Khong co quyen truy cap</span></div>
+      </div>
+    </div>
+    <div class="stats-box">
+      <div class="box-title">Tong man hinh co quyen truy cap (Full + Read)</div>
+      <div class="role-stats" id="statsContainer"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="search-box">
+      <span style="color:#94a3b8;font-size:14px;">&#128269;</span>
+      <input type="text" id="searchInput" placeholder="Tim kiem man hinh..." oninput="filterTable()">
+    </div>
+    <select class="filter-sel" id="moduleFilter" onchange="filterTable()">
+      <option value="">-- Tat ca Module --</option>
+    </select>
+    <select class="filter-sel" id="roleFilter" onchange="filterTable()">
+      <option value="">-- Tat ca Role --</option>
+      <option value="hv">Hoc vien (HV)</option>
+      <option value="gv">Giang vien (GV)</option>
+      <option value="nv">Quan ly / NV (NV)</option>
+      <option value="gd">Giam doc (GD)</option>
+      <option value="ph">Phu huynh (PH)</option>
+    </select>
+    <button class="btn btn-outline" onclick="window.print()">&#128424; In / Xuat PDF</button>
+    <button class="btn btn-outline" onclick="resetFilters()">&#8634; Xoa bo loc</button>
+    <span class="screen-count" id="screenCount"></span>
+  </div>
+
+  <div class="table-wrapper">
+    <table id="authTable">
+      <thead>
+        <tr class="role-header">
+          <th class="col-screen">Man hinh / Screen</th>
+          <th class="col-hv">HV</th>
+          <th class="col-gv">GV</th>
+          <th class="col-nv">NV</th>
+          <th class="col-gd">GD</th>
+          <th class="col-ph">PH</th>
+        </tr>
+        <tr class="role-sub">
+          <th class="col-screen">Vai tro nguoi dung &#8594;</th>
+          <th class="col-hv">Hoc vien</th>
+          <th class="col-gv">Giang vien</th>
+          <th class="col-nv">Quan ly / NV</th>
+          <th class="col-gd">Giam doc</th>
+          <th class="col-ph">Phu huynh</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="notes-section">
+    <h3>&#128204; Quy tac Nghiep vu Quan trong (Business Rules)</h3>
+    <div class="note-item"><span class="note-icon">&#128274;</span><span><strong>Enrollment Gate:</strong> HV chi truy cap Course Home, Bai giang, Danh sach Bai thi khi Enrollment = CONFIRMED. Khi PENDING: chi xem trang thai dang ky, KHONG duoc nop bai.</span></div>
+    <div class="note-item"><span class="note-icon">&#128179;</span><span><strong>Manual Payment (Phase 1):</strong> NV Ван hanh bat buoc XAC NHAN thanh toan thu cong truoc khi Confirm Enrollment. Khong co cong thanh toan online trong Phase 1.</span></div>
+    <div class="note-item"><span class="note-icon">&#128275;</span><span><strong>Giang vien Data Isolation:</strong> GV chi xem du lieu HV va ket qua thi cua cac Khoa hoc minh duoc PHAN CONG. Nghiem cam cross-access sang KH cua GV khac.</span></div>
+    <div class="note-item"><span class="note-icon">&#9203;</span><span><strong>Exam Anti-cheat:</strong> Trong khi lam bai, he thong phat hien tab-switching. Khong co chuc nang Pause. Auto force-submit khi Countdown = 0.</span></div>
+    <div class="note-item"><span class="note-icon">&#128231;</span><span><strong>Parent Access:</strong> Phu huynh KHONG can tai khoan. Truy cap hoan toan qua Email link (time-limited token). Toan bo quyen la Read-Only (tru "Lien he Trung tam").</span></div>
+    <div class="note-item"><span class="note-icon">&#128084;</span><span><strong>Giam doc:</strong> Read-only toan he thong. Quyen Write duy nhat: Phe duyet mo Khoa hoc moi (UC-GD-01). Khong duoc chinh sua truc tiep du lieu HV / GV.</span></div>
+    <div class="note-item"><span class="note-icon">&#129302;</span><span><strong>Adaptive Engine:</strong> Goi y AI chi cap nhat Competency Profile khi ti le cau tra loi trong bai thi &gt; 30%. Bai bo cuoc khong duoc tinh.</span></div>
+    <div class="note-item"><span class="note-icon">&#10003;</span><span><strong>QB Approval Gate:</strong> Cau hoi bat buoc gan du 3 metadata [Topic + Difficulty (Bloom) + Mon hoc] moi duoc Submit phe duyet. Chi NV Ван hanh moi co quyen Approve / Reject.</span></div>
+    <div class="note-item"><span class="note-icon">&#9881;</span><span><strong>Admin Role (v1.1 addition):</strong> Admin quan ly cac danh muc he thong (Mon hoc, Ma tran de, User accounts). Trong Phase 1, Quyen Admin co the do NV kiem nhiem. Day la role ky thuat, KHONG phai role nghiep vu End-user.</span></div>
+  </div>
+
+  <div class="footer">
+    HSA Platform — Screen Authorization Matrix v1.1 (Post Senior BA Review) | Phase 1 | 15/04/2026<br>
+    Tai lieu nay la phan cua bo quy trinh Requirements: Context Diagram &rarr; Use Case Diagram &rarr; Screen Flow &rarr; Screen Authorization
+  </div>
+</div>
+
+<script>
+  // F = Full Access, R = Read Only, '' = No Access
+  const modules = [
+    {
+      name:'PUBLIC — Trang cong khai (Khong can dang nhap)', bg:'#f8fafc',
+      screens:[
+        {name:'Trang chu / Landing Page',                                   hv:'R',gv:'R',nv:'R',gd:'R',ph:'R'},
+        {name:'Danh sach Khoa hoc cong khai (Catalog)',                     hv:'R',gv:'R',nv:'R',gd:'R',ph:'R'},
+        {name:'Chi tiet Khoa hoc (public view - truoc khi dang ky)',        hv:'R',gv:'R',nv:'R',gd:'R',ph:'R'},
+        {name:'Form Dang ky Khoa hoc (submit tao Enrollment PENDING)',      hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'AUTH — Xac thuc & Dat lai Mat khau', bg:'#fefce8',
+      screens:[
+        {name:'Trang Dang nhap',                                            hv:'F',gv:'F',nv:'F',gd:'F',ph:''},
+        {name:'Dang ky Tai khoan moi (Hoc vien tu dang ky)',                hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Quen Mat khau (yeu cau reset)',                              hv:'F',gv:'F',nv:'F',gd:'F',ph:''},
+        {name:'Xac thuc OTP qua Email',                                     hv:'F',gv:'F',nv:'F',gd:'F',ph:''},
+        {name:'Dat Mat khau moi (sau OTP)',                                 hv:'F',gv:'F',nv:'F',gd:'F',ph:''},
+        // [FIX-03] Doi mat khau thuoc ve Auth / Ca nhan, khong phai Student Portal
+        {name:'Doi Mat khau (Trang ca nhan — all roles)',                   hv:'F',gv:'F',nv:'F',gd:'F',ph:''},
+      ]
+    },
+    {
+      name:'STUDENT PORTAL — Khu vuc Hoc vien (sau dang nhap)', bg:'#eff6ff',
+      screens:[
+        {name:'Dashboard Hoc vien (Hub chinh)',                             hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Ho so Hoc vien (ca nhan)',                                   hv:'F',gv:'' ,nv:'R',gd:'' ,ph:''},
+        {name:'Chinh sua Ho so (Edit Profile)',                             hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        // [FIX-04] Thong bao tach rieng theo role Hub
+        {name:'Thong bao cua Hoc vien (notification hub)',                  hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Chi tiet Thong bao',                                         hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Khoa hoc cua toi (DS KH dang theo hoc)',                    hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        // [FIX-01+02] Tach ro: HV chi xem trang thai ban than; NV xu ly enrollment o quan tri
+        {name:'Xem Trang thai Enrollment ca nhan (PENDING / CONFIRMED)',    hv:'R',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        // Ghi chu: PENDING co the xem trang KH nhung KHONG duoc nop bai
+        {name:'Trang Khoa hoc - Course Home (chi sau CONFIRMED)',           hv:'F',gv:'R',nv:'' ,gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'MOCK EXAM — Thi Thu & Bai Thi (chi khi CONFIRMED)', bg:'#f0fdf4',
+      screens:[
+        {name:'Danh sach Bai Thi Thu trong Khoa hoc',                      hv:'F',gv:'R',nv:'' ,gd:'' ,ph:''},
+        {name:'Gioi thieu Bai thi (Intro Screen — thong tin de thi)',       hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Giao dien Lam bai (In-Progress, Split-screen)',             hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Xac nhan Nop bai (Confirm Submit Dialog)',                   hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'Lich su Bai thi (ExamAttempt History)',                      hv:'F',gv:'R',nv:'' ,gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'RESULTS & ANALYTICS — Ket qua & Phan tich Ca nhan', bg:'#fff7ed',
+      screens:[
+        // [FIX-05] HV la nguoi khoi tao action xem KQ => F, khong phai R thu dong
+        {name:'Ket qua & Diem so (hien thi tuc thi <= 1s sau nop bai)',    hv:'F',gv:'R',nv:'' ,gd:'' ,ph:''},
+        {name:'Xem Loi giai Dap an chi tiet',                               hv:'F',gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Radar Chart Nang luc ca nhan (phan mon)',                    hv:'F',gv:'R',nv:'' ,gd:'' ,ph:''},
+        {name:'Goi y On tap AI Adaptive (lo hong kien thuc)',               hv:'F',gv:'' ,nv:'' ,gd:'' ,ph:''},
+        {name:'So sanh Tien do qua cac lan thi (Timeline)',                 hv:'F',gv:'R',nv:'' ,gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'LEARNING CONTENT — Noi dung Bai giang & Tai lieu', bg:'#f0fdf4',
+      screens:[
+        {name:'Bai giang / Slide / Tai lieu hoc (view)',                    hv:'R',gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Upload Bai giang (Giang vien)',                              hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Tai lieu bo tro do GV giao (Student view)',                  hv:'R',gv:'F',nv:'' ,gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'LECTURER DASHBOARD — Dashboard & Giam sat Hoc vien', bg:'#f0fdf4',
+      screens:[
+        {name:'Dashboard Giang vien (Hub chinh)',                           hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        // [FIX-04] Thong bao tach rieng theo role
+        {name:'Thong bao cua Giang vien (notification hub)',                hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'DS Khoa hoc duoc phan cong',                                 hv:'' ,gv:'R',nv:'R',gd:'' ,ph:''},
+        {name:'Dashboard Khoa hoc cu the (duoc phan cong)',                 hv:'' ,gv:'F',nv:'R',gd:'R',ph:''},
+        {name:'Pho diem Khoa hoc — Histogram phan phoi diem',              hv:'' ,gv:'R',nv:'R',gd:'R',ph:''},
+        {name:'Radar Chart tap the cua toan Khoa hoc',                     hv:'' ,gv:'R',nv:'' ,gd:'R',ph:''},
+        {name:'Danh sach Hoc vien trong Khoa hoc',                         hv:'' ,gv:'R',nv:'F',gd:'' ,ph:''},
+        {name:'Competency Profile HV — chi tiet ca nhan',                  hv:'' ,gv:'R',nv:'' ,gd:'' ,ph:''},
+        {name:'Radar Chart ca nhan Hoc vien',                              hv:'' ,gv:'R',nv:'' ,gd:'' ,ph:''},
+        {name:'Lich su bai thi cua Hoc vien trong Khoa hoc',               hv:'' ,gv:'R',nv:'' ,gd:'' ,ph:''},
+        {name:'Giao tai lieu bo tro cho HV yeu (action)',                   hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Export Bao cao Khoa hoc (PDF / Excel) — KH phan cong',     hv:'' ,gv:'F',nv:'F',gd:'R',ph:''},
+      ]
+    },
+    {
+      name:'QUESTION BANK — Quan ly Ngan hang Cau hoi', bg:'#fefce8',
+      screens:[
+        {name:'Quan ly Cau hoi — QB Manager List',                         hv:'' ,gv:'F',nv:'R',gd:'' ,ph:''},
+        {name:'Soan Cau hoi don le (Web editor)',                           hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Import Cau hoi tu File (Word / Excel mau)',                 hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Preview Cau hoi — Render MathJax / LaTeX',                  hv:'' ,gv:'F',nv:'R',gd:'' ,ph:''},
+        {name:'Gan Tag Metadata (Topic, Bloom Level, Mon hoc)',             hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Submit Cau hoi de Phe duyet (workflow)',                     hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Hieu chinh Cau hoi bi Tu choi (theo ghi chu NV)',           hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Tim kiem Cau hoi trong QB (filter)',                         hv:'' ,gv:'R',nv:'R',gd:'' ,ph:''},
+        {name:'DS Cau hoi cho Phe duyet (Action Queue)',                    hv:'' ,gv:'R',nv:'F',gd:'' ,ph:''},
+        {name:'Phe duyet (Approve) Cau hoi — Publish vao QB',              hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Tu choi (Reject) Cau hoi + Ghi chu ly do chi tiet',         hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Kiem tra Phan phoi QB (thong ke theo Topic / Bloom)',        hv:'' ,gv:'R',nv:'F',gd:'' ,ph:''},
+        {name:'Vo hieu hoa Cau hoi loi thoi (Status = Inactive)',          hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'EXAM CREATION — Tao & Publish De thi', bg:'#fefce8',
+      screens:[
+        {name:'Tao De thi tu QB (wizard chon nguon)',                       hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Cau hinh Ma tran De thi (so cau, phan bo kien thuc)',       hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+        {name:'Preview De thi hoan chinh',                                  hv:'' ,gv:'R',nv:'R',gd:'' ,ph:''},
+        {name:'Publish De thi vao Khoa hoc',                               hv:'' ,gv:'F',nv:'' ,gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'ENROLLMENT ADMIN — Xac nhan & Quan ly Dang ky (NV Van hanh)', bg:'#f5f3ff',
+      screens:[
+        {name:'Dashboard Van hanh (Ops Hub)',                               hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        // [FIX-08] GD co R xem DS Enrollment de biet tong quan van hanh thuc te
+        {name:'DS Enrollment PENDING (Hang doi xu ly)',                     hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        {name:'Chi tiet Enrollment cua tung Hoc vien',                     hv:'' ,gv:'' ,nv:'R',gd:'' ,ph:''},
+        {name:'Xac nhan Thanh toan Hoc phi (thu cong — Phase 1)',          hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Confirm Enrollment — Status chuyen sang CONFIRMED',          hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Reject Enrollment + Nhap ly do tu choi',                    hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'DS Hoc vien dang hoat dong (toan Trung tam)',               hv:'' ,gv:'R',nv:'F',gd:'R',ph:''},
+        {name:'Gui Thong bao hang loat toi Hoc vien',                      hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Thong bao cua NV Van hanh (notification hub)',              hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'COURSE MANAGEMENT — Quan ly Khoa hoc (Van hanh)', bg:'#f5f3ff',
+      screens:[
+        {name:'DS Khoa hoc Trung tam (toan bo trang thai)',                 hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        {name:'Tao Khoa hoc Moi (form day du)',                             hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Cau hinh Khoa hoc (lich, hoc phi, SL toi da)',              hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        // [FIX-06] GD co R xem trang thai man hinh Publish KH
+        {name:'Publish Khoa hoc — Mo nhan Dang ky',                        hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        {name:'DS Giang vien hop le (co hop dong)',                         hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        {name:'Phan cong Giang vien vao Khoa hoc',                         hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Xac nhan Khai giang — Activate Khoa hoc',                   hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+        {name:'Dong / Huy Khoa hoc (truoc khai giang)',                    hv:'' ,gv:'' ,nv:'F',gd:'' ,ph:''},
+      ]
+    },
+    {
+      name:'COURSE APPROVAL — Phe duyet mo Khoa hoc (Giam doc)', bg:'#fef9c3',
+      screens:[
+        {name:'DS De xuat mo Khoa hoc Moi',                                hv:'' ,gv:'' ,nv:'F',gd:'F',ph:''},
+        {name:'Chi tiet De xuat Khoa hoc',                                 hv:'' ,gv:'' ,nv:'R',gd:'R',ph:''},
+        // NV gui de xuat; chi GD moi co quyen Approve
+        {name:'Phe duyet (Approve) mo Khoa hoc — GD only',                 hv:'' ,gv:'' ,nv:'' ,gd:'F',ph:''},
+      ]
+    },
+    {
+      name:'DIRECTOR ANALYTICS — KPI & Thong ke Trung tam', bg:'#fef3c7',
+      screens:[
+        {name:'Dashboard KPI Trung tam (Hub chinh)',                        hv:'' ,gv:'' ,nv:'R',gd:'F',ph:''},
+        {name:'Doanh thu & So HV tuyen sinh tong hop',                     hv:'' ,gv:'' ,nv:'R',gd:'F',ph:''},
+        {name:'Bieu do Tuyen sinh theo thang / quy',                        hv:'' ,gv:'' ,nv:'R',gd:'F',ph:''},
+        {name:'Ti le Hoan thanh Khoa hoc (%)',                              hv:'' ,gv:'' ,nv:'R',gd:'F',ph:''},
+        {name:'Pho diem thi Toan Trung tam',                               hv:'' ,gv:'' ,nv:'R',gd:'F',ph:''},
+        {name:'Tong so luot thi & Diem trung binh chung',                  hv:'' ,gv:'' ,nv:'' ,gd:'F',ph:''},
+        {name:'Canh bao KH sap khai giang chua du HV',                     hv:'' ,gv:'' ,nv:'F',gd:'F',ph:''},
+        {name:'Thong ke so sanh cac Khoa hoc',                             hv:'' ,gv:'' ,nv:'' ,gd:'F',ph:''},
+        {name:'Thong ke Hieu suat tung Giang vien',                        hv:'' ,gv:'' ,nv:'' ,gd:'F',ph:''},
+        {name:'Trang Xuat Bao cao Tong hop Trung tam',                     hv:'' ,gv:'' ,nv:'F',gd:'F',ph:''},
+        // [FIX-07] GV bi xoa khoi day — GV chi export bao cao KH phan cong (module GV)
+        {name:'Download Bao cao Tong hop Trung tam (PDF / Excel)',          hv:'' ,gv:'' ,nv:'F',gd:'F',ph:''},
+        {name:'Thong bao & Canh bao he thong (GD)',                        hv:'' ,gv:'' ,nv:'' ,gd:'F',ph:''},
+      ]
+    },
+    {
+      // [FIX-09] Module nay bi THIEU HOAN TOAN trong v1.0 — project_context line 98
+      name:'SYSTEM ADMIN — Quan tri He thong (Admin Role)', bg:'#f1f5f9',
+      screens:[
+        {name:'Quan ly Tai khoan nguoi dung (User Management)',            hv:'' ,gv:'' ,nv:'R',gd:'R',ph:''},
+        {name:'Quan ly Mon hoc & Phan mon (Subject / Topic catalog)',      hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        {name:'Cau hinh Ma tran De thi Chuan (Exam Template)',             hv:'' ,gv:'R',nv:'F',gd:'R',ph:''},
+        {name:'Quan ly Danh muc he thong (Lookup / Reference Data)',       hv:'' ,gv:'' ,nv:'F',gd:'R',ph:''},
+        {name:'Xem Nhat ky He thong (System Audit Log)',                   hv:'' ,gv:'' ,nv:'R',gd:'R',ph:''},
+        {name:'Cau hinh He thong (System Settings)',                        hv:'' ,gv:'' ,nv:'F',gd:'F',ph:''},
+      ]
+    },
+    {
+      name:'PARENT ACCESS — Phu huynh (Email Link — Read-Only hoan toan)', bg:'#fff1f2',
+      screens:[
+        {name:'Bao cao Hoc tap con (view-only qua link email co gia han)',  hv:'' ,gv:'' ,nv:'' ,gd:'' ,ph:'R'},
+        {name:'Diem so & Radar Chart cua con',                              hv:'' ,gv:'' ,nv:'' ,gd:'' ,ph:'R'},
+        {name:'Lich su Diem so theo tuan / thang',                          hv:'' ,gv:'' ,nv:'' ,gd:'' ,ph:'R'},
+        {name:'So sanh Tien do hoc tap con (Trend Chart)',                  hv:'' ,gv:'' ,nv:'' ,gd:'' ,ph:'R'},
+        {name:'Lien he Trung tam (Email / Hotline link)',                   hv:'' ,gv:'' ,nv:'' ,gd:'' ,ph:'F'},
+      ]
+    },
+  ];
+
+  let screenIndex = 0;
+  const tbody = document.getElementById('tableBody');
+  const modFilter = document.getElementById('moduleFilter');
+
+  modules.forEach((mod, mi) => {
+    const opt = document.createElement('option');
+    opt.value = mi;
+    opt.textContent = mod.name.replace(/^[A-Z\s&]+—\s*/,'').replace(/\s\(.*$/,'').trim().substring(0,50);
+    modFilter.appendChild(opt);
+
+    const mrow = document.createElement('tr');
+    mrow.className = 'module-row' + (mi === 0 ? ' first-module' : '');
+    mrow.dataset.module = mi;
+    mrow.style.background = mod.bg;
+    mrow.innerHTML = '<td colspan="6" style="color:#334155;">' + (mi+1) + '. ' + mod.name + '</td>';
+    tbody.appendChild(mrow);
+
+    mod.screens.forEach(s => {
+      screenIndex++;
+      const tr = document.createElement('tr');
+      tr.className = 'screen-row';
+      tr.dataset.module = mi;
+      tr.dataset.name = s.name.toLowerCase();
+      tr.dataset.hv = s.hv;
+      tr.dataset.gv = s.gv;
+      tr.dataset.nv = s.nv;
+      tr.dataset.gd = s.gd;
+      tr.dataset.ph = s.ph;
+
+      const cell = (access, role) => {
+        if (access === 'F') return '<span class="cell-full ' + role + '">&#10003;</span>';
+        if (access === 'R') return '<span class="cell-read ' + role + '">R</span>';
+        return '<span class="cell-none">&ndash;</span>';
+      };
+
+      tr.innerHTML =
+        '<td class="col-screen"><span class="screen-id">' + String(screenIndex).padStart(2,'0') + '</span>' + s.name + '</td>' +
+        '<td class="col-hv">' + cell(s.hv,'hv') + '</td>' +
+        '<td class="col-gv">' + cell(s.gv,'gv') + '</td>' +
+        '<td class="col-nv">' + cell(s.nv,'nv') + '</td>' +
+        '<td class="col-gd">' + cell(s.gd,'gd') + '</td>' +
+        '<td class="col-ph">' + cell(s.ph,'ph') + '</td>';
+      tbody.appendChild(tr);
+    });
+  });
+
+  function computeStats() {
+    const statsBox = document.getElementById('statsContainer');
+    statsBox.innerHTML = '';
+    const roleKeys = ['hv','gv','nv','gd','ph'];
+    const colors = {
+      hv:{bg:'#e0e7ff',txt:'#4338ca'},
+      gv:{bg:'#d1fae5',txt:'#047857'},
+      nv:{bg:'#ede9fe',txt:'#6d28d9'},
+      gd:{bg:'#fef3c7',txt:'#b45309'},
+      ph:{bg:'#ffe4e6',txt:'#be123c'}
+    };
+    const labels = {hv:'Hoc vien',gv:'Giang vien',nv:'Quan ly/NV',gd:'Giam doc',ph:'Phu huynh'};
+    roleKeys.forEach(r => {
+      let full=0, read=0;
+      document.querySelectorAll('.screen-row').forEach(row => {
+        if (row.dataset[r]==='F') full++;
+        else if (row.dataset[r]==='R') read++;
+      });
+      const div = document.createElement('div');
+      div.className = 'role-stat';
+      div.style.background = colors[r].bg;
+      div.innerHTML =
+        '<span class="role-stat-count" style="color:' + colors[r].txt + '">' + (full+read) + '</span>' +
+        '<span class="role-stat-label" style="color:' + colors[r].txt + '">' + r.toUpperCase() + '</span>' +
+        '<span class="role-stat-sub" style="color:' + colors[r].txt + '">' + full + '&#10003; + ' + read + 'R</span>';
+      statsBox.appendChild(div);
+    });
+  }
+  computeStats();
+
+  function filterTable() {
+    const search = document.getElementById('searchInput').value.trim().toLowerCase();
+    const modVal = document.getElementById('moduleFilter').value;
+    const roleVal = document.getElementById('roleFilter').value;
+    let visible = 0;
+
+    document.querySelectorAll('.screen-row').forEach(row => {
+      const matchName = !search || row.dataset.name.includes(search);
+      const matchMod  = !modVal  || row.dataset.module === modVal;
+      const matchRole = !roleVal || row.dataset[roleVal] !== '';
+      const show = matchName && matchMod && matchRole;
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+
+    document.querySelectorAll('.module-row').forEach(mrow => {
+      const anyVisible = [...document.querySelectorAll('.screen-row[data-module="' + mrow.dataset.module + '"]')]
+        .some(r => !r.classList.contains('hidden'));
+      mrow.classList.toggle('hidden', !anyVisible || (modVal && mrow.dataset.module !== modVal));
+    });
+
+    document.getElementById('screenCount').textContent = 'Hien thi ' + visible + ' / ' + screenIndex + ' man hinh';
+  }
+
+  function resetFilters() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('moduleFilter').value = '';
+    document.getElementById('roleFilter').value = '';
+    filterTable();
+  }
+
+  filterTable();
+</script>
+</body>
+</html>
